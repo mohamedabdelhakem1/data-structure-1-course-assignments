@@ -2,7 +2,7 @@ package eg.edu.alexu.csd.datastructure.calculator.cs44;
 
 import eg.edu.alexu.csd.datastructure.calculator.ICalculator;
 /**
- * 
+ *
  * @author SHiko
  *
  */
@@ -16,10 +16,10 @@ public class Calculator implements ICalculator {
 
 	@Override
 	public float divide(int x, int y) throws RuntimeException {
-		if (y == 0) { 
+		if (y == 0) {
 			throw new RuntimeException("Division by zero");
 			}
-		return (float) x / (float) y;	
+		return (float) x / (float) y;
 	}
 }
 
