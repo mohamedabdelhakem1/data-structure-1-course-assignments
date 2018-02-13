@@ -10,7 +10,7 @@ import eg.edu.alexu.csd.datastructure.calculator.ICalculator;
 public class Calculator implements ICalculator {
 
 	@Override
-	public int add(final int x, int y) {
+	public int add(final int x, final int y) {
 		return 	(x + y);
 	}
 
