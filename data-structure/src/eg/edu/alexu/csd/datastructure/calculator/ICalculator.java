@@ -14,5 +14,5 @@ int add(int x, int y);
 * @param y second number
 * @return the division result
 */
-float divide(int x, int y) throws RuntimeException;
+float divide(float x, float y) throws RuntimeException;
 }
