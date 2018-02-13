@@ -16,7 +16,7 @@ public class Calculator implements ICalculator {
 		// TODO Auto-generated method stub
 		if (y==0)
 		{ throw new RuntimeException("Division by zero!");}
-		return (float)(x / y);
+		return (float)x / (float)y;
 	
 		
 	}
