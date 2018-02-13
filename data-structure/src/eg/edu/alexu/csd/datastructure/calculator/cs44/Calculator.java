@@ -14,11 +14,7 @@ public class Calculator implements ICalculator {
 	public float divide(int x, int y) throws RuntimeException {
 		if (y==0)
 			{ throw new RuntimeException("Division by zero!");}
-		return (float)x / (float)y;
-	
-		
+		return (float)x / (float)y;	
 	}
-	
-	
 }
 
