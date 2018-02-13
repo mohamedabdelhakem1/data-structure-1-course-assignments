@@ -1,14 +1,15 @@
 package eg.edu.alexu.csd.datastructure.calculator.cs44;
 
-public class MyCalculator implements ICalculator
-{
+import eg.edu.alexu.csd.datastructure.calculator.ICalculator;
 
-	@Override
+
+public class Calculator implements ICalculator{
+
 	public int add(int x, int y) {
 		return x + y;
 	}
 
-	@Override
+	
 	public float divide(int x, int y) throws RuntimeException {
 		return x / y;
 	}

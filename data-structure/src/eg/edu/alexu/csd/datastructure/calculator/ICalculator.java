@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.calculator.cs44;
+package eg.edu.alexu.csd.datastructure.calculator;
 
 public interface ICalculator {
 /**
