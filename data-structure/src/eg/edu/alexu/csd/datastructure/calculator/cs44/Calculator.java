@@ -19,7 +19,7 @@ public class Calculator implements ICalculator {
 		if (y == 0) { 
 			throw new RuntimeException("Division by zero");
 			}
-		return (float) x / (float) y ;	
+		return (float) x / (float) y;	
 	}
 }
 
