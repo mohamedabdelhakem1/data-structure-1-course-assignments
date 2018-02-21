@@ -50,13 +50,11 @@ public class Hangman implements IHangman {
 
 	@Override
 	public String selectRandomSecretWord() {
+
 			Random number =new Random();
-			for(i=0;file_words[i]!=null;i++)
-			{
 
-			}
 
-			String secretword=file_words[number.nextInt(i-1)];
+			String secretword=file_words[number.nextInt(file_words.length)];
 		if(secretword!=null) {
 			return secretword;
 		}
