@@ -9,7 +9,7 @@ public interface IHangman {
 void setDictionary(String[] words);
 /**
 * Pick a random secret word from the dictionary and returns it
-	* @return secret word or null
+* @return secret word or null
 */
 String selectRandomSecretWord();
 /**

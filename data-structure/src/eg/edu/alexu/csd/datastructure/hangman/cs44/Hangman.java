@@ -1,7 +1,8 @@
 package eg.edu.alexu.csd.datastructure.hangman.cs44;
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Random;
-import java.util.Scanner;
 
 import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 /**
@@ -13,7 +14,7 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class Hangman implements IHangman {
 
-	public Scanner s;
+
 	public String[] word=new String [1000] ;
 	public String[] file_words=new String [1000];
 	public int i=0;
@@ -24,17 +25,21 @@ public class Hangman implements IHangman {
 	public void readfile() {
 
 		try {
-			s = new Scanner(new File("words.txt"));
-		}
-		catch(Exception e) {
+			FileReader filereader =new FileReader("C:\\Users\\SHIKO\\git\\data-structure\\data-structure\\src\\eg\\edu\\alexu\\csd\\datastructure\\hangman\\cs44\\words.txt");
+			BufferedReader buffer = new BufferedReader(filereader);
+			String line;
+			while((line = buffer.readLine())!=null) {
+				word[i]=line;
 
+				i++;
+			}
 		}
-		 while(s.hasNext())
-		 {
-			 word[i]= s.next();
-			 i++;
+		catch(IOException e) {
 		}
+
+
 		 setDictionary(word);
+
 	}
 
 
@@ -50,9 +55,9 @@ public class Hangman implements IHangman {
 			{
 
 			}
+
 			String secretword=file_words[number.nextInt(i-1)];
 		if(secretword!=null) {
-
 			return secretword;
 		}
 		else {
@@ -66,13 +71,12 @@ public class Hangman implements IHangman {
 	char input1 = Character.toLowerCase(c);
 	char input2 = Character.toUpperCase(c);
 	got_letters=secretword;
-
 	if (counter <= max_guesses) {
-		if(c != null){
-			if(secretword.indexOf(c)>=0||secretword.indexOf(input2)>=0||secretword.indexOf(input1)>=0) {
+		if(c != null&& secretword != null){
+			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
 
 				for(i=0;i<secretword.length();i++)
-			{		if(secretword.charAt(i)==c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
+			{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
 						solved+=(secretword.charAt(i));
 						got_letters.replace(got_letters.charAt(i), c);
 						}
