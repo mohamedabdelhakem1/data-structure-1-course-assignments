@@ -68,6 +68,7 @@ public class Hangman implements IHangman {
 	int counter = 0;
 	char input1 = Character.toLowerCase(c);
 	char input2 = Character.toUpperCase(c);
+	secretword=selectRandomSecretWord();
 	got_letters=secretword;
 	if (counter <= max_guesses) {
 		if(c != null&& secretword != null){
