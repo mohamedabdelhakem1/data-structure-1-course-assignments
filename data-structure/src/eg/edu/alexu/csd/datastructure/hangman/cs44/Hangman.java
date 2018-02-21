@@ -54,9 +54,11 @@ public class Hangman implements IHangman {
 	public String selectRandomSecretWord() {
 
 			Random number =new Random();
-			if(file_words.length!=0) {
-			secretword = file_words[number.nextInt(file_words.length)];
+			if(file_words.length==0) {
+				return null;
+
 			}
+			secretword = file_words[number.nextInt(file_words.length)];
 		if(secretword!=null){
 			got_letters=secretword;
 			return secretword;
