@@ -93,7 +93,7 @@ public class Hangman implements IHangman {
 	 {
 		 return null;
 	 }
-	 else {	char input1 = Character.toLowerCase(c);
+	 else {
 
 			if((secretword.indexOf(c)>=0)||(secretword.indexOf(Character.toUpperCase(c))>=0)||(secretword.indexOf(Character.toLowerCase(c))>=0)) {
 				for(i=0;i<secretword.length();i++)
