@@ -105,7 +105,7 @@ public class Hangman implements IHangman {
 				max_guesses--;
 				if(max_guesses==0)
 				{
-					return null
+					return null;
 				}
 				return got_letters;
 			}
