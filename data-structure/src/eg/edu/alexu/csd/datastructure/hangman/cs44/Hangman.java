@@ -21,12 +21,13 @@ public class Hangman implements IHangman {
 	public String secretword;
 	public int max_guesses;
 	public String got_letters;
-	public String solved;
+	public String solved="";
 	public int counter = 0;
 	public void readfile() {
 
 		try {
-			FileReader filereader =new FileReader("C:\\Users\\SHIKO\\git\\data-structure\\data-structure\\src\\eg\\edu\\alexu\\csd\\datastructure\\hangman\\cs44\\words.txt");
+			FileReader filereader =new FileReader("C:\\Users\\SHIKO\\git\\data-structure\\data-structure"
+					+ "\\src\\eg\\edu\\alexu\\csd\\datastructure\\hangman\\cs44\\words.txt");
 			BufferedReader buffer = new BufferedReader(filereader);
 			String line;
 			while((line = buffer.readLine())!=null) {
@@ -77,27 +78,18 @@ public class Hangman implements IHangman {
 				for(i=0;i<secretword.length();i++)
 				{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
 							solved+=(secretword.charAt(i));
-							got_letters=got_letters.replace(got_letters.charAt(i), secretword.charAt(i));
 
 						}
-
 						else if(solved == null) {
 							got_letters=got_letters.replace(got_letters.charAt(i), '-');
-
-
-
 
 						}
 						else if(solved.indexOf(secretword.charAt(i)) < 0){
 
 							got_letters=got_letters.replace(got_letters.charAt(i), '-');
 
-
 						}
 				}
-
-
-
 			return got_letters;
 			}
 			else {
@@ -105,29 +97,21 @@ public class Hangman implements IHangman {
 				{
 						if(solved == null) {
 							got_letters=got_letters.replace(got_letters.charAt(i), '-');
-
-
 						}
 						else if(solved.indexOf(secretword.charAt(i)) < 0){
-
 							got_letters=got_letters.replace(got_letters.charAt(i), '-');
-
 						}
 				}
 				counter++;
-
 				return got_letters;
-
 			}
 		}
 		else if (c == null) {
 			throw new Exception("");
 		}
-
-	}
+		}
 		return null;
-
-	}
+}
 
 	@Override
 	public void setMaxWrongGuesses(final Integer max) {
