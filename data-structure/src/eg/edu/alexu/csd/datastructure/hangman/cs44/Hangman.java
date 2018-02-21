@@ -69,24 +69,29 @@ public class Hangman implements IHangman {
 
 	char input1 = Character.toLowerCase(c);
 	char input2 = Character.toUpperCase(c);
-
 	if (counter <= max_guesses) {
 
 		if(c != null&& secretword != null){
 			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
 				for(i=0;i<secretword.length();i++)
 				{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
-						solved+=(secretword.charAt(i));
-						got_letters.replace(got_letters.charAt(i), c);
+							solved+=(secretword.charAt(i));
+							got_letters=got_letters.replace(got_letters.charAt(i), c);
+
+
 						}
-				else if(solved == null) {
-					got_letters.replace(got_letters.charAt(i), '-');
-				}
-				else if(solved.indexOf(secretword.charAt(i)) < 0){
 
-					got_letters.replace(got_letters.charAt(i), '-');
+						else if(solved == null) {
+							got_letters=got_letters.replace(got_letters.charAt(i), '-');
 
-					}
+
+
+						}
+						else if(solved.indexOf(secretword.charAt(i)) < 0){
+
+							got_letters=got_letters.replace(got_letters.charAt(i), '-');
+
+						}
 				}
 
 
@@ -94,7 +99,24 @@ public class Hangman implements IHangman {
 			return got_letters;
 			}
 			else {
+				for(i=0;i<secretword.length();i++)
+				{
+						if(solved == null) {
+							got_letters=got_letters.replace(got_letters.charAt(i), '-');
+
+
+						}
+						else if(solved.indexOf(secretword.charAt(i)) < 0){
+
+							got_letters=got_letters.replace(got_letters.charAt(i), '-');
+
+
+						}
+				}
 				counter++;
+
+				return got_letters;
+
 			}
 		}
 		else if (c == null) {
