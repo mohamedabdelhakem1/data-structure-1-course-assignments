@@ -19,7 +19,7 @@ public class Hangman implements IHangman {
 	public String[] file_words ;
 	public int i = 0;
 	public String secretword;
-	public int max_guesses;
+	public int max_guesses 	;
 	public String got_letters;
 	public String solved="";
 	public int counter = 0;
@@ -110,7 +110,7 @@ public class Hangman implements IHangman {
 				return got_letters;
 			}
 		}
-		else if (c == null||secretword == null||secretword==""||secretword.charAt(0)==' ') {
+		else if (c == null||secretword == null||secretword==""||secretword.charAt(0)==' '||max_guesses == 0) {
 			throw new Exception();
 		}
 
