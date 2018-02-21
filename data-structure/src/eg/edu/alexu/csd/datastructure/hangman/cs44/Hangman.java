@@ -77,7 +77,7 @@ public class Hangman implements IHangman {
 				for(i=0;i<secretword.length();i++)
 				{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
 							solved+=(secretword.charAt(i));
-							got_letters=got_letters.replace(got_letters.charAt(i), c);
+							got_letters=got_letters.replace(got_letters.charAt(i), secretword.charAt(i));
 
 						}
 
