@@ -58,9 +58,9 @@ public class Hangman implements IHangman {
 		if(secretword!=null) {
 			return secretword;
 		}
-		else {
+
 		return null;
-		}
+
 	}
 
 	@Override
@@ -68,8 +68,8 @@ public class Hangman implements IHangman {
 	int counter = 0;
 	char input1 = Character.toLowerCase(c);
 	char input2 = Character.toUpperCase(c);
-	secretword=selectRandomSecretWord();
 	got_letters=secretword;
+	System.out.println();
 	if (counter <= max_guesses) {
 		if(c != null&& secretword != null){
 			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
@@ -97,9 +97,9 @@ public class Hangman implements IHangman {
 			throw new Exception("");
 		}
 
-/*	else if (secretword==null) {
+	else if (secretword==null) {
 		throw new Exception("");
-	}*/
+	}
 	}
 		return null;
 
