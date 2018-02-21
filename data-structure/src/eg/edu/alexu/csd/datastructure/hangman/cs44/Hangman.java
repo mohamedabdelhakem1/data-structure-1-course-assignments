@@ -73,7 +73,7 @@ public class Hangman implements IHangman {
 	got_letters=secretword;
 	if (counter < max_guesses) {
 
-		if(c != null&& secretword != null){
+		if(c != null&& secretword != null&& max_guesses != 0){
 			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
 				for(i=0;i<secretword.length();i++)
 				{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
@@ -106,7 +106,7 @@ public class Hangman implements IHangman {
 				return got_letters;
 			}
 		}
-		else if (c == null||secretword == null) {
+		else if (c == null||secretword == null||max_guesses==0) {
 			throw new Exception();
 		}
 		}
