@@ -105,12 +105,12 @@ public class Hangman implements IHangman {
 				max_guesses--;
 				if(max_guesses==0)
 				{
-					return null;
+					return null
 				}
 				return got_letters;
 			}
 		}
-		else if (c == null||secretword == null||secretword.charAt(0)!=' ') {
+		else if (c == null||secretword == null||secretword==""||secretword.charAt(0)==' ') {
 			throw new Exception();
 		}
 
