@@ -93,11 +93,14 @@ public class Hangman implements IHangman {
 	 {
 		 return null;
 	 }
-	 else {
-
-			if((secretword.indexOf(c)>=0)||(secretword.indexOf(Character.toUpperCase(c))>=0)||(secretword.indexOf(Character.toLowerCase(c))>=0)) {
+	 else {	char input1 = Character.toLowerCase(c);
+			char input2 = Character.toUpperCase(c);
+			if(input1=='\0'||input2 == '\0') {
+				return null;
+			}
+			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
 				for(i=0;i<secretword.length();i++)
-				{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==Character.toUpperCase(c)||secretword.charAt(i)==Character.toLowerCase(c)) {
+				{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
 							solved+=(secretword.charAt(i));
 
 						}
