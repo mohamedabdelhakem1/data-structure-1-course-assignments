@@ -15,9 +15,9 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 public class Hangman implements IHangman {
 
 
-	public String[] word=new String [1000] ;
-	public String[] file_words=new String [1000];
-	public int i=0;
+	public String[] word = new String [1000] ;
+	public String[] file_words = new String [1000];
+	public int i = 0;
 	public String secretword;
 	public int max_guesses;
 	public String got_letters;
@@ -32,8 +32,7 @@ public class Hangman implements IHangman {
 				word[i]=line;
 
 				i++;
-			}
-		}
+			}}
 		catch(IOException e) {
 		}
 
@@ -45,7 +44,7 @@ public class Hangman implements IHangman {
 
 	@Override
 	public void setDictionary(String[] words) {
-		file_words=words;
+		file_words = words;
 	}
 
 	@Override
@@ -69,9 +68,8 @@ public class Hangman implements IHangman {
 	char input1 = Character.toLowerCase(c);
 	char input2 = Character.toUpperCase(c);
 	got_letters=secretword;
-	System.out.println();
 	if (counter <= max_guesses) {
-		if(c != null&& secretword != null){
+		if(c != null){
 			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
 
 				for(i=0;i<secretword.length();i++)
