@@ -93,9 +93,10 @@ public class Hangman implements IHangman {
 	 {
 		 return null;
 	 }
-	 else {	char input1 = Character.toLowerCase(c);
-			char input2 = Character.toUpperCase(c);
-			if(input1=='\0'||input2 == '\0') {
+	 else {
+		 	Character input1 = Character.toLowerCase(c);
+			Character input2 = Character.toUpperCase(c);
+			if(input1 == null||input2 == null) {
 				return null;
 			}
 			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
