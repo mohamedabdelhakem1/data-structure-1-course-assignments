@@ -58,14 +58,19 @@ public class Hangman implements IHangman {
 				return null;
 
 			}
-			secretword = file_words[number.nextInt(file_words.length)];
+
+			else {
+				secretword = file_words[number.nextInt(file_words.length)];
+			}
 		if(secretword!=null){
 			got_letters=secretword;
 			return secretword;
 
 		}
+		else {
+			return null;
 
-		return null;
+		}
 
 	}
 
