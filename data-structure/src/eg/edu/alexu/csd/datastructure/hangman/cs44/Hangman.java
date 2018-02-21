@@ -15,13 +15,14 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 public class Hangman implements IHangman {
 
 
-	public String[] word = new String [1000] ;
+	public String[] word = new String [10] ;
 	public String[] file_words = new String [1000];
 	public int i = 0;
 	public String secretword;
 	public int max_guesses;
 	public String got_letters;
 	public String solved;
+	public int counter = 0;
 	public void readfile() {
 
 		try {
@@ -52,10 +53,11 @@ public class Hangman implements IHangman {
 
 			Random number =new Random();
 
-
-			String secretword=file_words[number.nextInt(file_words.length)];
-		if(secretword!=null) {
+			secretword = file_words[number.nextInt(i)];
+		if(secretword!=null){
+			got_letters=secretword;
 			return secretword;
+
 		}
 
 		return null;
@@ -64,24 +66,28 @@ public class Hangman implements IHangman {
 
 	@Override
 	public String guess(final Character c) throws Exception {
-	int counter = 0;
+
 	char input1 = Character.toLowerCase(c);
 	char input2 = Character.toUpperCase(c);
-	got_letters=secretword;
+
 	if (counter <= max_guesses) {
+
 		if(c != null&& secretword != null){
 			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
-
 				for(i=0;i<secretword.length();i++)
-			{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
+				{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
 						solved+=(secretword.charAt(i));
 						got_letters.replace(got_letters.charAt(i), c);
 						}
-					else if(solved.indexOf(secretword.charAt(i))<0){
-								got_letters.replace(got_letters.charAt(i), '-');
+				else if(solved == null) {
+					got_letters.replace(got_letters.charAt(i), '-');
+				}
+				else if(solved.indexOf(secretword.charAt(i)) < 0){
+
+					got_letters.replace(got_letters.charAt(i), '-');
 
 					}
-			}
+				}
 
 
 
