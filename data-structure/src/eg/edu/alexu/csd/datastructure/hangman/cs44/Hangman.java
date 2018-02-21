@@ -23,6 +23,7 @@ public class Hangman implements IHangman {
 	public String got_letters;
 	public String solved="";
 	public int counter = 0;
+	public int flag=0;
 	public void readfile() {
 
 		try {
@@ -71,9 +72,23 @@ public class Hangman implements IHangman {
 	char input1 = Character.toLowerCase(c);
 	char input2 = Character.toUpperCase(c);
 	got_letters=secretword;
-
-
-		 if(c != null&& secretword != null&& max_guesses != 0&&secretword!=""&&secretword.charAt(0)!=' ' ){
+	 if (secretword == null) {
+		throw new Exception();
+	}
+	 else if (secretword=="") {
+		 throw new Exception();
+	 }
+	 else if (secretword.charAt(0)!=' ') {
+		 throw new Exception();
+	 }
+	 else if (flag == 0) {
+		 throw new Exception();
+	 }
+	 else if (max_guesses==0)
+	 {
+		 return null;
+	 }
+	 else {
 			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
 				for(i=0;i<secretword.length();i++)
 				{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
@@ -110,16 +125,14 @@ public class Hangman implements IHangman {
 				return got_letters;
 			}
 		}
-		else if (c == null||secretword == null||secretword==""||secretword.charAt(0)==' ') {
-			throw new Exception();
-		}
 
-				return null;
+
 
 }
 
 	@Override
 	public void setMaxWrongGuesses(final Integer max) {
+		flag=1;
 		if (max == null) {
 			max_guesses = 1;
 		}
