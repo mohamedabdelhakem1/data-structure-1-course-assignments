@@ -97,7 +97,9 @@ public class Hangman implements IHangman {
 			throw new Exception("");
 		}
 	}
-
+	else if (secretword==null) {
+		throw new Exception("");
+	}
 		return null;
 
 	}
