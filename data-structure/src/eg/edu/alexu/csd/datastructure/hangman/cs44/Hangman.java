@@ -110,7 +110,7 @@ public class Hangman implements IHangman {
 				return got_letters;
 			}
 		}
-		else if (c == null||secretword == null||secretword==""||secretword.charAt(0)==' '||max_guesses == 0) {
+		else if (c == null||secretword == null||secretword==""||secretword.charAt(0)==' ') {
 			throw new Exception();
 		}
 
