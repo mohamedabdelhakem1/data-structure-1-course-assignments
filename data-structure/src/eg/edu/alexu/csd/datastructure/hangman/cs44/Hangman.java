@@ -15,8 +15,8 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 public class Hangman implements IHangman {
 
 
-	public String[] word = new String [10] ;
-	public String[] file_words = new String [1000];
+	public String[] word  ;
+	public String[] file_words ;
 	public int i = 0;
 	public String secretword;
 	public int max_guesses;
@@ -53,7 +53,7 @@ public class Hangman implements IHangman {
 
 			Random number =new Random();
 
-			secretword = file_words[number.nextInt(i)];
+			secretword = file_words[number.nextInt(file_words.length)];
 		if(secretword!=null){
 			got_letters=secretword;
 			return secretword;
@@ -69,7 +69,8 @@ public class Hangman implements IHangman {
 
 	char input1 = Character.toLowerCase(c);
 	char input2 = Character.toUpperCase(c);
-	if (counter <= max_guesses) {
+	got_letters=secretword;
+	if (counter < max_guesses) {
 
 		if(c != null&& secretword != null){
 			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
@@ -78,7 +79,6 @@ public class Hangman implements IHangman {
 							solved+=(secretword.charAt(i));
 							got_letters=got_letters.replace(got_letters.charAt(i), c);
 
-
 						}
 
 						else if(solved == null) {
@@ -86,10 +86,12 @@ public class Hangman implements IHangman {
 
 
 
+
 						}
 						else if(solved.indexOf(secretword.charAt(i)) < 0){
 
 							got_letters=got_letters.replace(got_letters.charAt(i), '-');
+
 
 						}
 				}
@@ -109,7 +111,6 @@ public class Hangman implements IHangman {
 						else if(solved.indexOf(secretword.charAt(i)) < 0){
 
 							got_letters=got_letters.replace(got_letters.charAt(i), '-');
-
 
 						}
 				}
