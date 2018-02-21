@@ -93,17 +93,9 @@ public class Hangman implements IHangman {
 			return got_letters;
 			}
 			else {
-				for(i=0;i<secretword.length();i++)
-				{
-						if(solved == null) {
-							got_letters=got_letters.replace(got_letters.charAt(i), '-');
-						}
-						else if(solved.indexOf(secretword.charAt(i)) < 0){
-							got_letters=got_letters.replace(got_letters.charAt(i), '-');
-						}
-				}
+
 				counter++;
-				return got_letters;
+				return null;
 			}
 		}
 		else if (c == null) {
