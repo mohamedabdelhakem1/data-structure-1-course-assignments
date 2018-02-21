@@ -110,7 +110,7 @@ public class Hangman implements IHangman {
 			}
 		}
 
-		return null;
+
 }
 
 	@Override
