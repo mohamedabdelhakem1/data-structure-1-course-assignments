@@ -75,12 +75,10 @@ public class Hangman implements IHangman {
 	 if (secretword == null) {
 		throw new Exception();
 	}
-	 else if (secretword=="") {
+	 else if (secretword==""||secretword.charAt(0)!=' ') {
 		 throw new Exception();
 	 }
-	 else if (secretword.charAt(0)!=' ') {
-		 throw new Exception();
-	 }
+
 	 else if (flag == 0) {
 		 throw new Exception();
 	 }
