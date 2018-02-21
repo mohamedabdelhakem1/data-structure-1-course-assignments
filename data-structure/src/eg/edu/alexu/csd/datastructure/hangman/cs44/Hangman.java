@@ -96,9 +96,10 @@ public class Hangman implements IHangman {
 		else if (c == null) {
 			throw new Exception("");
 		}
-	}
-	else if (secretword==null) {
+
+/*	else if (secretword==null) {
 		throw new Exception("");
+	}*/
 	}
 		return null;
 
