@@ -71,7 +71,6 @@ public class Hangman implements IHangman {
 	char input1 = Character.toLowerCase(c);
 	char input2 = Character.toUpperCase(c);
 	got_letters=secretword;
-	if (counter < max_guesses) {
 
 		if(c != null&& secretword != null&& max_guesses != 0){
 			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
@@ -102,14 +101,14 @@ public class Hangman implements IHangman {
 							got_letters=got_letters.replace(got_letters.charAt(i), '-');
 						}
 				}
-				counter++;
+				max_guesses--;
 				return got_letters;
 			}
 		}
 		else if (c == null||secretword == null||max_guesses==0) {
 			throw new Exception();
 		}
-		}
+
 		return null;
 }
 
