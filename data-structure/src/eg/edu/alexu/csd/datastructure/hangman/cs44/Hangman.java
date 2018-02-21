@@ -72,7 +72,7 @@ public class Hangman implements IHangman {
 	char input2 = Character.toUpperCase(c);
 	got_letters=secretword;
 
-		if(c != null&& secretword != null&& max_guesses != 0){
+		if(c != null&& secretword != null&& max_guesses != 0&&secretword!=""&&secretword.charAt(0)!=' ' ){
 			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
 				for(i=0;i<secretword.length();i++)
 				{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
