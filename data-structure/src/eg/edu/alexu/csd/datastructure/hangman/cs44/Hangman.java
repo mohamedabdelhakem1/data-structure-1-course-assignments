@@ -63,8 +63,7 @@ public class Hangman implements IHangman {
 		if (file_words == null || file_words.length == 0) {
 			return null;
 		} else {
-			secretword = file_words
-						[number.nextInt(file_words.length)];
+			secretword = file_words[number.nextInt(file_words.length)];
 		}
 		if (secretword != null) {
 			for (i = 0; i < secretword.length(); i++) {
@@ -90,9 +89,7 @@ public class Hangman implements IHangman {
 			throw new Exception();
 		} else if (secretword == "" || secretword.charAt(0) == ' ') {
 			throw new Exception();
-		}
-
-		else if (flag == 0) {
+		} else if (flag == 0) {
 			throw new Exception();
 		} else if (max_guesses == 0) {
 			return null;
