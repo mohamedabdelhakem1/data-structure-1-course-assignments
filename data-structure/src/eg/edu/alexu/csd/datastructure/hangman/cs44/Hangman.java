@@ -95,7 +95,8 @@ public class Hangman implements IHangman {
 		if (fileWords == null || fileWords.length == 0) {
 			return null;
 		} else {
-			secretword = fileWords[number.nextInt(fileWords.length)];
+			secretword =
+			fileWords[number.nextInt(fileWords.length)];
 		}
 		if (secretword != null) {
 			for (i = 0; i < secretword.length(); i++) {
