@@ -54,6 +54,7 @@ public class Hangman implements IHangman {
 	/**
 	 *
 	 * @throws IOException
+	 *
 	 */
 	public void readfile() throws IOException {
 
