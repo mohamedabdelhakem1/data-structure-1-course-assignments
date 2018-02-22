@@ -94,7 +94,7 @@ public class Hangman implements IHangman {
 		 return null;
 	 }
 	 else {
-		 		char input1;
+		 	/*	char input1;
 				char input2;
 
 			if(Character.toUpperCase(c) == '\0'||Character.toLowerCase(c) == '\0') {
@@ -105,10 +105,14 @@ public class Hangman implements IHangman {
 				input2=Character.toLowerCase(c);
 
 
-			}
-			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
+			}*/
+			char r =secretword.charAt(secretword.indexOf(c));
+			String f = ""+r;
+			String g = ""+c;
+
+			if(f.equalsIgnoreCase(g)/*(secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)*/) {
 				for(i=0;i<secretword.length();i++)
-				{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
+				{		if(f.equalsIgnoreCase(g)/*secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1*/) {
 							solved+=(secretword.charAt(i));
 
 						}
