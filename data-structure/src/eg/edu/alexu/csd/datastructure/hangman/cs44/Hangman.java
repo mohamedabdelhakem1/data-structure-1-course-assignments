@@ -51,7 +51,10 @@ public class Hangman implements IHangman {
 	 * @serialField copy for gotletters
 	 */
 	public String unsolvedWord = "";
-
+	/**
+	 *
+	 * @throws IOException
+	 */
 	public void readfile() throws IOException {
 
 		try {
