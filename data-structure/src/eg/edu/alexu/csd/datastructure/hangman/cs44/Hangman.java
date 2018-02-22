@@ -21,19 +21,19 @@ public class Hangman implements IHangman {
 	public String secretword;
 	public int max_guesses 	;
 	public String got_letters;
-	public String solved="";
+	public String solved = "";
 	public int counter = 0;
-	public int flag=0;
-	public String unsolved_word="";
+	public int flag = 0;
+	public String unsolved_word = "";
 	public void readfile() {
 
 		try {
-			FileReader filereader =new FileReader("C:\\Users\\SHIKO\\git\\data-structure\\data-structure"
+			FileReader filereader = new FileReader("C:\\Users\\SHIKO\\git\\data-structure\\data-structure"
 					+ "\\src\\eg\\edu\\alexu\\csd\\datastructure\\hangman\\cs44\\words.txt");
 			BufferedReader buffer = new BufferedReader(filereader);
 			String line;
 			while((line = buffer.readLine())!=null) {
-				word[i]=line;
+				word[i] = line;
 
 				i++;
 			}}
@@ -54,8 +54,8 @@ public class Hangman implements IHangman {
 	@Override
 	public String selectRandomSecretWord() {
 
-			Random number =new Random();
-			if(file_words==null||file_words.length==0) {
+			Random number = new Random();
+			if(file_words == null||file_words.length == 0) {
 				return null;
 
 			}
@@ -63,11 +63,11 @@ public class Hangman implements IHangman {
 			else {
 				secretword = file_words[number.nextInt(file_words.length)];
 			}
-		if(secretword!=null){
-			for(i=0;i<secretword.length();i++) {
-				unsolved_word+="-";
+		if(secretword != null){
+			for(i = 0;i < secretword.length();i++) {
+				unsolved_word += "-";
 			}
-			got_letters=secretword;
+			got_letters = secretword;
 			return secretword;
 
 		}
@@ -82,22 +82,22 @@ public class Hangman implements IHangman {
 	public String guess(final Character c) throws Exception {
 
 
-	got_letters=secretword;
-	if (c==null) {
+	got_letters = secretword;
+	if (c == null) {
 		return unsolved_word;
 	}
 
 	else if (secretword == null) {
 		throw new Exception();
 	}
-	 else if (secretword==""||secretword.charAt(0)==' ') {
+	 else if (secretword == ""||secretword.charAt(0) == ' ') {
 		 throw new Exception();
 	 }
 
 	 else if (flag == 0) {
 		 throw new Exception();
 	 }
-	 else if (max_guesses==0)
+	 else if (max_guesses == 0)
 	 {
 		 return null;
 	 }
@@ -110,41 +110,41 @@ public class Hangman implements IHangman {
 
 
 
-			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
+			if((secretword.indexOf(c) >= 0)||(secretword.indexOf(input2) >= 0)||(secretword.indexOf(input1) >= 0)) {
 				for(i=0;i<secretword.length();i++)
-				{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
-							solved+=(secretword.charAt(i));
+				{		if(secretword.charAt(i) ==  c||secretword.charAt(i) == input2||secretword.charAt(i) == input1) {
+							solved += (secretword.charAt(i));
 
 						}
 						else if(solved == null) {
-							got_letters=got_letters.replace(got_letters.charAt(i), '-');
+							got_letters = got_letters.replace(got_letters.charAt(i), '-');
 
 						}
 						else if(solved.indexOf(secretword.charAt(i)) < 0){
 
-							got_letters=got_letters.replace(got_letters.charAt(i), '-');
+							got_letters = got_letters.replace(got_letters.charAt(i), '-');
 
 						}
 				}
-				unsolved_word=got_letters;
+				unsolved_word = got_letters;
 			return got_letters;
 			}
 			else {
-				for(i=0;i<secretword.length();i++)
+				for(i = 0;i<secretword.length();i++)
 				{
 						if(solved == null) {
-							got_letters=got_letters.replace(got_letters.charAt(i), '-');
+							got_letters = got_letters.replace(got_letters.charAt(i), '-');
 						}
 						else if(solved.indexOf(secretword.charAt(i)) < 0){
-							got_letters=got_letters.replace(got_letters.charAt(i), '-');
+							got_letters = got_letters.replace(got_letters.charAt(i), '-');
 						}
 				}
 				max_guesses--;
-				if(max_guesses==0)
+				if(max_guesses == 0)
 				{
 					return null;
 				}
-				unsolved_word=got_letters;
+				unsolved_word = got_letters;
 				return got_letters;
 			}
 		}
