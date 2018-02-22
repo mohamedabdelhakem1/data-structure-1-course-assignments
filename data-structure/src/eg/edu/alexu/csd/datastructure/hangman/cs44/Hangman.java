@@ -24,6 +24,7 @@ public class Hangman implements IHangman {
 	public String solved="";
 	public int counter = 0;
 	public int flag=0;
+	public String unsolved_word="";
 	public void readfile() {
 
 		try {
@@ -63,6 +64,9 @@ public class Hangman implements IHangman {
 				secretword = file_words[number.nextInt(file_words.length)];
 			}
 		if(secretword!=null){
+			for(i=0;i<secretword.length();i++) {
+				unsolved_word+="-";
+			}
 			got_letters=secretword;
 			return secretword;
 
@@ -79,7 +83,11 @@ public class Hangman implements IHangman {
 
 
 	got_letters=secretword;
-	 if (secretword == null) {
+	if (c==null) {
+		return unsolved_word;
+	}
+
+	else if (secretword == null) {
 		throw new Exception();
 	}
 	 else if (secretword==""||secretword.charAt(0)==' ') {
@@ -118,6 +126,7 @@ public class Hangman implements IHangman {
 
 						}
 				}
+				unsolved_word=got_letters;
 			return got_letters;
 			}
 			else {
@@ -135,6 +144,7 @@ public class Hangman implements IHangman {
 				{
 					return null;
 				}
+				unsolved_word=got_letters;
 				return got_letters;
 			}
 		}
