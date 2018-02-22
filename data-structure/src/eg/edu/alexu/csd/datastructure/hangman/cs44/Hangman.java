@@ -53,6 +53,9 @@ public class Hangman implements IHangman {
 
 	@Override
 	public void setDictionary(final String[] words) {
+		/**
+		 * @param words : array of words
+		 */
 		fileWords = words;
 	}
 
