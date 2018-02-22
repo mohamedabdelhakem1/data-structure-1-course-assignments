@@ -19,7 +19,7 @@ public class Hangman implements IHangman {
 	public String[] fileWords;
 	public int i = 0;
 	public String secretword;
-	public int max_guesses;
+	public int maxGuesses;
 	public String got_letters;
 	public String solved = "";
 	public int counter = 0;
@@ -91,7 +91,7 @@ public class Hangman implements IHangman {
 			throw new Exception();
 		} else if (flag == 0) {
 			throw new Exception();
-		} else if (max_guesses == 0) {
+		} else if (maxGuesses == 0) {
 			return null;
 		} else {
 			char input1;
@@ -125,8 +125,8 @@ public class Hangman implements IHangman {
 						got_letters = got_letters.replace(got_letters.charAt(i), '-');
 					}
 				}
-				max_guesses--;
-				if (max_guesses == 0) {
+				maxGuesses--;
+				if (maxGuesses == 0) {
 					return null;
 				}
 				unsolved_word = got_letters;
@@ -140,9 +140,9 @@ public class Hangman implements IHangman {
 	public void setMaxWrongGuesses(final Integer max) {
 		flag = 1;
 		if (max == null) {
-			max_guesses = 1;
+			maxGuesses = 1;
 		} else {
-			max_guesses = max;
+			maxGuesses = max;
 		}
 
 	}
