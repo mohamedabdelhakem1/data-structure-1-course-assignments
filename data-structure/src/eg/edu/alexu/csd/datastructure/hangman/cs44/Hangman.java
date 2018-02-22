@@ -20,7 +20,7 @@ public class Hangman implements IHangman {
 	public int i = 0;
 	public String secretword;
 	public int maxGuesses;
-	public String got_letters;
+	public String gotLetters;
 	public String solved = "";
 	public int counter = 0;
 	public int flag = 0;
@@ -69,7 +69,7 @@ public class Hangman implements IHangman {
 			for (i = 0; i < secretword.length(); i++) {
 				unsolved_word += "-";
 			}
-			got_letters = secretword;
+			gotLetters = secretword;
 			return secretword;
 
 		} else {
@@ -82,7 +82,7 @@ public class Hangman implements IHangman {
 	@Override
 	public String guess(final Character c) throws Exception {
 
-		got_letters = secretword;
+		gotLetters = secretword;
 		if (c == null) {
 			return unsolved_word;
 		} else if (secretword == null) {
@@ -107,30 +107,30 @@ public class Hangman implements IHangman {
 						solved += (secretword.charAt(i));
 
 					} else if (solved == null) {
-						got_letters = got_letters.replace(got_letters.charAt(i), '-');
+						gotLetters = gotLetters.replace(gotLetters.charAt(i), '-');
 
 					} else if (solved.indexOf(secretword.charAt(i)) < 0) {
 
-						got_letters = got_letters.replace(got_letters.charAt(i), '-');
+						gotLetters = gotLetters.replace(gotLetters.charAt(i), '-');
 
 					}
 				}
-				unsolved_word = got_letters;
-				return got_letters;
+				unsolved_word = gotLetters;
+				return gotLetters;
 			} else {
 				for (i = 0; i < secretword.length(); i++) {
 					if (solved == null) {
-						got_letters = got_letters.replace(got_letters.charAt(i), '-');
+						gotLetters = gotLetters.replace(gotLetters.charAt(i), '-');
 					} else if (solved.indexOf(secretword.charAt(i)) < 0) {
-						got_letters = got_letters.replace(got_letters.charAt(i), '-');
+						gotLetters = gotLetters.replace(gotLetters.charAt(i), '-');
 					}
 				}
 				maxGuesses--;
 				if (maxGuesses == 0) {
 					return null;
 				}
-				unsolved_word = got_letters;
-				return got_letters;
+				unsolved_word = gotLetters;
+				return gotLetters;
 			}
 		}
 
