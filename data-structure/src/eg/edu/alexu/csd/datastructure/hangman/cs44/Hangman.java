@@ -29,9 +29,10 @@ public class Hangman implements IHangman {
 	public void readfile() throws IOException {
 
 		try {
-			FileReader filereader = new FileReader("C:\\Users\\SHIKO\\git\\data-structur"
-					+ "\\data-structure\\src\\eg\\edu\\alexu\\csd\\datastructure"
-					+ "\\hangman\\cs44\\words.txt");
+			FileReader filereader = new FileReader("C:\\Users\\SHIKO\\git\\"
+					+ "data-structure\\data-structure"
+					+ "\\src\\eg\\edu\\alexu"
+					+ "\\csd\\datastructure\\hangman\\cs44");
 			BufferedReader buffer = new BufferedReader(filereader);
 			String line;
 			while ((line = buffer.readLine()) != null) {
