@@ -137,7 +137,9 @@ public class Hangman implements IHangman {
 					|| (secretword.indexOf(input2) >= 0)
 					|| (secretword.indexOf(input1) >= 0)) {
 				for (i = 0; i < secretword.length(); i++) {
-					if (secretword.charAt(i) == c || secretword.charAt(i) == input2 || secretword.charAt(i) == input1) {
+					if (secretword.charAt(i) == c
+							|| secretword.charAt(i) == input2
+							|| secretword.charAt(i) == input1) {
 						solved += (secretword.charAt(i));
 
 					} else if (solved == null) {
