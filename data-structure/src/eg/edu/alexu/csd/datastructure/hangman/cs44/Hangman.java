@@ -94,22 +94,14 @@ public class Hangman implements IHangman {
 		 return null;
 	 }
 	 else {
-		 		char input1;
-				char input2;
-
-		/*	if(Character.toUpperCase(c) == '\0'||Character.toLowerCase(c) == '\0') {
-				return null;
-			}
-		*/
-				input1 =Character.toUpperCase(c);
-				input2=Character.toLowerCase(c);
+	 		char	input1 ;
+			char	input2 ;
+		 	if(c!=null){
+		 		input1 = Character.toUpperCase(c);
+				input2 = Character.toLowerCase(c);
+		 		}
 
 
-			/*}
-			char r =secretword.charAt(secretword.indexOf(c));
-			String f = ""+r;
-			String g = ""+c;
-			f.equalsIgnoreCase(g);*/
 			if((secretword.indexOf(c)>=0)||(secretword.indexOf(input2)>=0)||(secretword.indexOf(input1)>=0)) {
 				for(i=0;i<secretword.length();i++)
 				{		if(secretword.charAt(i) ==  c||secretword.charAt(i)==input2||secretword.charAt(i)==input1) {
