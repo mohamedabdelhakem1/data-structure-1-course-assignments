@@ -16,9 +16,12 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 public class Hangman implements IHangman {
 
 	/**
-	 * @serialField my array read from the file
+	 * @serialField my field
 	 */
 	public String[] word;
+	/**
+	 * @serialField array read from the file
+	 */
 	public String[] fileWords;
 	/**
 	 * @serialField array used for the dictionary
