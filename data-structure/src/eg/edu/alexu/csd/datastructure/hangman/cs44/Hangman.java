@@ -16,7 +16,7 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 public class Hangman implements IHangman {
 
 	public String[] word;
-	public String[] file_words;
+	public String[] fileWords;
 	public int i = 0;
 	public String secretword;
 	public int max_guesses;
@@ -53,17 +53,17 @@ public class Hangman implements IHangman {
 
 	@Override
 	public void setDictionary(final String[] words) {
-		file_words = words;
+		fileWords = words;
 	}
 
 	@Override
 	public String selectRandomSecretWord() {
 
 		Random number = new Random();
-		if (file_words == null || file_words.length == 0) {
+		if (fileWords == null || fileWords.length == 0) {
 			return null;
 		} else {
-			secretword = file_words[number.nextInt(file_words.length)];
+			secretword = fileWords[number.nextInt(fileWords.length)];
 		}
 		if (secretword != null) {
 			for (i = 0; i < secretword.length(); i++) {
