@@ -16,23 +16,40 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 public class Hangman implements IHangman {
 
 	/**
-	 * @serialField my field
+	 * @serialField array read from the file
 	 */
 	public String[] word;
 	/**
-	 * @serialField array read from the file
+	 * @serialField array used for the dictionary
 	 */
 	public String[] fileWords;
 	/**
-	 * @serialField array used for the dictionary
+	 * @serialField for counter
 	 */
 	public int i = 0;
+	/**
+	 * @serialField secretword select from the dictionary
+	 */
 	public String secretword;
+	/**
+	 * @serialField maxgueses set
+	 */
 	public int maxGuesses;
+	/**
+	 * @serialField the solved word
+	 */
 	public String gotLetters;
+	/**
+	 * @serialField the solved letters
+	 */
 	public String solved = "";
-	public int counter = 0;
+	/**
+	 * @serialField flag value used in function setmaxguesses
+	 */
 	public int flag = 0;
+	/**
+	 * @serialField copy for gotletters
+	 */
 	public String unsolvedWord = "";
 
 	public void readfile() throws IOException {
