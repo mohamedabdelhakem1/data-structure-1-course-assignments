@@ -29,7 +29,7 @@ public class Hangman implements IHangman {
 	public void readfile() throws IOException {
 
 		try {
-			FileReader filereader = new FileReader("C:\\Users\\SHIKO\\git\\data-structure\\data-structure"
+			FileReader filereader = new FileReader("C:\\Users\\SHIKO\\git\\data-structur\\data-structure"
 					+ "\\src\\eg\\edu\\alexu\\csd\\datastructure\\hangman\\cs44\\words.txt");
 			BufferedReader buffer = new BufferedReader(filereader);
 			String line;
@@ -57,10 +57,7 @@ public class Hangman implements IHangman {
 		Random number = new Random();
 		if (file_words == null || file_words.length == 0) {
 			return null;
-
-		}
-
-		else {
+		} else {
 			secretword = file_words[number.nextInt(file_words.length)];
 		}
 		if (secretword != null) {
