@@ -29,7 +29,8 @@ public class Hangman implements IHangman {
 	public void readfile() throws IOException {
 
 		try {
-			FileReader filereader = new FileReader("C:\\Users\\SHIKO\\git\\"
+			FileReader filereader = new FileReader(""
+					+ "C:\\Users\\SHIKO\\git\\"
 					+ "data-structure\\data-structure"
 					+ "\\src\\eg\\edu\\alexu"
 					+ "\\csd\\datastructure\\hangman\\cs44");
