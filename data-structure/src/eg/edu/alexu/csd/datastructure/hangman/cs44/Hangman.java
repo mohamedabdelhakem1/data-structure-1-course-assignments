@@ -15,6 +15,9 @@ import eg.edu.alexu.csd.datastructure.hangman.IHangman;
 
 public class Hangman implements IHangman {
 
+	/**
+	 * @serialField
+	 */
 	public String[] word;
 	public String[] fileWords;
 	public int i = 0;
