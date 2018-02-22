@@ -149,7 +149,9 @@ public class Hangman implements IHangman {
 
 					} else if (solved.indexOf(secretword.charAt(i)) < 0) {
 
-						gotLetters = gotLetters.replace(gotLetters.charAt(i), '-');
+						gotLetters =
+						gotLetters.replace(
+						gotLetters.charAt(i), '-');
 
 					}
 				}
@@ -158,9 +160,14 @@ public class Hangman implements IHangman {
 			} else {
 				for (i = 0; i < secretword.length(); i++) {
 					if (solved == null) {
-						gotLetters = gotLetters.replace(gotLetters.charAt(i), '-');
-					} else if (solved.indexOf(secretword.charAt(i)) < 0) {
-						gotLetters = gotLetters.replace(gotLetters.charAt(i), '-');
+						gotLetters =
+						gotLetters.replace(
+						gotLetters.charAt(i), '-');
+					} else if (solved.indexOf(
+						secretword.charAt(i)) < 0) {
+						gotLetters =
+						gotLetters.replace(
+						gotLetters.charAt(i), '-');
 					}
 				}
 				maxGuesses--;
