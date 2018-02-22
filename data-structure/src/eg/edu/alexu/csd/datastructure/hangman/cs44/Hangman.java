@@ -26,7 +26,7 @@ public class Hangman implements IHangman {
 	public int flag = 0;
 	public String unsolved_word = "";
 
-	public void readfile() {
+	public void readfile() throws IOException {
 
 		try {
 			FileReader filereader = new FileReader("C:\\Users\\SHIKO\\git\\data-structure\\data-structure"
@@ -39,6 +39,7 @@ public class Hangman implements IHangman {
 				i++;
 			}
 		} catch (IOException e) {
+			throw new IOException();
 		}
 
 		setDictionary(word);
@@ -46,7 +47,7 @@ public class Hangman implements IHangman {
 	}
 
 	@Override
-	public void setDictionary(String[] words) {
+	public void setDictionary(final String[] words) {
 		file_words = words;
 	}
 
