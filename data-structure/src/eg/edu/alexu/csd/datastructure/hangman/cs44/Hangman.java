@@ -147,8 +147,8 @@ public class Hangman implements IHangman {
 						gotLetters.replace(
 						gotLetters.charAt(i), '-');
 
-					} else if (solved.indexOf(secretword.charAt(i)) < 0) {
-
+					} else if (solved.indexOf(
+						secretword.charAt(i)) < 0) {
 						gotLetters =
 						gotLetters.replace(
 						gotLetters.charAt(i), '-');
