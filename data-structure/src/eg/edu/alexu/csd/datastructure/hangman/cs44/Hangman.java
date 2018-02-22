@@ -29,8 +29,8 @@ public class Hangman implements IHangman {
 	public void readfile() throws IOException {
 
 		try {
-			FileReader filereader = new FileReader("C:\\Users\\SHIKO\\git\\data-structur\\data-structure"
-					+ "\\src\\eg\\edu\\alexu\\csd\\datastructure\\hangman\\cs44\\words.txt");
+			FileReader filereader = new FileReader("C:\\Users\\SHIKO\\git\\data-structur" + "\\data-structure"
+					+ "\\src\\eg\\edu\\alexu\\csd\\datastructure" + "\\hangman\\cs44\\words.txt");
 			BufferedReader buffer = new BufferedReader(filereader);
 			String line;
 			while ((line = buffer.readLine()) != null) {
@@ -80,9 +80,7 @@ public class Hangman implements IHangman {
 		got_letters = secretword;
 		if (c == null) {
 			return unsolved_word;
-		}
-
-		else if (secretword == null) {
+		} else if (secretword == null) {
 			throw new Exception();
 		} else if (secretword == "" || secretword.charAt(0) == ' ') {
 			throw new Exception();
