@@ -53,7 +53,7 @@ public class Hangman implements IHangman {
 	public String unsolvedWord = "";
 	/**
 	 *
-	 * @throws IOException
+	 * @throws IOException  if the file not found
 	 *
 	 */
 	public void readfile() throws IOException {
