@@ -12,6 +12,10 @@ import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
  */
 public class Icehockey implements IPlayersFinder {
 	/**
+	 * @serialField const area increment
+	 */
+	public int constArea = 4;
+	/**
 	 * @serialField pixels
 	 */
 	public char[][] photoPixels;
@@ -107,7 +111,7 @@ public class Icehockey implements IPlayersFinder {
 			search(row, column - 1, team, threshold);
 			search(row + 1, column, team, threshold);
 			search(row - 1, column, team, threshold);
-			area += 4;
+			area += constArea;
 
 		}
 		// System.out.println(area);
