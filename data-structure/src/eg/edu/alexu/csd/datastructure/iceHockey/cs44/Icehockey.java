@@ -73,7 +73,8 @@ public class Icehockey implements IPlayersFinder {
 	 * @param threshold miniarea
 	 * @return point
 	 */
-	public Point search(final int row, final int column, final char team, final int threshold) {
+	public Point search(final int row, final int column,
+			final char team, final int threshold) {
 
 		if (row < 0 || column < 0 || row >= photoPixels.length || column >= photoPixels[0].length) {
 			return null;
