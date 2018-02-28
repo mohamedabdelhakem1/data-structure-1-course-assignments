@@ -65,7 +65,14 @@ public class Icehockey implements IPlayersFinder {
 	 *                  list for adding points
 	 */
 	ArrayList<Point> coordinates = new ArrayList<Point>();
-
+	/**
+	 *
+	 * @param row
+	 * @param column
+	 * @param team
+	 * @param threshold
+	 * @return
+	 */
 	public Point search(final int row, final int column, final char team, final int threshold) {
 
 		if (row < 0 || column < 0 || row >= photoPixels.length || column >= photoPixels[0].length) {
