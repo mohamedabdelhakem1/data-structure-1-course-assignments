@@ -14,7 +14,7 @@ public class Icehockey implements IPlayersFinder {
 	/**
 	 * @serialField const area increment
 	 */
-	public static final  int constArea = 4;
+	public static final  int constarea = 4;
 	/**
 	 * @serialField pixels
 	 */
@@ -111,7 +111,7 @@ public class Icehockey implements IPlayersFinder {
 			search(row, column - 1, team, threshold);
 			search(row + 1, column, team, threshold);
 			search(row - 1, column, team, threshold);
-			area += constArea;
+			area += constarea;
 
 		}
 		// System.out.println(area);
