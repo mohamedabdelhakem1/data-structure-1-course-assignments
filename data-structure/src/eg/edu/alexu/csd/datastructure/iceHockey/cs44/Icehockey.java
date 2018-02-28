@@ -122,6 +122,11 @@ public class Icehockey implements IPlayersFinder {
 		} else {
 			arrayOfPoints = points.toArray(arrayOfPoints);
 		}
+		for (i = 0; i < photo.length; i++) {
+			for (j = 0; j < photo[0].length(); j++) {
+				visited[i][j] = false;
+			}
+		}
 
 		return arrayOfPoints;
 	}
