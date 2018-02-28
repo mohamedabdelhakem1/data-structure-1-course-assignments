@@ -123,7 +123,7 @@ public class Icehockey implements IPlayersFinder {
 			arrayOfPoints = points.toArray(arrayOfPoints);
 		}
 
-
+		points.clear();
 
 		return arrayOfPoints;
 	}
