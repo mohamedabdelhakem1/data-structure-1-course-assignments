@@ -156,7 +156,8 @@ public class Icehockey implements IPlayersFinder {
 
 				if (receivedPoint != null) {
 
-					points.add(new Point(receivedPoint.x, receivedPoint.y));
+					points.add(new Point(receivedPoint.x,
+							receivedPoint.y));
 
 				}
 
