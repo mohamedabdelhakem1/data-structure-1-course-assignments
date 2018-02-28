@@ -73,6 +73,10 @@ public class Icehockey implements IPlayersFinder {
 
 	@Override
 	public Point[] findPlayers(final String[] photo, final int team, final int threshold) {
+		if(photo==null)
+		{
+			return null;
+		}
 		int i;
 		int j;
 		char Team = (char) (team + '0');
