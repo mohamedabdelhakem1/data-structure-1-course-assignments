@@ -14,7 +14,7 @@ public class Icehockey implements IPlayersFinder {
 	/**
 	 * @serialField const area increment
 	 */
-	public int constArea = 4;
+	public static final  int constArea = 4;
 	/**
 	 * @serialField pixels
 	 */
