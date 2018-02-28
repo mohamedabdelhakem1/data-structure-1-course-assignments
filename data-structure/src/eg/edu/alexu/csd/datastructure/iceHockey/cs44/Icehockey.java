@@ -21,7 +21,8 @@ public class Icehockey implements IPlayersFinder {
 	 */
 	public int area;
 	/**
-	 * @serialField flag array
+	 * @serialField flag
+	 *                  array
 	 */
 	public boolean[][] visited;
 	/**
@@ -29,7 +30,8 @@ public class Icehockey implements IPlayersFinder {
 	 */
 	public int maxRow = 0;
 	/**
-	 * @serialField max column
+	 * @serialField max
+	 *                  column
 	 */
 	public int maxColumn = 0;
 	/**
@@ -41,7 +43,8 @@ public class Icehockey implements IPlayersFinder {
 	 */
 	public int minColumn = 0;
 	/**
-	 *  @serialField return point
+	 * @serialField return
+	 *                  point
 	 */
 	public Point p = new Point();
 	/**
@@ -49,15 +52,18 @@ public class Icehockey implements IPlayersFinder {
 	 */
 	public Point receivedPoint = new Point();
 	/**
-	 * @serialField return array
+	 * @serialField return
+	 *                  array
 	 */
-	public Point[] arrayOfPoints ;
+	public Point[] arrayOfPoints;
 	/**
-	 * @serialField array list for adding points
+	 * @serialField array
+	 *                  list for adding points
 	 */
 	ArrayList<Point> points = new ArrayList<Point>();
 	/**
-	 * @serialField array list for adding points
+	 * @serialField array
+	 *                  list for adding points
 	 */
 	ArrayList<Point> coordinates = new ArrayList<Point>();
 
@@ -108,8 +114,7 @@ public class Icehockey implements IPlayersFinder {
 
 	@Override
 	public Point[] findPlayers(final String[] photo, final int team, final int threshold) {
-		if(photo==null)
-		{
+		if (photo == null) {
 			return null;
 		}
 		int i;
@@ -141,13 +146,12 @@ public class Icehockey implements IPlayersFinder {
 
 				if (receivedPoint != null) {
 
-					points.add(new Point(receivedPoint.x,receivedPoint.y));
+					points.add(new Point(receivedPoint.x, receivedPoint.y));
 
 				}
 
 			}
 		}
-
 
 		Collections.sort(points, new PointCompare());
 

@@ -1,6 +1,11 @@
 package eg.edu.alexu.csd.datastructure.iceHockey.cs44;
 import java.awt.Point;
 import java.util.Comparator;
+/**
+ *
+ * @author SHIKO
+ *
+ */
 public class PointCompare implements Comparator<Point> {
 
 	@Override
