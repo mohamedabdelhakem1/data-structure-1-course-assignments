@@ -12,18 +12,53 @@ import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
  *
  */
 public class Icehockey implements IPlayersFinder {
+	/**
+	 * @serialField pixels
+	 */
 	public char[][] photoPixels;
+	/**
+	 * @serialField area;
+	 */
 	public int area;
+	/**
+	 * @serialField flag array
+	 */
 	public boolean[][] visited;
+	/**
+	 * @serialField maxRow
+	 */
 	public int maxRow = 0;
+	/**
+	 * @serialField max column
+	 */
 	public int maxColumn = 0;
+	/**
+	 * @serialField minrow
+	 */
 	public int minRow = 0;
+	/**
+	 * @serialField mincolumn
+	 */
 	public int minColumn = 0;
+	/**
+	 *  @serialField return point
+	 */
 	public Point p = new Point();
+	/**
+	 * @serialField rec.point
+	 */
 	public Point receivedPoint = new Point();
+	/**
+	 * @serialField return array
+	 */
 	public Point[] arrayOfPoints ;
+	/**
+	 * @serialField array list for adding points
+	 */
 	ArrayList<Point> points = new ArrayList<Point>();
-
+	/**
+	 * @serialField array list for adding points
+	 */
 	ArrayList<Point> coordinates = new ArrayList<Point>();
 
 	public Point search(final int row, final int column, final char team, final int threshold) {
