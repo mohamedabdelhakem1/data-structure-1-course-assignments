@@ -86,7 +86,7 @@ public class Icehockey implements IPlayersFinder {
 		} else if (photoPixels[row][column] != team) {
 			visited[row][column] = true;
 			return null;
-		} else if (visited[row][column] == true) {
+		} else if (visited[row][column]) {
 			return null;
 		} else {
 			if (row > maxRow) {
