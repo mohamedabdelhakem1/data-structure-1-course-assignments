@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import eg.edu.alexu.csd.datastructure.iceHockey.IPlayersFinder;
-
 /**
  *
  * @author SHIKO
