@@ -76,7 +76,8 @@ public class Icehockey implements IPlayersFinder {
 	public Point search(final int row, final int column,
 			final char team, final int threshold) {
 
-		if (row < 0 || column < 0 || row >= photoPixels.length || column >= photoPixels[0].length) {
+		if (row < 0 || column < 0 || row >= photoPixels.length
+				|| column >= photoPixels[0].length) {
 			return null;
 		} else if (photoPixels[row][column] != team
 				|| visited[row][column] == true) {
