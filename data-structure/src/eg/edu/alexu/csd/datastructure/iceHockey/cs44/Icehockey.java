@@ -79,7 +79,7 @@ public class Icehockey implements IPlayersFinder {
 		}
 		int i;
 		int j;
-		char Team = (char) (team + '0');
+		char teamx = (char) (team + '0');
 
 		photoPixels = new char[photo.length][photo[0].length()];
 		visited = new boolean[photo.length][photo[0].length()];
@@ -102,7 +102,7 @@ public class Icehockey implements IPlayersFinder {
 				maxColumn = 0;
 				minColumn = j;
 				minRow = i;
-				receivedPoint = search(i, j, Team, threshold);
+				receivedPoint = search(i, j, teamx, threshold);
 
 				if (receivedPoint != null) {
 
