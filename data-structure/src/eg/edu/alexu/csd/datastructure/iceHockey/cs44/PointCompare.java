@@ -9,11 +9,11 @@ import java.util.Comparator;
 public class PointCompare implements Comparator<Point> {
 
 	@Override
-	public int compare(Point a, Point b) {
-		if (a.x<b.x) {
+	public int compare(final Point a,final Point b) {
+		if (a.x < b.x) {
 			return -1;
 		}
-		else if (a.x>b.x) {
+		else if (a.x > b.x) {
 			return 1;
 		}
 		else if (a.x == b.x)
@@ -21,7 +21,7 @@ public class PointCompare implements Comparator<Point> {
 			if (a.y < b.y) {
 				return -1;
 			}
-			else if (a.y>b.y) {
+			else if (a.y > b.y) {
 				return 1;
 			}
 		}
