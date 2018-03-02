@@ -123,21 +123,5 @@ public class Stringtest {
 		Assert.assertArrayEquals(point, thepoints);
 
 	}
-	/**
-	 * @author SHIKO
-	 */
-	@Test
-	public void test5() {
-		Icehockey icehockey = new Icehockey();
-		String[] players = new String[] {"11111",
-				"1A1A1", "1a1a1",
-				"1A1A1", "11111" };
-		final int team = 1;
-		final int threshold = 3;
-		Point[] thepoints = icehockey.findPlayers(players,
-				team, threshold);
-		Point[] point = new Point[] {new Point(5, 5) };
-		Assert.assertArrayEquals(point, thepoints);
 
-	}
 }
