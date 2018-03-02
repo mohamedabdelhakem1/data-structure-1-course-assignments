@@ -12,6 +12,9 @@ import org.junit.Test;
 public class Stringtest {
 
 	@Test
+	/**
+	 * @author SHIKO
+	 */
 	public void test1() {
 		Icehockey icehockey = new Icehockey();
 		String[] players = {"33JUBU33",
