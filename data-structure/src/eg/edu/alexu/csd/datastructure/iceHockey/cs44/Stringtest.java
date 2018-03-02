@@ -22,17 +22,21 @@ public class Stringtest {
 			"VNDSD333", "OINFD33X" };
 		final int team = 3;
 		final int threshold = 16;
+		final int x1 = 4;
+		final int x2 = 13;
+		final int x3 = 14;
+		final int y1 = 5;
+		final int y2 = 9;
+		final int y3 = 2;
 		Point[] thepoints = icehockey.findPlayers(players,
 				team, threshold);
 		Point[] point = new Point[] {
-				new Point(4, 5),
-				new Point(13, 9),
-				new Point(14, 2) };
+				new Point(x1, y1),
+				new Point(x2, y2),
+				new Point(x3, y3) };
 		Assert.assertArrayEquals(point, thepoints);
 	}
-	/**
-	 * @author SHIKO
-	 */
+	/*
 	@Test
 	public void test2() {
 		Icehockey icehockey = new Icehockey();
@@ -55,9 +59,8 @@ public class Stringtest {
 				new Point(17, 9) };
 		Assert.assertArrayEquals(point, thepoints);
 	}
-	/**
-	 * @author SHIKO
-	 */
+
+
 	@Test
 	public void test3() {
 		Icehockey icehockey = new Icehockey();
@@ -104,9 +107,7 @@ public class Stringtest {
 		Assert.assertArrayEquals(point, thepoints);
 
 	}
-	/**
-	 * @author SHIKO
-	 */
+
 	@Test
 	public void test4() {
 		Icehockey icehockey = new Icehockey();
@@ -123,5 +124,5 @@ public class Stringtest {
 		Assert.assertArrayEquals(point, thepoints);
 
 	}
-
+*/
 }
