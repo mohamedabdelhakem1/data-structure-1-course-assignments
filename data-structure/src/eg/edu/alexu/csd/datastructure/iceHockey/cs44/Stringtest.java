@@ -157,6 +157,7 @@ public class Stringtest {
 				new Point(27, 2),
 				new Point(28, 26),
 				new Point(29, 16) };
+
 		Assert.assertArrayEquals(point, thepoints);
 
 	}
