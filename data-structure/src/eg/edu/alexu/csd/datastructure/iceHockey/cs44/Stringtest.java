@@ -40,8 +40,7 @@ public class Stringtest {
 				"4444ZDQ4S4", "4BR4Y4A444",
 				"4G4V4T4444" };
 		Point[] thepoints = icehockey.findPlayers(players, 4, 16);
-		Point[] point = new Point[] {
-				new Point(3,8),
+		Point[] point = new Point[] {new Point(3,8),
 				new Point(4,16),
 				new Point(5,4),
 				new Point(16,3),
