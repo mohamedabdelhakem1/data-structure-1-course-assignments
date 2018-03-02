@@ -22,7 +22,8 @@ public class Stringtest {
 			"VNDSD333", "OINFD33X" };
 		final int team = 3;
 		final int threshold = 16;
-		Point[] thepoints = icehockey.findPlayers(players, team, threshold);
+		Point[] thepoints = icehockey.findPlayers(players,
+				team, threshold);
 		Point[] point = new Point[] {
 				new Point(4, 5),
 				new Point(13, 9),
@@ -43,7 +44,8 @@ public class Stringtest {
 				"4G4V4T4444" };
 		final int team = 4;
 		final int threshold = 16;
-		Point[] thepoints = icehockey.findPlayers(players, team, threshold);
+		Point[] thepoints = icehockey.findPlayers(players,
+				team, threshold);
 		Point[] point = new Point[] {
 				new Point(3, 8),
 				new Point(4, 16),
@@ -77,7 +79,8 @@ public class Stringtest {
 				"8PK8H8T8888TQR8" };
 		final int team = 8;
 		final int threshold = 9;
-		Point[] thepoints = icehockey.findPlayers(players, team, threshold);
+		Point[] thepoints = icehockey.findPlayers(players,
+				team, threshold);
 		Point[] point = new Point[] {
 				new Point(1, 17),
 				new Point(3, 3),
@@ -113,7 +116,8 @@ public class Stringtest {
 				"11111" };
 		final int team = 1;
 		final int threshold = 3;
-		Point[] thepoints = icehockey.findPlayers(players, team, threshold);
+		Point[] thepoints = icehockey.findPlayers(players,
+				team, threshold);
 		Point[] point = new Point[] {new Point(5, 5),
 				new Point(5, 5) };
 		Assert.assertArrayEquals(point, thepoints);
@@ -130,7 +134,8 @@ public class Stringtest {
 				"1A1A1", "11111" };
 		final int team = 1;
 		final int threshold = 3;
-		Point[] thepoints = icehockey.findPlayers(players, team, threshold);
+		Point[] thepoints = icehockey.findPlayers(players,
+				team, threshold);
 		Point[] point = new Point[] {new Point(5, 5) };
 		Assert.assertArrayEquals(point, thepoints);
 
