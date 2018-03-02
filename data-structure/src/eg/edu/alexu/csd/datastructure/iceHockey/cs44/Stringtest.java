@@ -20,7 +20,10 @@ public class Stringtest {
 			"PO3NSDP3",
 			"VNDSD333", "OINFD33X" };
 		Point[] thepoints = icehockey.findPlayers(players, 3, 16);
-		Point[] point = new Point[] { new Point(4, 5), new Point(13, 9), new Point(14, 2) };
+		Point[] point = new Point[] {
+				new Point(4, 5),
+				new Point(13, 9),
+				new Point(14, 2) };
 		Assert.assertArrayEquals(point, thepoints);
 	}
 
@@ -34,8 +37,13 @@ public class Stringtest {
 				"4444ZDQ4S4", "4BR4Y4A444",
 				"4G4V4T4444" };
 		Point[] thepoints = icehockey.findPlayers(players, 4, 16);
-		Point[] point = new Point[] { new Point(3, 8), new Point(4, 16), new Point(5, 4), new Point(16, 3),
-				new Point(16, 17), new Point(17, 9) };
+		Point[] point = new Point[] {
+				new Point(3, 8),
+				new Point(4, 16),
+				new Point(5, 4),
+				new Point(16, 3),
+				new Point(16, 17),
+				new Point(17, 9) };
 		Assert.assertArrayEquals(point, thepoints);
 	}
 
@@ -59,8 +67,10 @@ public class Stringtest {
 				"U88H8NI8CZB88B8",
 				"8PK8H8T8888TQR8" };
 		Point[] thepoints = icehockey.findPlayers(players, 8, 9);
-		Point[] point = new Point[] { new Point(1, 17),
-				new Point(3, 3), new Point(3, 10),
+		Point[] point = new Point[] {
+				new Point(1, 17),
+				new Point(3, 3),
+				new Point(3, 10),
 				new Point(3, 25),
 				new Point(5, 21),
 				new Point(8, 17),
@@ -89,7 +99,7 @@ public class Stringtest {
 				"1A1A1", "1AAA1",
 				"11111" };
 		Point[] thepoints = icehockey.findPlayers(players, 1, 3);
-		Point[] point = new Point[] { new Point(5, 5),
+		Point[] point = new Point[] {new Point(5, 5),
 				new Point(5, 5) };
 		Assert.assertArrayEquals(point, thepoints);
 
@@ -98,22 +108,21 @@ public class Stringtest {
 	@Test
 	public void test5() {
 		Icehockey icehockey = new Icehockey();
-		String[] players = new String[] { "11111",
+		String[] players = new String[] {"11111",
 				"1A1A1", "1a1a1",
 				"1A1A1", "11111" };
 		Point[] thepoints = icehockey.findPlayers(players, 1, 3);
-		Point[] point = new Point[] { new Point(5, 5) };
+		Point[] point = new Point[] {new Point(5, 5) };
 		Assert.assertArrayEquals(point, thepoints);
 
 	}
-
 	@Test
 	public void test6() {
 		Icehockey icehockey = new Icehockey();
-		String[] players ;
+		String[] players;
 
 
-		players = new String[] { "8D88888J8L8E888",
+		players = new String[] {"8D88888J8L8E888",
 				"88NKMG8N8E8JI88",
 				"888NS8EU88HN8EO",
 				"LUQ888A8TH8OIH8",
@@ -128,8 +137,8 @@ public class Stringtest {
 				"88SQGB8I8J88W88",
 				"U88H8NI8CZB88B8",
 				"8PK8H8T8888TQR8" };
-		Point []thepoints = icehockey.findPlayers(players, 8, 9);
-		Point [] point = new Point[] { new Point(1, 17),
+		Point[]thepoints = icehockey.findPlayers(players, 8, 9);
+		Point[] point = new Point[] {new Point(1, 17),
 				new Point(3, 3),
 				new Point(3, 10),
 				new Point(3, 25),
