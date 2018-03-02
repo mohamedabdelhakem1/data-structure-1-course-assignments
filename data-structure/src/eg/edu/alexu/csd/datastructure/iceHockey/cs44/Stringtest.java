@@ -41,12 +41,12 @@ public class Stringtest {
 				"4G4V4T4444" };
 		Point[] thepoints = icehockey.findPlayers(players, 4, 16);
 		Point[] point = new Point[] {
-				new Point(3,8),
-				new Point(4,16),
-				new Point(5,4),
-				new Point(16,3),
-				new Point(16,17),
-				new Point(17,9) };
+				new Point(3, 8),
+				new Point(4, 16),
+				new Point(5, 4),
+				new Point(16, 3),
+				new Point(16, 17),
+				new Point(17, 9) };
 		Assert.assertArrayEquals(point, thepoints);
 	}
 	/**
