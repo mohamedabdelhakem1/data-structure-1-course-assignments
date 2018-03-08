@@ -129,5 +129,38 @@ public class Stringtest {
 		Assert.assertArrayEquals(point, thepoints);
 
 	}
+	/**
+	 * @test5
+	 */
+	@Test
+	public void test5() {
+		Icehockey icehockey = new Icehockey();
+		String[] players = null ;
+		final int team = 1;
+		final int threshold = 3;
+		final Point[] thepoints = icehockey.findPlayers(players,
+				team, threshold);
+		final Point[] point = null;
+		Assert.assertArrayEquals(point, thepoints);
+
+	}
+	/**
+	 * @test6
+	 */
+	@Test
+	public void test6() {
+		Icehockey icehockey = new Icehockey();
+		String[] players = new String[] {
+				"22222", "1AAA1",
+				"1A1A1", "1AAA1",
+				"11111" };
+		final int team = 2;
+		final int threshold = 3;
+		final Point[] thepoints = icehockey.findPlayers(players,
+				team, threshold);
+		final Point[] point = new Point[] {new Point(5, 1) };
+		Assert.assertArrayEquals(point, thepoints);
+
+	}
 
 }
