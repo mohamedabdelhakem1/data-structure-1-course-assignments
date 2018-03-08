@@ -36,7 +36,9 @@ public class Stringtest {
 				new Point(x3, y3) };
 		Assert.assertArrayEquals(point, thepoints);
 	}
-
+	/**
+	 * @test2
+	 */
 	@Test
 	public void test2() {
 		Icehockey icehockey = new Icehockey();
@@ -59,8 +61,9 @@ public class Stringtest {
 				new Point(17, 9) };
 		Assert.assertArrayEquals(point, thepoints);
 	}
-
-
+	/**
+	 * @test3
+	 */
 	@Test
 	public void test3() {
 		Icehockey icehockey = new Icehockey();
@@ -107,7 +110,9 @@ public class Stringtest {
 		Assert.assertArrayEquals(point, thepoints);
 
 	}
-
+	/**
+	 * @test4
+	 */
 	@Test
 	public void test4() {
 		Icehockey icehockey = new Icehockey();
