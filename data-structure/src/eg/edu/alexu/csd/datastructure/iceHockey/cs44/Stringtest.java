@@ -135,7 +135,7 @@ public class Stringtest {
 	@Test
 	public void test5() {
 		Icehockey icehockey = new Icehockey();
-		String[] players = null ;
+		String[] players = null;
 		final int team = 1;
 		final int threshold = 3;
 		final Point[] thepoints = icehockey.findPlayers(players,
