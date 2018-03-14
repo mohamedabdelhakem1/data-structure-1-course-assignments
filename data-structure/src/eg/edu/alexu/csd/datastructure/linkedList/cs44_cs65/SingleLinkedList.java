@@ -159,8 +159,9 @@ public class SingleLinkedList implements ILinkedList {
 			}
 			return list1;
 		}
+		throw new RuntimeException();
 
-		return null;
+
 	}
 
 	@Override
