@@ -167,7 +167,6 @@ public class SingleLinkedList implements ILinkedList {
 	public boolean contains(Object o) {
 		sNode node;
 		if (numberOfElements == 0) {
-
 			return false;
 
 		} else {
