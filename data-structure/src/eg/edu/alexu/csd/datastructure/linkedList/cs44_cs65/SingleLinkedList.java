@@ -8,9 +8,9 @@ public class SingleLinkedList implements ILinkedList {
 		Object newElement;
 		sNode nextElement;
 
-		sNode(Object x) {
+		sNode(Object x,sNode n) {
 			newElement = x;
-			nextElement = null;
+			nextElement = n;
 
 		}
 	}
@@ -32,8 +32,7 @@ public class SingleLinkedList implements ILinkedList {
 				counter++;
 			}
 			sNode temp = node.nextElement;
-			sNode addedNode = new sNode(element);
-			addedNode.nextElement = temp;
+			sNode addedNode = new sNode(element,temp);
 			node.nextElement = addedNode;
 			numberOfElements++;
 
@@ -51,14 +50,14 @@ public class SingleLinkedList implements ILinkedList {
 		sNode node;
 		if (head == null) {
 
-			head = new sNode(element);
+			head = new sNode(element,null);
 			numberOfElements++;
 		} else {
 			node = head;
 			while (node.nextElement != null) {
 				node = node.nextElement;
 			}
-			node.nextElement = new sNode(element);
+			node.nextElement = new sNode(element,null);
 			numberOfElements++;
 
 
