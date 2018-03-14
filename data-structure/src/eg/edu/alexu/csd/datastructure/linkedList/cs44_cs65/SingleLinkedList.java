@@ -166,7 +166,7 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public boolean contains(Object o) {
 		sNode node;
-		if (head == null) {
+		if (numberOfElements == 0) {
 
 			return false;
 
