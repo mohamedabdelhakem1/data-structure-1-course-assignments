@@ -54,7 +54,7 @@ public class DoubleLinkedList implements ILinkedList {
 				node.prevElement = addedNode;
 				(addedNode.prevElement).nextElement = addedNode;
 				numberOfelements++;
-
+//
 			} else {
 				throw new RuntimeException();
 			}
