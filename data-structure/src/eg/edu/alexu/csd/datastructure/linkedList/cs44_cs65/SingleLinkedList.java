@@ -2,18 +2,20 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs44_cs65;
 
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
+class sNode {
+	Object newElement;
+	sNode nextElement;
+
+	sNode(Object x,sNode n) {
+		newElement = x;
+		nextElement = n;
+
+	}
+}
+
 public class SingleLinkedList implements ILinkedList {
 
-	static class sNode {
-		Object newElement;
-		sNode nextElement;
 
-		sNode(Object x,sNode n) {
-			newElement = x;
-			nextElement = n;
-
-		}
-	}
 
 
 
