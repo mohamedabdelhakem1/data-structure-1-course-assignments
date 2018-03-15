@@ -37,7 +37,6 @@ public class DoubleLinkedList implements ILinkedList {
 
 					dNode addednode = new dNode(element, head, null);
 					head = addednode;
-					(head.nextElement).prevElement = addednode ;
 
 				} else {
 
@@ -46,7 +45,7 @@ public class DoubleLinkedList implements ILinkedList {
 
 				}
 				numberOfelements++;
-
+				return;
 			} else if (index <= numberOfelements && index > 0) {
 
 				while (counter < index) {
@@ -57,7 +56,7 @@ public class DoubleLinkedList implements ILinkedList {
 				node.prevElement = addedNode;
 				(addedNode.prevElement).nextElement = addedNode;
 				numberOfelements++;
-
+				return;
 			}
 				throw new RuntimeException();
 
