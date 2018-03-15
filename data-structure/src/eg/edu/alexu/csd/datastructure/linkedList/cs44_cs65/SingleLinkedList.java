@@ -87,9 +87,9 @@ public class SingleLinkedList implements ILinkedList {
 			}
 			return (node.newElement);
 		}
-		 else {
+
 		 throw new RuntimeException();
-		 }
+
 
 		 }
 
@@ -103,9 +103,10 @@ public class SingleLinkedList implements ILinkedList {
 				counter++;
 			}
 			node.newElement = element;
-		} else {
-			throw new RuntimeException();
+			return;
 		}
+			throw new RuntimeException();
+
 
 	}
 
