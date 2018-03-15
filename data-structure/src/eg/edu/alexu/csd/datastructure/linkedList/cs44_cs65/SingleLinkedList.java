@@ -26,7 +26,9 @@ public class SingleLinkedList implements ILinkedList {
 		node = head;
 		int counter = 0;
 		if(index == 0) {
+
 			head.newElement = element;
+
 		}
 		else if (index <= numberOfElements && index > 0) {
 
@@ -112,7 +114,7 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public boolean isEmpty() {
 
-			return (head == null) ;
+			return (numberOfElements == 0) ;
 
 	}
 
