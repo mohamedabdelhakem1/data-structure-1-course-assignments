@@ -77,9 +77,7 @@ public class SingleLinkedList implements ILinkedList {
 	public Object get(int index) {
 		sNode node = head;
 		int counter = 0;
-		if (head == null) {
-			throw new RuntimeException();
-		}
+		
 		 if (index < numberOfElements && index >= 0) {
 			while (counter < index) {
 				node = node.nextElement;
@@ -90,6 +88,7 @@ public class SingleLinkedList implements ILinkedList {
 		 else {
 		 throw new RuntimeException();
 		 }
+		 
 		 }
 
 	@Override
