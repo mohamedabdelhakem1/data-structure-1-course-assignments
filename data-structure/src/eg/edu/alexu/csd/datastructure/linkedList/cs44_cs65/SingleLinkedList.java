@@ -178,10 +178,9 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public boolean contains(Object o) {
 		sNode node;
-		if (numberOfElements == 0) {
-			return false;
 
-		} else {
+
+
 			node = head;
 			while (node != null) {
 				if (node.newElement == o) {
@@ -189,9 +188,10 @@ public class SingleLinkedList implements ILinkedList {
 				}
 				node = node.nextElement;
 			}
+			return false;
 
 		}
-		return false;
+
 	}
 
-}
+
