@@ -35,8 +35,9 @@ public class DoubleLinkedList implements ILinkedList {
 
 				if (numberOfelements != 0) {
 
-					node.prevElement = new dNode(element, head, null);
-					head = node.prevElement;
+					dNode addednode = new dNode(element, head, null);
+					head = addednode;
+
 
 				} else {
 
