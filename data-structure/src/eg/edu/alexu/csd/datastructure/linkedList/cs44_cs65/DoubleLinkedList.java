@@ -161,7 +161,7 @@ public class DoubleLinkedList implements ILinkedList {
 
 		}
 
-		//throw new RuntimeException();
+		throw new RuntimeException();
 
 
 	}
@@ -171,6 +171,7 @@ public class DoubleLinkedList implements ILinkedList {
 		head = null;
 		tail = null;
 		numberOfelements = 0;
+		return;
 
 	}
 
