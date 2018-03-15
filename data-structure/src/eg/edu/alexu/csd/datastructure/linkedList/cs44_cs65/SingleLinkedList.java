@@ -107,8 +107,13 @@ public class SingleLinkedList implements ILinkedList {
 
 	@Override
 	public void clear() {
-		head = null;
-		numberOfElements = 0;
+		if(numberOfElements!=0) {
+			head = null;
+			numberOfElements = 0;
+		}else {
+			throw new RuntimeException();
+		}
+
 	}
 
 	@Override
