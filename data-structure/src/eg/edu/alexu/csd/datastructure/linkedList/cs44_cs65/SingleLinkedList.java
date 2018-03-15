@@ -27,11 +27,12 @@ public class SingleLinkedList implements ILinkedList {
 		int counter = 0;
 		if(index == 0) {
 			if(numberOfElements != 0) {
-			head.newElement = element;
+				sNode addedNode = new sNode(element,head);
+				head = addedNode;
 			}else {
 				head = new sNode (element,null);
 			}
-
+			numberOfElements++;
 		}
 		else if (index <= numberOfElements && index > 0) {
 
