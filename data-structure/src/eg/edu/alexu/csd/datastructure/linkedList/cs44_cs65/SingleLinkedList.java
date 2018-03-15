@@ -112,12 +112,10 @@ public class SingleLinkedList implements ILinkedList {
 
 	@Override
 	public void clear() {
-		if(numberOfElements!=0) {
+
 			head = null;
 			numberOfElements = 0;
-		}else {
-			throw new RuntimeException();
-		}
+
 
 	}
 
