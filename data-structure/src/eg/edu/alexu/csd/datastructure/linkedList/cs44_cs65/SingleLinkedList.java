@@ -18,7 +18,7 @@ public class SingleLinkedList implements ILinkedList {
 
 
 	int numberOfElements = 0;
-	sNode head = new sNode(null,null)	;
+	sNode head = null	;
 
 	@Override
 	public void add(int index, Object element) {
