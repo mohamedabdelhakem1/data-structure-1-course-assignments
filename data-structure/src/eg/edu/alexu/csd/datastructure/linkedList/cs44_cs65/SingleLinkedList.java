@@ -56,9 +56,8 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public void add(Object element) {
 		sNode node;
-		if(element !=null) {
+		if(element.equals(null)) {
 		if (head == null) {
-
 			head = new sNode(element,null);
 			numberOfElements++;
 		} else {
