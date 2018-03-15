@@ -26,8 +26,11 @@ public class SingleLinkedList implements ILinkedList {
 		node = head;
 		int counter = 0;
 		if(index == 0) {
-
+			if(numberOfElements != 0) {
 			head.newElement = element;
+			}else {
+				head = new sNode (element,null);
+			}
 
 		}
 		else if (index <= numberOfElements && index > 0) {
