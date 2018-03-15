@@ -115,7 +115,7 @@ public class SingleLinkedList implements ILinkedList {
 
 			head = null;
 			numberOfElements = 0;
-
+			return;
 
 	}
 
