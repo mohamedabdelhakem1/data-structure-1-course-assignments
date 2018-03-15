@@ -68,12 +68,13 @@ public class SingleLinkedList implements ILinkedList {
 			}
 			node.nextElement = new sNode(element,null);
 			numberOfElements++;
-
-
-		}
+			return;
 
 		}
+
+		} else {
 		throw new RuntimeException();
+		}
 		}
 
 	@Override
@@ -112,10 +113,10 @@ public class SingleLinkedList implements ILinkedList {
 
 	@Override
 	public void clear() {
-
+		if(numberOfElements!=0) {
 			head = null;
 			numberOfElements = 0;
-
+		}
 
 	}
 
