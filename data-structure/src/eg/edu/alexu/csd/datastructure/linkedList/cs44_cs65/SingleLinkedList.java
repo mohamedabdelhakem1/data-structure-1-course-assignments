@@ -69,7 +69,6 @@ public class SingleLinkedList implements ILinkedList {
 			node.nextElement = new sNode(element,null);
 			numberOfElements++;
 
-
 		}
 
 		}
