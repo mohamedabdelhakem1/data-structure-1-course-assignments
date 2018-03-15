@@ -187,7 +187,7 @@ public class SingleLinkedList implements ILinkedList {
 
 			node = head;
 			while (node != null) {
-				if (node.newElement == o) {
+				if (node.newElement.equals(o) ) {
 					return true;
 				}
 				node = node.nextElement;
