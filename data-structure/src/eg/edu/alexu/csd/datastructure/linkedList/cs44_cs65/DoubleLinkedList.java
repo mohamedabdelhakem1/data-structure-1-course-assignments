@@ -26,7 +26,7 @@ public class DoubleLinkedList implements ILinkedList {
 		dNode node;
 
 		int counter;
-		//index before the middle
+		// index before the middle
 		if (index <= (numberOfelements / 2)) {
 
 			node = head;
@@ -60,19 +60,16 @@ public class DoubleLinkedList implements ILinkedList {
 				return;
 			}
 
-
-		}
-		else {
+		} else {
 			node = tail;
 			counter = numberOfelements - 1;
-			if(index == numberOfelements) {
+			if (index == numberOfelements) {
 				dNode addedNode = new dNode(element, null, tail);
 				tail.nextElement = addedNode;
 				tail = addedNode;
 				numberOfelements++;
 				return;
-			}
-			else if (index <= numberOfelements && index > 0) {
+			} else if (index <= numberOfelements && index > 0) {
 
 				while (counter != index) {
 					node = node.prevElement;
@@ -85,7 +82,6 @@ public class DoubleLinkedList implements ILinkedList {
 				return;
 
 			}
-
 
 		}
 		throw new RuntimeException();
@@ -106,7 +102,7 @@ public class DoubleLinkedList implements ILinkedList {
 				node = tail;
 				node.nextElement = new dNode(element, null, node);
 				tail = node.nextElement;
-				node.nextElement =tail;
+				node.nextElement = tail;
 				numberOfelements++;
 
 			}
@@ -153,28 +149,27 @@ public class DoubleLinkedList implements ILinkedList {
 		if (index <= (numberOfelements / 2) && index >= 0) {
 			node = head;
 			counter = 0;
-				while (counter < index) {
-					node = node.nextElement;
-					counter++;
-				}
-				node.newElement = element;
-				return;
+			while (counter < index) {
+				node = node.nextElement;
+				counter++;
+			}
+			node.newElement = element;
+			return;
 
 		} else if (index < numberOfelements && index >= 0) {
 			node = tail;
 			counter = numberOfelements - 1;
 
-				while (counter != index) {
-					node = node.prevElement;
-					counter--;
-				}
-				node.newElement = element;
-				return;
+			while (counter != index) {
+				node = node.prevElement;
+				counter--;
+			}
+			node.newElement = element;
+			return;
 
 		}
 
 		throw new RuntimeException();
-
 
 	}
 
@@ -197,53 +192,47 @@ public class DoubleLinkedList implements ILinkedList {
 	public void remove(int index) {
 		dNode node;
 		int counter;
-		if(index == 0) {
-			head  = head.nextElement;
+		if (index == 0) {
+			head = head.nextElement;
 			node = head.nextElement;
 			node.prevElement = null;
 			numberOfelements--;
 			return;
-		} else if (index == numberOfelements-1) {
-			tail  = tail.prevElement;
+		} else if (index == numberOfelements - 1) {
+			tail = tail.prevElement;
 			node = tail.prevElement;
 			node.nextElement = null;
 			numberOfelements--;
 			return;
 
-
 		} else if (index <= (numberOfelements / 2) && index > 0) {
 			node = head;
 			counter = 0;
 
-				while (counter < index) {
-					node = node.nextElement;
-					counter++;
-				}
+			while (counter < index) {
+				node = node.nextElement;
+				counter++;
+			}
 			node.nextElement.prevElement = node.prevElement;
 			node.prevElement.nextElement = node.nextElement;
 			numberOfelements--;
 			return;
 
-
-
-		} else if(index < numberOfelements && index >= 0) {
+		} else if (index < numberOfelements && index >= 0) {
 			node = tail;
 			counter = numberOfelements - 1;
 
-				while (counter != index) {
-					node = node.prevElement;
-					counter--;
-				}
-				node.prevElement.nextElement = node.nextElement;
-				node.nextElement.prevElement = node.prevElement;
-				numberOfelements--;
+			while (counter != index) {
+				node = node.prevElement;
+				counter--;
+			}
+			node.prevElement.nextElement = node.nextElement;
+			node.nextElement.prevElement = node.prevElement;
+			numberOfelements--;
 
 			return;
 		}
 		throw new RuntimeException();
-
-
-
 
 	}
 
@@ -257,7 +246,7 @@ public class DoubleLinkedList implements ILinkedList {
 		DoubleLinkedList list1 = new DoubleLinkedList();
 		dNode node = head;
 		int counter = 0;
-		if (head != null && fromIndex >= 0 && toIndex < numberOfelements  && toIndex >= fromIndex ) {
+		if (head != null && fromIndex >= 0 && toIndex < numberOfelements && toIndex >= fromIndex) {
 			while (counter < fromIndex) {
 				counter++;
 				node = node.nextElement;
@@ -271,8 +260,6 @@ public class DoubleLinkedList implements ILinkedList {
 		}
 		throw new RuntimeException();
 
-
-
 	}
 
 	@Override
@@ -281,7 +268,7 @@ public class DoubleLinkedList implements ILinkedList {
 
 		node = head;
 		while (node != null) {
-			if (node.newElement.equals(o) ) {
+			if (node.newElement.equals(o)) {
 				return true;
 			}
 			node = node.nextElement;

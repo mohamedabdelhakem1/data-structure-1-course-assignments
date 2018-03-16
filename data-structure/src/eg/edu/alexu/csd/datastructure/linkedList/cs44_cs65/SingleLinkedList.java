@@ -8,47 +8,41 @@ public class SingleLinkedList implements ILinkedList {
 		Object newElement;
 		sNode nextElement;
 
-		sNode(Object x,sNode n) {
+		sNode(Object x, sNode n) {
 			newElement = x;
 			nextElement = n;
 
 		}
 	}
 
-
-
 	int numberOfElements = 0;
-	sNode head = null	;
+	sNode head = null;
 
 	@Override
 	public void add(int index, Object element) {
 		sNode node;
 		node = head;
 		int counter = 0;
-		if(index == 0) {
-			if(numberOfElements != 0) {
-				sNode addedNode = new sNode(element,head);
+		if (index == 0) {
+			if (numberOfElements != 0) {
+				sNode addedNode = new sNode(element, head);
 				head = addedNode;
-			}else {
-				head = new sNode (element,null);
+			} else {
+				head = new sNode(element, null);
 			}
 			numberOfElements++;
-		}
-		else if (index <= numberOfElements && index > 0) {
+		} else if (index <= numberOfElements && index > 0) {
 
-			while (counter < (index-1)) {
+			while (counter < (index - 1)) {
 				node = node.nextElement;
 				counter++;
 			}
 			sNode temp = node.nextElement;
-			sNode addedNode = new sNode(element,temp);
+			sNode addedNode = new sNode(element, temp);
 			node.nextElement = addedNode;
 			numberOfElements++;
 
-
-
-
-		}else {
+		} else {
 			throw new RuntimeException();
 		}
 
@@ -57,31 +51,30 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public void add(Object element) {
 		sNode node;
-		if(element !=null) {
-		if (head == null) {
+		if (element != null) {
+			if (head == null) {
 
-			head = new sNode(element,null);
-			numberOfElements++;
-		} else {
-			node = head;
-			while (node.nextElement != null) {
-				node = node.nextElement;
+				head = new sNode(element, null);
+				numberOfElements++;
+			} else {
+				node = head;
+				while (node.nextElement != null) {
+					node = node.nextElement;
+				}
+				node.nextElement = new sNode(element, null);
+				numberOfElements++;
+
 			}
-			node.nextElement = new sNode(element,null);
-			numberOfElements++;
-
 
 		}
-
-		}
-		}
+	}
 
 	@Override
 	public Object get(int index) {
 		sNode node = head;
 		int counter = 0;
 
-		 if (index < numberOfElements && index >= 0) {
+		if (index < numberOfElements && index >= 0) {
 			while (counter < index) {
 				node = node.nextElement;
 				counter++;
@@ -89,10 +82,9 @@ public class SingleLinkedList implements ILinkedList {
 			return (node.newElement);
 		}
 
-		 throw new RuntimeException();
+		throw new RuntimeException();
 
-
-		 }
+	}
 
 	@Override
 	public void set(int index, Object element) {
@@ -106,24 +98,23 @@ public class SingleLinkedList implements ILinkedList {
 			node.newElement = element;
 			return;
 		}
-			throw new RuntimeException();
-
+		throw new RuntimeException();
 
 	}
 
 	@Override
 	public void clear() {
 
-			head = null;
-			numberOfElements = 0;
-			return;
+		head = null;
+		numberOfElements = 0;
+		return;
 
 	}
 
 	@Override
 	public boolean isEmpty() {
 
-			return (numberOfElements == 0) ;
+		return (numberOfElements == 0);
 
 	}
 
@@ -132,23 +123,21 @@ public class SingleLinkedList implements ILinkedList {
 		sNode node;
 		node = head;
 		int counter = 0;
-		if(index == 0) {
+		if (index == 0) {
 			head = head.nextElement;
 			numberOfElements--;
-		}
-		else if (index < numberOfElements && index >= 0) {
+		} else if (index < numberOfElements && index >= 0) {
 
-			while (counter < index - 1 ) {
+			while (counter < index - 1) {
 				node = node.nextElement;
 				counter++;
 			}
 			node.nextElement = node.nextElement.nextElement;
 
 			numberOfElements--;
-		}	else {
+		} else {
 			throw new RuntimeException();
 		}
-
 
 	}
 
@@ -162,7 +151,7 @@ public class SingleLinkedList implements ILinkedList {
 		SingleLinkedList list1 = new SingleLinkedList();
 		sNode node = head;
 		int counter = 0;
-		if (head != null && fromIndex >= 0 && toIndex < numberOfElements  && toIndex >= fromIndex ) {
+		if (head != null && fromIndex >= 0 && toIndex < numberOfElements && toIndex >= fromIndex) {
 			while (counter < fromIndex) {
 				counter++;
 				node = node.nextElement;
@@ -176,26 +165,21 @@ public class SingleLinkedList implements ILinkedList {
 		}
 		throw new RuntimeException();
 
-
 	}
 
 	@Override
 	public boolean contains(Object o) {
 		sNode node;
 
-
-
-			node = head;
-			while (node != null) {
-				if (node.newElement.equals(o) ) {
-					return true;
-				}
-				node = node.nextElement;
+		node = head;
+		while (node != null) {
+			if (node.newElement.equals(o)) {
+				return true;
 			}
-			return false;
-
+			node = node.nextElement;
 		}
+		return false;
 
 	}
 
-
+}
