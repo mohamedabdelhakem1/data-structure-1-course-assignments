@@ -7,12 +7,7 @@ public class DoubleLinkedList implements ILinkedList {
 		Object newElement;
 		dNode nextElement;
 		dNode prevElement;
-		/**
-		 *
-		 * @param x
-		 * @param next
-		 * @param prev
-		 */
+
 		dNode(final Object x, final dNode next, final dNode prev) {
 			newElement = x;
 			nextElement = next;
