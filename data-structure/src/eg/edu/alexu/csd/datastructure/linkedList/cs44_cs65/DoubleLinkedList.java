@@ -3,12 +3,12 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs44_cs65;
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 public class DoubleLinkedList implements ILinkedList {
-	static class dnode {
+	static class Dnode {
 		Object newElement;
-		dnode nextElement;
-		dnode prevElement;
+		Dnode nextElement;
+		Dnode prevElement;
 
-		dnode(final Object x, final dnode next, final dnode prev) {
+		Dnode(final Object x, final Dnode next, final Dnode prev) {
 			newElement = x;
 			nextElement = next;
 			prevElement = prev;
@@ -16,14 +16,14 @@ public class DoubleLinkedList implements ILinkedList {
 		}
 	}
 
-	dnode head = null;
-	dnode tail = null;
+	Dnode head = null;
+	Dnode tail = null;
 
 	int numberOfelements = 0;
 
 	@Override
 	public void add(final int index, final Object element) {
-		dnode node;
+		Dnode node;
 
 		int counter;
 		// index before the middle
@@ -35,13 +35,13 @@ public class DoubleLinkedList implements ILinkedList {
 
 				if (numberOfelements != 0) {
 
-					dnode addednode = new dnode(element, head, null);
+					Dnode addednode = new Dnode(element, head, null);
 					head.prevElement = addednode;
 					head = addednode;
 
 				} else {
 
-					head = new dnode(element, null, null);
+					head = new Dnode(element, null, null);
 					tail = head;
 
 				}
@@ -53,7 +53,7 @@ public class DoubleLinkedList implements ILinkedList {
 					node = node.nextElement;
 					counter++;
 				}
-				dnode addedNode = new dnode(element, node, node.prevElement);
+				Dnode addedNode = new Dnode(element, node, node.prevElement);
 				node.prevElement = addedNode;
 				(addedNode.prevElement).nextElement = addedNode;
 				numberOfelements++;
@@ -64,7 +64,7 @@ public class DoubleLinkedList implements ILinkedList {
 			node = tail;
 			counter = numberOfelements - 1;
 			if (index == numberOfelements) {
-				dnode addedNode = new dnode(element, null, tail);
+				Dnode addedNode = new Dnode(element, null, tail);
 				tail.nextElement = addedNode;
 				tail = addedNode;
 				numberOfelements++;
@@ -75,7 +75,7 @@ public class DoubleLinkedList implements ILinkedList {
 					node = node.prevElement;
 					counter--;
 				}
-				dnode addedNode = new dnode(element, node, node.prevElement);
+				Dnode addedNode = new Dnode(element, node, node.prevElement);
 				node.prevElement = addedNode;
 				(addedNode.prevElement).nextElement = addedNode;
 				numberOfelements++;
@@ -91,16 +91,16 @@ public class DoubleLinkedList implements ILinkedList {
 	@Override
 	public void add(final Object element) {
 
-		dnode node;
+		Dnode node;
 		if (element != null) {
 			if (head == null && tail == null) {
 
-				head = new dnode(element, null, null);
+				head = new Dnode(element, null, null);
 				tail = head;
 				numberOfelements++;
 			} else {
 				node = tail;
-				node.nextElement = new dnode(element, null, node);
+				node.nextElement = new Dnode(element, null, node);
 				tail = node.nextElement;
 				node.nextElement = tail;
 				numberOfelements++;
@@ -113,7 +113,7 @@ public class DoubleLinkedList implements ILinkedList {
 
 	@Override
 	public Object get(final int index) {
-		dnode node;
+		Dnode node;
 		int counter;
 		if (index <= (numberOfelements / 2)) {
 			node = head;
@@ -144,7 +144,7 @@ public class DoubleLinkedList implements ILinkedList {
 
 	@Override
 	public void set(final int index, final Object element) {
-		dnode node;
+		Dnode node;
 		int counter;
 		if (index <= (numberOfelements / 2) && index >= 0) {
 			node = head;
@@ -190,7 +190,7 @@ public class DoubleLinkedList implements ILinkedList {
 
 	@Override
 	public void remove(final int index) {
-		dnode node;
+		Dnode node;
 		int counter;
 		if (index == 0) {
 			head = head.nextElement;
@@ -244,7 +244,7 @@ public class DoubleLinkedList implements ILinkedList {
 	@Override
 	public ILinkedList sublist(final int fromIndex, final int toIndex) {
 		DoubleLinkedList list1 = new DoubleLinkedList();
-		dnode node = head;
+		Dnode node = head;
 		int counter = 0;
 		if (head != null && fromIndex >= 0 && toIndex < numberOfelements && toIndex >= fromIndex) {
 			while (counter < fromIndex) {
@@ -264,7 +264,7 @@ public class DoubleLinkedList implements ILinkedList {
 
 	@Override
 	public boolean contains(final Object o) {
-		dnode node;
+		Dnode node;
 
 		node = head;
 		while (node != null) {
