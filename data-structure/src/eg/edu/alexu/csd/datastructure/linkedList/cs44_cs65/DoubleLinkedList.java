@@ -8,7 +8,7 @@ public class DoubleLinkedList implements ILinkedList {
 		dNode nextElement;
 		dNode prevElement;
 
-		dNode(Object x, dNode next, dNode prev) {
+		dNode(final Object x,final dNode next,final dNode prev) {
 			newElement = x;
 			nextElement = next;
 			prevElement = prev;

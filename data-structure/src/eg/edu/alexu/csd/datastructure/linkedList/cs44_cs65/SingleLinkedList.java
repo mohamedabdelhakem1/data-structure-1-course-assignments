@@ -8,7 +8,7 @@ public class SingleLinkedList implements ILinkedList {
 		Object newElement;
 		sNode nextElement;
 
-		sNode(Object x, sNode n) {
+		sNode(final Object x,final sNode n) {
 			newElement = x;
 			nextElement = n;
 
