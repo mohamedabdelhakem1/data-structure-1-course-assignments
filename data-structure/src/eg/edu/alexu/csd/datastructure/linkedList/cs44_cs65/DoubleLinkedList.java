@@ -59,7 +59,7 @@ public class DoubleLinkedList implements ILinkedList {
 				numberOfelements++;
 				return;
 			}
-				throw new RuntimeException();
+
 
 		}
 		else {
@@ -78,9 +78,11 @@ public class DoubleLinkedList implements ILinkedList {
 				return;
 
 			}
-				throw new RuntimeException();
+
 
 		}
+		throw new RuntimeException();
+
 	}
 
 	@Override
