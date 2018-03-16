@@ -47,7 +47,7 @@ public class DoubleLinkedList implements ILinkedList {
 				}
 				numberOfelements++;
 				return;
-			} else if (index <= numberOfelements && index > 0) {
+			} else if (index < numberOfelements && index > 0) {
 
 				while (counter < index) {
 					node = node.nextElement;
