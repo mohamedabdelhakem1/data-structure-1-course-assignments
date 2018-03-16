@@ -12,11 +12,11 @@ public class SingleLinkedList implements ILinkedList {
 	 * @author SHIKO
 	 *
 	 */
-	static class sNode {
+	static class snode {
 		Object newElement;
-		sNode nextElement;
+		snode nextElement;
 
-		sNode(final Object x, final sNode n) {
+		snode(final Object x, final snode n) {
 			newElement = x;
 			nextElement = n;
 
@@ -24,19 +24,19 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	int numberOfElements = 0;
-	sNode head = null;
+	snode head = null;
 
 	@Override
 	public void add(final int index, final Object element) {
-		sNode node;
+		snode node;
 		node = head;
 		int counter = 0;
 		if (index == 0) {
 			if (numberOfElements != 0) {
-				sNode addedNode = new sNode(element, head);
+				snode addedNode = new snode(element, head);
 				head = addedNode;
 			} else {
-				head = new sNode(element, null);
+				head = new snode(element, null);
 			}
 			numberOfElements++;
 		} else if (index <= numberOfElements && index > 0) {
@@ -45,8 +45,8 @@ public class SingleLinkedList implements ILinkedList {
 				node = node.nextElement;
 				counter++;
 			}
-			sNode temp = node.nextElement;
-			sNode addedNode = new sNode(element, temp);
+			snode temp = node.nextElement;
+			snode addedNode = new snode(element, temp);
 			node.nextElement = addedNode;
 			numberOfElements++;
 
@@ -58,18 +58,18 @@ public class SingleLinkedList implements ILinkedList {
 
 	@Override
 	public void add(final Object element) {
-		sNode node;
+		snode node;
 		if (element != null) {
 			if (head == null) {
 
-				head = new sNode(element, null);
+				head = new snode(element, null);
 				numberOfElements++;
 			} else {
 				node = head;
 				while (node.nextElement != null) {
 					node = node.nextElement;
 				}
-				node.nextElement = new sNode(element, null);
+				node.nextElement = new snode(element, null);
 				numberOfElements++;
 
 			}
@@ -79,7 +79,7 @@ public class SingleLinkedList implements ILinkedList {
 
 	@Override
 	public Object get(final int index) {
-		sNode node = head;
+		snode node = head;
 		int counter = 0;
 
 		if (index < numberOfElements && index >= 0) {
@@ -96,7 +96,7 @@ public class SingleLinkedList implements ILinkedList {
 
 	@Override
 	public void set(final int index, final Object element) {
-		sNode node = head;
+		snode node = head;
 		int counter = 0;
 		if (index < numberOfElements && index >= 0) {
 			while (counter < index) {
@@ -128,7 +128,7 @@ public class SingleLinkedList implements ILinkedList {
 
 	@Override
 	public void remove(final int index) {
-		sNode node;
+		snode node;
 		node = head;
 		int counter = 0;
 		if (index == 0) {
@@ -157,7 +157,7 @@ public class SingleLinkedList implements ILinkedList {
 	@Override
 	public ILinkedList sublist(final int fromIndex, final int toIndex) {
 		SingleLinkedList list1 = new SingleLinkedList();
-		sNode node = head;
+		snode node = head;
 		int counter = 0;
 		if (head != null && fromIndex >= 0 && toIndex < numberOfElements && toIndex >= fromIndex) {
 			while (counter < fromIndex) {
@@ -177,7 +177,7 @@ public class SingleLinkedList implements ILinkedList {
 
 	@Override
 	public boolean contains(final Object o) {
-		sNode node;
+		snode node;
 
 		node = head;
 		while (node != null) {
