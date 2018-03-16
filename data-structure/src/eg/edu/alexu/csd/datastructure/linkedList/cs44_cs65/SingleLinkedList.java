@@ -19,7 +19,7 @@ public class SingleLinkedList implements ILinkedList {
 	sNode head = null;
 
 	@Override
-	public void add(int index, Object element) {
+	public void add(final int index,final Object element) {
 		sNode node;
 		node = head;
 		int counter = 0;
@@ -49,7 +49,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void add(Object element) {
+	public void add(final Object element) {
 		sNode node;
 		if (element != null) {
 			if (head == null) {
@@ -70,7 +70,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public Object get(int index) {
+	public Object get(final int index) {
 		sNode node = head;
 		int counter = 0;
 
@@ -87,7 +87,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void set(int index, Object element) {
+	public void set(final int index,final Object element) {
 		sNode node = head;
 		int counter = 0;
 		if (index < numberOfElements && index >= 0) {
@@ -119,7 +119,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void remove(int index) {
+	public void remove(final int index) {
 		sNode node;
 		node = head;
 		int counter = 0;
@@ -147,7 +147,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public ILinkedList sublist(int fromIndex, int toIndex) {
+	public ILinkedList sublist(final int fromIndex,final int toIndex) {
 		SingleLinkedList list1 = new SingleLinkedList();
 		sNode node = head;
 		int counter = 0;
@@ -168,7 +168,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public boolean contains(Object o) {
+	public boolean contains(final Object o) {
 		sNode node;
 
 		node = head;

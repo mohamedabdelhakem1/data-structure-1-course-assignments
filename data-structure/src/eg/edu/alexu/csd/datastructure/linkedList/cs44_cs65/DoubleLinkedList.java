@@ -22,7 +22,7 @@ public class DoubleLinkedList implements ILinkedList {
 	int numberOfelements = 0;
 
 	@Override
-	public void add(int index, Object element) {
+	public void add(final int index,final Object element) {
 		dNode node;
 
 		int counter;
@@ -89,7 +89,7 @@ public class DoubleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void add(Object element) {
+	public void add(final Object element) {
 
 		dNode node;
 		if (element != null) {
@@ -112,7 +112,7 @@ public class DoubleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public Object get(int index) {
+	public Object get(final int index) {
 		dNode node;
 		int counter;
 		if (index <= (numberOfelements / 2)) {
@@ -143,7 +143,7 @@ public class DoubleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void set(int index, Object element) {
+	public void set(final int index,final Object element) {
 		dNode node;
 		int counter;
 		if (index <= (numberOfelements / 2) && index >= 0) {
@@ -189,7 +189,7 @@ public class DoubleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void remove(int index) {
+	public void remove(final int index) {
 		dNode node;
 		int counter;
 		if (index == 0) {
@@ -242,7 +242,7 @@ public class DoubleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public ILinkedList sublist(int fromIndex, int toIndex) {
+	public ILinkedList sublist(final int fromIndex,final int toIndex) {
 		DoubleLinkedList list1 = new DoubleLinkedList();
 		dNode node = head;
 		int counter = 0;
@@ -263,7 +263,7 @@ public class DoubleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public boolean contains(Object o) {
+	public boolean contains(final Object o) {
 		dNode node;
 
 		node = head;
