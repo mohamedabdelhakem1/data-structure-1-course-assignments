@@ -1,14 +1,22 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs44_cs65;
 
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
-
+/**
+ *
+ * @author SHIKO
+ *
+ */
 public class SingleLinkedList implements ILinkedList {
-
+	/**
+	 *
+	 * @author SHIKO
+	 *
+	 */
 	static class sNode {
 		Object newElement;
 		sNode nextElement;
 
-		sNode(final Object x,final sNode n) {
+		sNode(final Object x, final sNode n) {
 			newElement = x;
 			nextElement = n;
 
@@ -19,7 +27,7 @@ public class SingleLinkedList implements ILinkedList {
 	sNode head = null;
 
 	@Override
-	public void add(final int index,final Object element) {
+	public void add(final int index, final Object element) {
 		sNode node;
 		node = head;
 		int counter = 0;
@@ -87,7 +95,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void set(final int index,final Object element) {
+	public void set(final int index, final Object element) {
 		sNode node = head;
 		int counter = 0;
 		if (index < numberOfElements && index >= 0) {
@@ -147,7 +155,7 @@ public class SingleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public ILinkedList sublist(final int fromIndex,final int toIndex) {
+	public ILinkedList sublist(final int fromIndex, final int toIndex) {
 		SingleLinkedList list1 = new SingleLinkedList();
 		sNode node = head;
 		int counter = 0;

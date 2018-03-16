@@ -8,7 +8,7 @@ public class DoubleLinkedList implements ILinkedList {
 		dNode nextElement;
 		dNode prevElement;
 
-		dNode(final Object x,final dNode next,final dNode prev) {
+		dNode(final Object x, final dNode next, final dNode prev) {
 			newElement = x;
 			nextElement = next;
 			prevElement = prev;
@@ -22,7 +22,7 @@ public class DoubleLinkedList implements ILinkedList {
 	int numberOfelements = 0;
 
 	@Override
-	public void add(final int index,final Object element) {
+	public void add(final int index, final Object element) {
 		dNode node;
 
 		int counter;
@@ -143,7 +143,7 @@ public class DoubleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public void set(final int index,final Object element) {
+	public void set(final int index, final Object element) {
 		dNode node;
 		int counter;
 		if (index <= (numberOfelements / 2) && index >= 0) {
@@ -242,7 +242,7 @@ public class DoubleLinkedList implements ILinkedList {
 	}
 
 	@Override
-	public ILinkedList sublist(final int fromIndex,final int toIndex) {
+	public ILinkedList sublist(final int fromIndex, final int toIndex) {
 		DoubleLinkedList list1 = new DoubleLinkedList();
 		dNode node = head;
 		int counter = 0;
