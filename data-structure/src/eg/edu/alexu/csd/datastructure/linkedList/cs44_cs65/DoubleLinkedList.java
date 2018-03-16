@@ -99,6 +99,7 @@ public class DoubleLinkedList implements ILinkedList {
 				node = tail;
 				node.nextElement = new dNode(element, null, node);
 				tail = node.nextElement;
+				node.nextElement =tail;
 				numberOfelements++;
 
 			}
