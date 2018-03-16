@@ -65,7 +65,12 @@ public class DoubleLinkedList implements ILinkedList {
 		else {
 			node = tail;
 			counter = numberOfelements - 1;
-			if (index <= numberOfelements && index > 0) {
+			if(index == numberOfelements) {
+				dNode addedNode = new dNode(element, null, tail);
+				tail.nextElement = addedNode;
+				tail = addedNode;
+			}
+			else if (index <= numberOfelements && index > 0) {
 
 				while (counter != index) {
 					node = node.prevElement;
@@ -105,6 +110,7 @@ public class DoubleLinkedList implements ILinkedList {
 			}
 
 		}
+
 	}
 
 	@Override
@@ -213,7 +219,6 @@ public class DoubleLinkedList implements ILinkedList {
 				}
 			node.nextElement.prevElement = node.prevElement;
 			node.prevElement.nextElement = node.nextElement;
-
 			numberOfelements--;
 			return;
 
