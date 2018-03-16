@@ -69,6 +69,7 @@ public class DoubleLinkedList implements ILinkedList {
 				dNode addedNode = new dNode(element, null, tail);
 				tail.nextElement = addedNode;
 				tail = addedNode;
+				numberOfelements++;
 				return;
 			}
 			else if (index <= numberOfelements && index > 0) {
