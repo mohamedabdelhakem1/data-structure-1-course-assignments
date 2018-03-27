@@ -423,7 +423,29 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			} else {
 				addition(C, B);
 			}
-		}  else {
+		}  else if(poly1 == 'A' && poly2 == 'A'){
+			if (A.isEmpty()) {
+
+				throw new RuntimeException();
+			} else {
+				addition(A, A);
+			}
+		}  else if(poly1 == 'B' && poly2 == 'B'){
+			if (B.isEmpty() ) {
+
+				throw new RuntimeException();
+			} else {
+				addition(B, B);
+			}
+		}  else if(poly1 == 'C' && poly2 == 'C'){
+			if (C.isEmpty() ) {
+
+				throw new RuntimeException();
+			} else {
+				addition(C, C);
+			}
+		} else {
+
 			throw new RuntimeException();
 
 		}
@@ -475,6 +497,27 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			} else {
 				subtraction(B, C);
 			}
+		} else if(poly1 == 'A' && poly2 == 'A'){
+			if (A.isEmpty()) {
+
+				throw new RuntimeException();
+			} else {
+				subtraction(A, A);
+			}
+		} else if(poly1 == 'B' && poly2 == 'B'){
+			if (B.isEmpty() ) {
+
+				throw new RuntimeException();
+			} else {
+				subtraction(B,B);
+			}
+		} else if(poly1 == 'C' && poly2 == 'C'){
+			if (C.isEmpty() ) {
+
+				throw new RuntimeException();
+			} else {
+				subtraction(C, C);
+			}
 		} else {
 			throw new RuntimeException();
 
@@ -508,7 +551,29 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			} else {
 				multiplication(B, C);
 			}
-		}  else {
+		} else if(poly1 == 'A' && poly2 == 'A'){
+			if (A.isEmpty()) {
+
+				throw new RuntimeException();
+			} else {
+				multiplication(A, A);
+			}
+		} else if(poly1 == 'B' && poly2 == 'B'){
+			if (B.isEmpty() ) {
+
+				throw new RuntimeException();
+			} else {
+				multiplication(B,B);
+			}
+		} else if(poly1 == 'C' && poly2 == 'C'){
+			if (C.isEmpty() ) {
+
+				throw new RuntimeException();
+			} else {
+				multiplication(C, C);
+			}
+		}
+		else {
 			throw new RuntimeException();
 
 		}
