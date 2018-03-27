@@ -1,4 +1,4 @@
-
+/*
 package eg.edu.alexu.csd.datastructure.linkedList.cs44_cs65;
 
 import java.awt.EventQueue;
@@ -19,9 +19,7 @@ import javax.swing.border.EmptyBorder;
 
 
 public class PolynomialSolver extends JFrame {
-	/**
-	 *
-	 */
+
 	private static final long serialVersionUID = -1712534205806686845L;
 	MyPolynomialSolver poly = new MyPolynomialSolver();
 	private JPanel contentPane;
@@ -34,9 +32,7 @@ public class PolynomialSolver extends JFrame {
 	private JButton btnEnterVariables;
 	private int counter = 0;
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			@Override
@@ -51,9 +47,6 @@ public class PolynomialSolver extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public PolynomialSolver() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 703, 477);
@@ -530,3 +523,4 @@ public class PolynomialSolver extends JFrame {
 		}
 	}
 }
+*/
