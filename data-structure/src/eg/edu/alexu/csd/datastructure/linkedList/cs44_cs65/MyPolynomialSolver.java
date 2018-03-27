@@ -327,6 +327,9 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 			}
 
+		}  else {
+			throw new RuntimeException();
+
 		}
 		return s;
 	}
@@ -341,7 +344,10 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			C.clear();
 		} else if (poly == 'R') {
 			R.clear();
-		}
+		} else {
+				throw new RuntimeException();
+
+			}
 
 	}
 
@@ -388,6 +394,10 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				}
 			}
 		}
+	 else {
+		throw new RuntimeException();
+
+	}
 
 		return result;
 	}
@@ -413,6 +423,9 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			} else {
 				addition(C, B);
 			}
+		}  else {
+			throw new RuntimeException();
+
 		}
 		int[][] result = new int[R.size()][2];
 		for (int i = 0; i < R.size(); i++) {
@@ -462,6 +475,9 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			} else {
 				subtraction(B, C);
 			}
+		} else {
+			throw new RuntimeException();
+
 		}
 		int[][] result = new int[R.size()][2];
 		for (int i = 0; i < R.size(); i++) {
@@ -492,6 +508,9 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			} else {
 				multiplication(B, C);
 			}
+		}  else {
+			throw new RuntimeException();
+
 		}
 		int[][] result = new int[R.size()][2];
 		for (int i = 0; i < R.size(); i++) {
