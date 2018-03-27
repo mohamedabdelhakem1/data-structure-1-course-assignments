@@ -334,11 +334,11 @@ public class PolynomialSolver extends JFrame {
 					if (!s.isEmpty()) {
 						ch1 = s.charAt(0);
 						if (ch1 == 'A' || ch1 == 'B' || ch1 == 'C') {
-						input.setText("");
-						output.setText("");
-						output.setText("Insert second operand variable name: A, B or C");
-						input.setText("");
-						counter++;
+							input.setText("");
+							output.setText("");
+							output.setText("Insert second operand variable name: A, B or C");
+							input.setText("");
+							counter++;
 						} else {
 							output.setText("invalid input try again");
 							input.setText("");
@@ -349,16 +349,16 @@ public class PolynomialSolver extends JFrame {
 					if (!s.isEmpty()) {
 						ch2 = s.charAt(0);
 						if (ch2 == 'A' || ch2 == 'B' || ch2 == 'C') {
-						input.setText("");
-						output.setText("");
-						clearbtn(btnEnterVariables);
+							input.setText("");
+							output.setText("");
+							clearbtn(btnEnterVariables);
 
-						poly.subtract(ch1, ch2);
+							poly.subtract(ch1, ch2);
 						} else {
 							output.setText("invalid input try again");
 							input.setText("");
 						}
-						}
+					}
 				}
 
 			}
@@ -382,31 +382,31 @@ public class PolynomialSolver extends JFrame {
 					if (!s.isEmpty()) {
 						ch1 = s.charAt(0);
 						if (ch1 == 'A' || ch1 == 'B' || ch1 == 'C') {
-						input.setText("");
-						output.setText("");
-						output.setText("Insert second operand variable name: A, B or C");
-						input.setText("");
-						counter++;
-					} else {
-						output.setText("invalid input try again");
-						input.setText("");
-					}
+							input.setText("");
+							output.setText("");
+							output.setText("Insert second operand variable name: A, B or C");
+							input.setText("");
+							counter++;
+						} else {
+							output.setText("invalid input try again");
+							input.setText("");
 						}
+					}
 				} else {
 					s = input.getText();
 					if (!s.isEmpty()) {
 						ch2 = s.charAt(0);
 						if (ch2 == 'A' || ch2 == 'B' || ch2 == 'C') {
-						input.setText("");
-						output.setText("");
-						clearbtn(btnEnterVariables);
-						poly.multiply(ch1, ch2);
-					} else {
-					output.setText("invalid input try again");
-					input.setText("");
+							input.setText("");
+							output.setText("");
+							clearbtn(btnEnterVariables);
+							poly.multiply(ch1, ch2);
+						} else {
+							output.setText("invalid input try again");
+							input.setText("");
 
-					}
 						}
+					}
 				}
 
 			}
@@ -430,15 +430,16 @@ public class PolynomialSolver extends JFrame {
 					if (!s.isEmpty()) {
 						ch1 = s.charAt(0);
 						if (ch1 == 'A' || ch1 == 'B' || ch1 == 'C') {
-						input.setText("");
-						output.setText("enter the value to be substituted in the form 8.00 (with the floating point) ");
-						counter++;
+							input.setText("");
+							output.setText(
+									"enter the value to be substituted in the form 8.00 (with the floating point) ");
+							counter++;
 						} else {
 							output.setText("invalid input try again");
 							input.setText("");
 
 						}
-						}
+					}
 				} else {
 					String f = input.getText();
 					try {
@@ -473,15 +474,15 @@ public class PolynomialSolver extends JFrame {
 
 					ch1 = s.charAt(0);
 					if (ch1 == 'A' || ch1 == 'B' || ch1 == 'C') {
-					input.setText("");
-					poly.clearPolynomial(ch1);
-					if (poly.ISEmpty(ch1)) {
-						output.setText("the polynomial is cleared");
-						clearbtn(btnEnterVariables);
+						input.setText("");
+						poly.clearPolynomial(ch1);
+						if (poly.ISEmpty(ch1)) {
+							output.setText("the polynomial is cleared");
+							clearbtn(btnEnterVariables);
+						} else {
+							output.setText("the polynomial is not cleared , try again");
+						}
 					} else {
-						output.setText("the polynomial is not cleared , try again");
-					}
-					}else {
 						output.setText("invalid input try again");
 						input.setText("");
 
