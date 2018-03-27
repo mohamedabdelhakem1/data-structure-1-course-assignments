@@ -332,7 +332,6 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 		return s;
 	}
 
-
 	@Override
 	public void clearPolynomial(char poly) {
 		if (poly == 'A') {
