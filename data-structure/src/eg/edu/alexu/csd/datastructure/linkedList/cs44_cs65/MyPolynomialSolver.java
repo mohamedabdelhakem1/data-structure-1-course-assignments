@@ -114,7 +114,8 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			for (int j = 0; j < s.size(); j++) {
 				Point p = (Point) s.get(j);
 
-				 if(p.x == 0) { return s; }
+				 if(p.x == 0) {
+					 return s; }
 
 				if (p1.y > p.y) {
 					s.add(j, p1);
@@ -502,21 +503,24 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 				throw new RuntimeException();
 			} else {
-				subtraction(A, A);
+				//subtraction(A, A);
+				return null;
 			}
 		} else if(poly1 == 'B' && poly2 == 'B'){
 			if (B.isEmpty() ) {
 
 				throw new RuntimeException();
 			} else {
-				subtraction(B,B);
+				//subtraction(B,B);
+				return null;
 			}
 		} else if(poly1 == 'C' && poly2 == 'C'){
 			if (C.isEmpty() ) {
 
 				throw new RuntimeException();
 			} else {
-				subtraction(C, C);
+				//subtraction(C, C);
+				return null;
 			}
 		} else {
 			throw new RuntimeException();
