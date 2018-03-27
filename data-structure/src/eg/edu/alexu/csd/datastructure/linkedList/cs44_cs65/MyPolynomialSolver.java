@@ -40,6 +40,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 	private void subtraction(SingleLinkedList s1, SingleLinkedList s2) {
 		R.clear();
+		boolean flag = false;
 		SingleLinkedList visited = new SingleLinkedList();
 		for (int i = 0; i < s1.size(); i++) {
 			for (int j = 0; j < s2.size(); j++) {
@@ -52,6 +53,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 					if (pr.x == 0) {
 						pr.y = 0;
 					} else {
+						flag = true;
 						pr.y = p1.y;
 					}
 					R = sort(R, R.size(), pr);
@@ -76,7 +78,14 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			}
 
 		}
-
+		if(flag == true ) {
+			for(int f = 0 ;f < R.size();f++ ) {
+				Point pon = (Point) R.get(f);
+				if(pon.x == 0) {
+					R.remove(f);
+				}
+			}
+		}
 	}
 
 	private void addition(SingleLinkedList s1, SingleLinkedList s2) {
@@ -122,9 +131,6 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			for (int j = 0; j < s.size(); j++) {
 				Point p = (Point) s.get(j);
 
-				/**
-				 * if(p.x == 0) { return s; }
-				 */
 				if (p1.y > p.y) {
 					s.add(j, p1);
 					added = true;
@@ -189,9 +195,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			for (int i = 0; i < A.size(); i++) {
 				Point p = (Point) A.get(i);
 				if (p.x == 0) {
-					/*
-					 * if(A.size() == 1) { return "0"; }
-					 */
+
 					continue;
 				} else if (p.x == -1) {
 					s += '-';
@@ -228,9 +232,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 				Point p = (Point) B.get(i);
 				if (p.x == 0) {
-					/*
-					 * if(A.size() == 1) { return "0"; }
-					 */
+
 					continue;
 				} else if (p.x == -1) {
 					s += '-';
@@ -266,9 +268,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			for (int i = 0; i < C.size(); i++) {
 				Point p = (Point) C.get(i);
 				if (p.x == 0) {
-					/*
-					 * if(A.size() == 1) { return "0"; }
-					 */
+
 					continue;
 				} else if (p.x == -1) {
 					s += '-';
@@ -305,9 +305,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			for (int i = 0; i < R.size(); i++) {
 				Point p = (Point) R.get(i);
 				if (p.x == 0) {
-					/*
-					 * if(A.size() == 1) { return "0"; }
-					 */
+
 					continue;
 				} else if (p.x == -1) {
 					s += '-';
