@@ -163,8 +163,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				Point p = new Point(terms[i][0], terms[i][1]);
 				C = sort(C, i, p);
 			}
-		}
-		else {
+		} else {
 			throw new RuntimeException();
 
 		}
@@ -331,7 +330,6 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 		}
 		return s;
 	}
-
 
 	@Override
 	public void clearPolynomial(char poly) {
