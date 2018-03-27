@@ -114,9 +114,9 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			for (int j = 0; j < s.size(); j++) {
 				Point p = (Point) s.get(j);
 
-				 if(p.x == 0) {
+			/**	 if(p.x == 0) {
 					 return s; }
-
+*/
 				if (p1.y > p.y) {
 					s.add(j, p1);
 					added = true;
