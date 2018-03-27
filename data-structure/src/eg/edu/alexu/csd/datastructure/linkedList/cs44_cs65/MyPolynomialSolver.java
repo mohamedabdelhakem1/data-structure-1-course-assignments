@@ -49,7 +49,11 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				if (p1.y == p2.y) {
 					Point pr = new Point();
 					pr.x = p1.x - p2.x;
-					pr.y = p1.y;
+					if (pr.x == 0) {
+						pr.y = 0;
+					} else {
+						pr.y = p1.y;
+					}
 					R = sort(R, R.size(), pr);
 					visited.add(p1.y);
 				}
@@ -86,7 +90,11 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				if (p1.y == p2.y) {
 					Point pr = new Point();
 					pr.x = p1.x + p2.x;
-					pr.y = p1.y;
+					if (pr.x == 0) {
+						pr.y = 0;
+					} else {
+						pr.y = p1.y;
+					}
 					R = sort(R, R.size(), pr);
 					visited.add(p1.y);
 				}
@@ -502,34 +510,34 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 				throw new RuntimeException();
 			} else {
-				// subtraction(A, A);
-				int[][] result = new int[1][2];
+				 subtraction(A, A);
+				/*int[][] result = new int[1][2];
 				result[0][0] = 0;
 				result[0][1] = 0;
 				return result;
-
+*/
 			}
 		} else if (poly1 == 'B' && poly2 == 'B') {
 			if (B.isEmpty()) {
 
 				throw new RuntimeException();
 			} else {
-				// subtraction(B,B);
-				int[][] result = new int[1][2];
+				 subtraction(B,B);
+			/*	int[][] result = new int[1][2];
 				result[0][0] = 0;
 				result[0][1] = 0;
-				return result;
+				return result;*/
 			}
 		} else if (poly1 == 'C' && poly2 == 'C') {
 			if (C.isEmpty()) {
 
 				throw new RuntimeException();
 			} else {
-				// subtraction(C, C);
-				int[][] result = new int[1][2];
+				 subtraction(C, C);
+				/*int[][] result = new int[1][2];
 				result[0][0] = 0;
 				result[0][1] = 0;
-				return result;
+				return result;*/
 			}
 		} else {
 			throw new RuntimeException();
