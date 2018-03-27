@@ -100,12 +100,13 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				if (p1.y == p2.y) {
 					Point pr = new Point();
 					pr.x = p1.x + p2.x;
-					if (pr.x == 0) {
+					pr.y = p1.y;
+					/*if (pr.x == 0) {
 						pr.y = 0;
-					} else {
+					/*} else {
 						flag = true;
 						pr.y = p1.y;
-					}
+					}*/
 					R = sort(R, R.size(), pr);
 					visited.add(p1.y);
 				}
@@ -124,14 +125,14 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				R = sort(R, R.size(), p1);
 			}
 		}
-		if(flag == true ) {
+		/*if(flag == true ) {
 			for(int f = 0 ;f < R.size();f++ ) {
 				Point pon = (Point) R.get(f);
 				if(pon.x == 0) {
 					R.remove(f);
 				}
 			}
-		}
+		}*/
 
 	}
 
