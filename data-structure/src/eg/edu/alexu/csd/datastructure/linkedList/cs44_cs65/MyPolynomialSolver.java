@@ -519,11 +519,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				throw new RuntimeException();
 			} else {
 				 subtraction(A, A);
-				/*int[][] result = new int[1][2];
-				result[0][0] = 0;
-				result[0][1] = 0;
-				return result;
-*/
+
 			}
 		} else if (poly1 == 'B' && poly2 == 'B') {
 			if (B.isEmpty()) {
@@ -531,10 +527,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				throw new RuntimeException();
 			} else {
 				 subtraction(B,B);
-			/*	int[][] result = new int[1][2];
-				result[0][0] = 0;
-				result[0][1] = 0;
-				return result;*/
+
 			}
 		} else if (poly1 == 'C' && poly2 == 'C') {
 			if (C.isEmpty()) {
@@ -542,10 +535,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				throw new RuntimeException();
 			} else {
 				 subtraction(C, C);
-				/*int[][] result = new int[1][2];
-				result[0][0] = 0;
-				result[0][1] = 0;
-				return result;*/
+
 			}
 		} else {
 			throw new RuntimeException();
