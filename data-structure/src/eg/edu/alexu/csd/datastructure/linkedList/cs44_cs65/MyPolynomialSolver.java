@@ -164,6 +164,10 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				C = sort(C, i, p);
 			}
 		}
+		else {
+			throw new RuntimeException();
+
+		}
 	}
 
 	@Override
