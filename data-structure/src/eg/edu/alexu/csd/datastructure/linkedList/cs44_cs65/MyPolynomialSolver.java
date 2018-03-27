@@ -78,19 +78,23 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			}
 
 		}
-		if(flag == true ) {
-			for(int f = 0 ;f < R.size();f++ ) {
-				Point pon = (Point) R.get(f);
-				if(pon.x == 0) {
-					R.remove(f);
-				}
+
+		for (int f = 0; f < R.size(); f++) {
+			Point pon = (Point) R.get(f);
+			if (pon.x == 0) {
+				R.remove(f);
 			}
+
+		}
+		if(R.size() == 0) {
+			Point pr = new Point(0,0) ;
+			R.add(pr);
 		}
 	}
 
 	private void addition(SingleLinkedList s1, SingleLinkedList s2) {
 		R.clear();
-		boolean flag =  false ;
+		boolean flag = false;
 		SingleLinkedList visited = new SingleLinkedList();
 		for (int i = 0; i < s1.size(); i++) {
 			for (int j = 0; j < s2.size(); j++) {
@@ -101,12 +105,12 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 					Point pr = new Point();
 					pr.x = p1.x + p2.x;
 					pr.y = p1.y;
-					/*if (pr.x == 0) {
+					if (pr.x == 0) {
 						pr.y = 0;
-					/*} else {
+					} else {
 						flag = true;
 						pr.y = p1.y;
-					}*/
+					}
 					R = sort(R, R.size(), pr);
 					visited.add(p1.y);
 				}
@@ -125,14 +129,14 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				R = sort(R, R.size(), p1);
 			}
 		}
-		/*if(flag == true ) {
-			for(int f = 0 ;f < R.size();f++ ) {
+		if (flag == true) {
+			for (int f = 0; f < R.size(); f++) {
 				Point pon = (Point) R.get(f);
-				if(pon.x == 0) {
+				if (pon.x == 0) {
 					R.remove(f);
 				}
 			}
-		}*/
+		}
 
 	}
 
@@ -519,7 +523,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 				throw new RuntimeException();
 			} else {
-				 subtraction(A, A);
+				subtraction(A, A);
 
 			}
 		} else if (poly1 == 'B' && poly2 == 'B') {
@@ -527,7 +531,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 				throw new RuntimeException();
 			} else {
-				 subtraction(B,B);
+				subtraction(B, B);
 
 			}
 		} else if (poly1 == 'C' && poly2 == 'C') {
@@ -535,7 +539,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 				throw new RuntimeException();
 			} else {
-				 subtraction(C, C);
+				subtraction(C, C);
 
 			}
 		} else {
