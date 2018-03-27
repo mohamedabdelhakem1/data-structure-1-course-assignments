@@ -90,6 +90,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 	private void addition(SingleLinkedList s1, SingleLinkedList s2) {
 		R.clear();
+		boolean flag =  false ;
 		SingleLinkedList visited = new SingleLinkedList();
 		for (int i = 0; i < s1.size(); i++) {
 			for (int j = 0; j < s2.size(); j++) {
@@ -102,6 +103,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 					if (pr.x == 0) {
 						pr.y = 0;
 					} else {
+						flag = true;
 						pr.y = p1.y;
 					}
 					R = sort(R, R.size(), pr);
@@ -120,6 +122,14 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			Point p1 = (Point) s2.get(i);
 			if (visited.contains(p1.y) == false) {
 				R = sort(R, R.size(), p1);
+			}
+		}
+		if(flag == true ) {
+			for(int f = 0 ;f < R.size();f++ ) {
+				Point pon = (Point) R.get(f);
+				if(pon.x == 0) {
+					R.remove(f);
+				}
 			}
 		}
 
