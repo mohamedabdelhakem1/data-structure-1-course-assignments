@@ -68,15 +68,38 @@ public class MyPolynomialSolverTest {
 		int[][] expected = new int[][] { { 3, 7 }, { -75, 5 }, { 175, 3 }, { 27, 2 }, { 129, 1 }, { -1, 0 } };
 		assertArrayEquals(expected, result1);
 	}
-/*	@Test
+	@Test
 	public void testSolveAdd2() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
+		instance.setPolynomial('C', new int[][] { { 0, 7 }, { 45, 5 }, { 176, 3 }, { 128, 1 } });
+		instance.setPolynomial('B', new int[][] {{ 3, 7 }, { 45, 5 }, { 175, 3 }, { 128, 1 } });
+		assertNull("Polynomial R is not set yet", instance.print('R'));
+		int[][] result1 = instance.add('B', 'C');
+		assertNotNull("Polynomial R must be set after evaluation", instance.print('R'));
+		int[][] expected = new int[][] {{ 3, 7 }, { 90, 5 }, { 351, 3 }, { 256, 1 } };
+		assertArrayEquals(expected, result1);
+	}
+	@Test
+	public void testSolveAdd3() {
+		MyPolynomialSolver instance = new MyPolynomialSolver();
 		instance.setPolynomial('C', new int[][] { { 3, 7 }, { 45, 5 }, { 176, 3 }, { 128, 1 } });
-		instance.setPolynomial('B', new int[][] {{ 3, 7 }, { 45, 5 }, { 176, 3 }, { 128, 1 } });
+		instance.setPolynomial('B', new int[][] {{ 3, 7 }, { 45, 5 }, { 175, 3 }, { 128, 1 } });
 		assertNull("Polynomial R is not set yet", instance.print('R'));
 		int[][] result1 = instance.subtract('B', 'C');
 		assertNotNull("Polynomial R must be set after evaluation", instance.print('R'));
-		int[][] expected = new int[][] { {0,0}};
+		int[][] expected = new int[][] { {-1,3}};
 		assertArrayEquals(expected, result1);
-	}*/
+	}
+	@Test
+	public void testSolveAdd4() {
+		MyPolynomialSolver instance = new MyPolynomialSolver();
+		instance.setPolynomial('B', new int[][] { { -3, 2} })  ;
+		instance.setPolynomial('C', new int[][] {{ 3, 2} });
+		assertNull("Polynomial R is not set yet", instance.print('R'));
+		int[][] result1 = instance.add('C', 'B');
+		assertNotNull("Polynomial R must be set after evaluation", instance.print('R'));
+		int[][] expected = new int[][] { { 0, 0} };
+		assertArrayEquals(expected, result1);
+
+	}
 }
