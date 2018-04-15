@@ -115,7 +115,7 @@ public class DoubleLinkedList implements ILinkedList {
 	public Object get(final int index) {
 		Dnode node;
 		int counter;
-		if (index <= (numberOfelements / 2)) {
+		if (index < (numberOfelements / 2)) {
 			node = head;
 			counter = 0;
 			if (index < numberOfelements && index >= 0) {
@@ -200,8 +200,6 @@ public class DoubleLinkedList implements ILinkedList {
 			return;
 		} else if (index == numberOfelements - 1) {
 			tail = tail.prevElement;
-			node = tail.prevElement;
-			node.nextElement = null;
 			numberOfelements--;
 			return;
 
