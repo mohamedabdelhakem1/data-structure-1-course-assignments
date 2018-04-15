@@ -5,6 +5,7 @@ import eg.edu.alexu.csd.datastructure.stack.IStack;
 public class MyStack implements IStack {
 	 DoubleLinkedList stack = new DoubleLinkedList();
 
+
 	@Override
 	public Object pop() {
 		if (stack.size() == 0) {
