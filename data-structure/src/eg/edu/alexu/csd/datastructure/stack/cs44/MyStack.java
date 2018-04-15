@@ -12,6 +12,7 @@ public class MyStack implements IStack {
 		} else {
 			Object element = stack.get(stack.size()-1);
 			stack.remove(stack.size()-1);
+
 			return element;
 		}
 
