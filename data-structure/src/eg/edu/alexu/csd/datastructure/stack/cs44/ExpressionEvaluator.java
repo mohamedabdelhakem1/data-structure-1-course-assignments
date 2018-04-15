@@ -17,29 +17,29 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		}
 		String s[] = expression.split(" ");
 		MyStack numbers = new MyStack();
-		int num;
-		int firstOperand;
-		int secondOperand;
+		float num;
+		float firstOperand;
+		float secondOperand;
 		for (int i = 0; i < s.length; i++) {
 			if (Character.isDigit(s[i].charAt(0))) {
-				num = Integer.parseInt(s[i]);
+				num = Float.parseFloat(s[i]);
 				numbers.push(num);
 			} else if (s[i].charAt(0) == '*') {
-				secondOperand = (int) numbers.pop();
-				firstOperand = (int) numbers.pop();
+				secondOperand = (float) numbers.pop();
+				firstOperand = (float) numbers.pop();
 				numbers.push(firstOperand * secondOperand);
 			} else if (s[i].charAt(0) == '+') {
-				secondOperand = (int) numbers.pop();
-				firstOperand = (int) numbers.pop();
+				secondOperand = (float) numbers.pop();
+				firstOperand = (float) numbers.pop();
 				numbers.push(firstOperand + secondOperand);
 			} else if (s[i].charAt(0) == '-') {
-				secondOperand = (int) numbers.pop();
-				firstOperand = (int) numbers.pop();
+				secondOperand = (float) numbers.pop();
+				firstOperand = (float) numbers.pop();
 				numbers.push(firstOperand - secondOperand);
 
 			} else if (s[i].charAt(0) == '/') {
-				secondOperand = (int) numbers.pop();
-				firstOperand = (int) numbers.pop();
+				secondOperand = (float) numbers.pop();
+				firstOperand = (float) numbers.pop();
 				numbers.push(firstOperand / secondOperand);
 			}
 
