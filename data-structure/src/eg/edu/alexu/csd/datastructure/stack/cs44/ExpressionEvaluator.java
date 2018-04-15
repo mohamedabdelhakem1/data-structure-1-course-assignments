@@ -12,6 +12,9 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 	@Override
 	public int evaluate(String expression) {
+		if(expression.equals(null)||expression.equals("")) {
+			throw new RuntimeException();
+		}
 		String s[] = expression.split(" ");
 		MyStack numbers = new MyStack();
 		int num;
