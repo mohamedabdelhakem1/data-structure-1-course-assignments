@@ -194,8 +194,7 @@ public class DoubleLinkedList implements ILinkedList {
 		int counter;
 		if (index == 0) {
 			head = head.nextElement;
-			node = head.nextElement;
-			node.prevElement = null;
+
 			numberOfelements--;
 			return;
 		} else if (index == numberOfelements - 1) {
