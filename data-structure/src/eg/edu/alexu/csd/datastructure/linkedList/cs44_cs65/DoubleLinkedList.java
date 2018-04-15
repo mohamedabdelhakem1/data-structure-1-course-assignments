@@ -195,11 +195,17 @@ public class DoubleLinkedList implements ILinkedList {
 		if (index == 0) {
 			head = head.nextElement;
 			numberOfelements--;
+			if(numberOfelements == 0) {
+				tail = head;
+			}
 			return;
 
 		} else if (index == numberOfelements - 1) {
 			tail = tail.prevElement;
 			numberOfelements--;
+			if(numberOfelements == 0) {
+				head = tail;
+			}
 			return;
 
 		} else if (index <= (numberOfelements / 2) && index > 0) {
