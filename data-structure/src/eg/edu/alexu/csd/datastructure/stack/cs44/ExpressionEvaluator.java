@@ -44,7 +44,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			}
 
 		}
-		return (int)numbers.peek();
+		float result =(float) numbers.peek();
+		return Math.round(result);
 	}
 
 }
