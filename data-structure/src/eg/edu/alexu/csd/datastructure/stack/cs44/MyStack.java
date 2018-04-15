@@ -3,7 +3,7 @@ package eg.edu.alexu.csd.datastructure.stack.cs44;
 import eg.edu.alexu.csd.datastructure.linkedList.cs44_cs65.DoubleLinkedList;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 public class MyStack implements IStack {
-	private DoubleLinkedList stack = new DoubleLinkedList();
+	 DoubleLinkedList stack = new DoubleLinkedList();
 
 	@Override
 	public Object pop() {
@@ -12,7 +12,6 @@ public class MyStack implements IStack {
 		} else {
 			Object element = stack.get(stack.size()-1);
 			stack.remove(stack.size()-1);
-
 			return element;
 		}
 
