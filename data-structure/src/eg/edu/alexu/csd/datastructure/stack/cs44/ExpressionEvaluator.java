@@ -6,13 +6,74 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 	@Override
 	public String infixToPostfix(String expression) {
+		if (expression.equals(null) || expression.equals("")) {
+			throw new RuntimeException();
+		}
+		String result = "";
+		MyStack operators = new MyStack();
+		String s[] = expression.split(" ");
+		for (int i = 0; i < s.length; i++) {
+			if (Character.isDigit(s[i].charAt(0)) || Character.isAlphabetic(s[i].charAt(0))) {
+				result += s[i];
+				result += " ";
 
-		return null;
+			} else if (s[i].equals("*") || s[i].equals("/")) {
+
+				if (operators.isEmpty() || operators.peek().equals("-") || operators.peek().equals("+")) {
+					operators.push(s[i]);
+
+				} else if (operators.peek().equals("*") || operators.peek().equals("/")) {
+					while (operators.peek().equals("*") || operators.peek().equals("/")) {
+						result += operators.pop();
+						result += " ";
+
+					}
+					operators.push(s[i]);
+				}
+
+			} else if (s[i].equals("-") || s[i].equals("+")) {
+				if (operators.isEmpty()) {
+					operators.push(s[i]);
+				} else {
+					while (operators.peek().equals("+") || operators.peek().equals("-") || operators.peek().equals("/")
+							|| operators.peek().equals("*")) {
+						result += operators.pop();
+					}
+					operators.push(s[i]);
+				}
+
+			} else if (s[i].charAt(0) == '(') {
+				operators.push(s[i]);
+			} else if (s[i].charAt(0) == ')') {
+				result += operators.pop();
+				result += " ";
+				try {
+					while (operators.peek().equals("(")) {
+						result += operators.pop();
+						result += " ";
+					}
+					operators.pop();
+
+				} catch (Exception e) {
+
+				}
+
+			}
+		}
+
+		while (!operators.isEmpty()) {
+
+			result += operators.pop();
+			result += " ";
+
+		}
+
+		return result;
 	}
 
 	@Override
 	public int evaluate(String expression) {
-		if(expression.equals(null)||expression.equals("")) {
+		if (expression.equals(null) || expression.equals("")) {
 			throw new RuntimeException();
 		}
 		String s[] = expression.split(" ");
@@ -44,7 +105,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			}
 
 		}
-		float result =(float) numbers.peek();
+
+		float result = (float) numbers.peek();
 		return Math.round(result);
 	}
 
