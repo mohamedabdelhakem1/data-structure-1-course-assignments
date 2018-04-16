@@ -277,7 +277,8 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 						s += "+";
 					}
 				}
-			}}
+			}
+		}
 
 		else if (poly == 'C') {
 			if (c.isEmpty()) {
