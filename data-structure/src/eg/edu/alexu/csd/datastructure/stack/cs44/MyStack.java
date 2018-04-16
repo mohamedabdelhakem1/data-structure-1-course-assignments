@@ -1,18 +1,51 @@
 package eg.edu.alexu.csd.datastructure.stack.cs44;
 
-import eg.edu.alexu.csd.datastructure.linkedList.cs44_cs65.DoubleLinkedList;
 import eg.edu.alexu.csd.datastructure.stack.IStack;
-public class MyStack implements IStack {
-	 DoubleLinkedList stack = new DoubleLinkedList();
 
+public class MyStack implements IStack {
+	private int size = 0;
+
+	static class Node {
+		Object element;
+		Node next;
+
+		public Node() {
+			this(null, null);
+		}
+
+		public Node(Object x, Node n) {
+			element = x;
+			next = n;
+		}
+
+		public void setElement(Object x) {
+			element = x;
+		}
+
+		public Object getElement() {
+			return element;
+		}
+
+		public void setNext(Node n) {
+			next = n;
+		}
+
+		public Object getnext() {
+			return next;
+		}
+
+	}
+
+	private Node top;
 
 	@Override
 	public Object pop() {
-		if (stack.size() == 0) {
+		if (size == 0) {
 			throw new RuntimeException();
 		} else {
-			Object element = stack.get(stack.size()-1);
-			stack.remove(stack.size()-1);
+			Object element = top.element;
+			top = top.next;
+			size--;
 			return element;
 		}
 
@@ -20,28 +53,34 @@ public class MyStack implements IStack {
 
 	@Override
 	public Object peek() {
-		if (stack.size() == 0) {
+		if (size == 0) {
 			throw new RuntimeException();
 		} else {
-			return  stack.get(stack.size()-1);
+			return top.element;
 		}
 
 	}
 
 	@Override
 	public void push(Object element) {
-		stack.add(element);
+		if (size == 0) {
+			top = new Node(element, null);
+		} else {
+			Node newNode = new Node(element, top);
+			top = newNode;
+		}
+		size++;
 	}
 
 	@Override
 	public boolean isEmpty() {
 
-		return (stack.size() == 0);
+		return (size == 0);
 	}
 
 	@Override
 	public int size() {
-		return stack.size();
+		return size;
 	}
 
 }

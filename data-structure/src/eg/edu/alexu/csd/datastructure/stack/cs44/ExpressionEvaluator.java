@@ -114,6 +114,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		return result.toString();
 	}
 
+
 	@Override
 	public int evaluate(String expression) {
 		if (expression.equals(null) || expression.equals("")) {
