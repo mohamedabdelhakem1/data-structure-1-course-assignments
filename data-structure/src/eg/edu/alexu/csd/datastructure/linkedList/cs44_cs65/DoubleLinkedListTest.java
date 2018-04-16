@@ -28,7 +28,8 @@ public class DoubleLinkedListTest {
 			instance.add(1);
 			instance.add(2);
 			instance.set(4, 'F');
-			fail("You should throw an exception when trying to set in a wrong index");
+			fail("You should throw an exception"
+					+ " when trying to set in a wrong index");
 		} catch (RuntimeException f) {
 		}
 	}
