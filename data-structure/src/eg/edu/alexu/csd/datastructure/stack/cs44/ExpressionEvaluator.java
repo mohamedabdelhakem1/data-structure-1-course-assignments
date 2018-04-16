@@ -24,20 +24,20 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		for (int i = 0; i < expression.length(); i++) {
 			if (Character.isDigit(expression.charAt(i))) {
 				numofoperands++;
-				//String number = "";
-				StringBuilder num = new StringBuilder();
-				num.append(expression.charAt(i));
-				//number += expression.charAt(i);
+				String number = "";
+			//	StringBuilder num = new StringBuilder();
+			//	num.append(expression.charAt(i));
+				number += expression.charAt(i);
 				i++;
 
 				while (i < expression.length()
 						&& Character.isDigit(expression.charAt(i))) {
-					num.append(expression.charAt(i));
-					//number += expression.charAt(i);
+				//	num.append(expression.charAt(i));
+					number += expression.charAt(i);
 					i++;
 				}
 				i--;
-				result.append(num);
+				result.append(number);
 				result.append(" ");
 
 			} else if (Character.isAlphabetic(expression.charAt(i))) {
