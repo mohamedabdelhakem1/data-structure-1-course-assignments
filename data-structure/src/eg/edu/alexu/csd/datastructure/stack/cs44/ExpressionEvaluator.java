@@ -22,7 +22,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				if (operators.isEmpty() || operators.peek().equals("-") || operators.peek().equals("+")) {
 					operators.push(s[i]);
 
-				} else if (operators.peek().equals("*") || operators.peek().equals("/")) {
+				} else {
 					try {
 						while (operators.peek().equals("*") || operators.peek().equals("/")) {
 							result += operators.pop();
@@ -33,8 +33,6 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					} catch (Exception e) {
 
 					}
-					operators.push(s[i]);
-				} else {
 					operators.push(s[i]);
 				}
 
