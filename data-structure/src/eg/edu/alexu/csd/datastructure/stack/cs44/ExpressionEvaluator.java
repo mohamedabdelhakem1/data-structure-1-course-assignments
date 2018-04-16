@@ -69,8 +69,9 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 	{
 		result += operators.pop();
+		if(!operators.isEmpty()) {
 		result += " ";
-
+		}
 	}
 
 	return result;
