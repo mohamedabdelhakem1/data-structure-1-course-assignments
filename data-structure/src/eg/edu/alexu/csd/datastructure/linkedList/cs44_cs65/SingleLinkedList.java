@@ -160,7 +160,8 @@ public class SingleLinkedList implements ILinkedList {
 		SingleLinkedList list1 = new SingleLinkedList();
 		Snode node = head;
 		int counter = 0;
-		if (head != null && fromIndex >= 0 && toIndex < numberOfElements && toIndex >= fromIndex) {
+		if (head != null && fromIndex >= 0 && toIndex < numberOfElements
+				&& toIndex >= fromIndex) {
 			while (counter < fromIndex) {
 				counter++;
 				node = node.nextElement;

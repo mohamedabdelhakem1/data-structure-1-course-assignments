@@ -22,7 +22,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				number += expression.charAt(i);
 				i++;
 
-				while (i < expression.length() && Character.isDigit(expression.charAt(i))) {
+				while (i < expression.length()
+						&& Character.isDigit(expression.charAt(i))) {
 					number += expression.charAt(i);
 					i++;
 				}
@@ -35,14 +36,17 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				result.append(expression.charAt(i));
 				result.append(" ");
 
-			} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
+			} else if (expression.charAt(i) == '*'
+					|| expression.charAt(i) == '/') {
 				numofoperators++;
-				if (operators.isEmpty() || operators.peek().equals('-') || operators.peek().equals('+')) {
+				if (operators.isEmpty() || operators.peek().equals('-')
+						|| operators.peek().equals('+')) {
 					operators.push(expression.charAt(i));
 
 				} else {
 					try {
-						while (operators.peek().equals('*') || operators.peek().equals('/')) {
+						while (operators.peek().equals('*')
+								|| operators.peek().equals('/')) {
 							result.append(operators.pop());
 							result.append(" ");
 
@@ -54,14 +58,17 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					operators.push(expression.charAt(i));
 				}
 
-			} else if (expression.charAt(i) == '-' || expression.charAt(i) == '+') {
+			} else if (expression.charAt(i) == '-'
+					|| expression.charAt(i) == '+') {
 				numofoperators++;
 				if (operators.isEmpty()) {
 					operators.push(expression.charAt(i));
 				} else {
 					try {
-						while (operators.peek().equals('+') || operators.peek().equals('-')
-								|| operators.peek().equals('/') || operators.peek().equals('*')) {
+						while (operators.peek().equals('+')
+								|| operators.peek().equals('-')
+								|| operators.peek().equals('/')
+								|| operators.peek().equals('*')) {
 							result.append(operators.pop());
 							result.append(" ");
 

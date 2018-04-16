@@ -86,8 +86,8 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			}
 
 		}
-		if(R.size() == 0) {
-			Point pr = new Point(0,0) ;
+		if (R.size() == 0) {
+			Point pr = new Point(0, 0);
 			R.add(pr);
 
 		}
@@ -137,8 +137,8 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			}
 
 		}
-		if(R.size() == 0) {
-			Point pr = new Point(0,0) ;
+		if (R.size() == 0) {
+			Point pr = new Point(0, 0);
 			R.add(pr);
 
 		}
@@ -436,13 +436,15 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			} else {
 				addition(A, B);
 			}
-		} else if ((poly1 == 'A' && poly2 == 'C') || (poly1 == 'C' && poly2 == 'A')) {
+		} else if ((poly1 == 'A' && poly2 == 'C')
+				|| (poly1 == 'C' && poly2 == 'A')) {
 			if (A.isEmpty() || C.isEmpty()) {
 				throw new RuntimeException();
 			} else {
 				addition(A, C);
 			}
-		} else if ((poly1 == 'C' && poly2 == 'B') || (poly1 == 'B' && poly2 == 'C')) {
+		} else if ((poly1 == 'C' && poly2 == 'B')
+				|| (poly1 == 'B' && poly2 == 'C')) {
 			if (B.isEmpty() || C.isEmpty()) {
 				throw new RuntimeException();
 			} else {
@@ -567,13 +569,15 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			} else {
 				multiplication(A, B);
 			}
-		} else if ((poly1 == 'A' && poly2 == 'C') || (poly1 == 'C' && poly2 == 'A')) {
+		} else if ((poly1 == 'A' && poly2 == 'C')
+				|| (poly1 == 'C' && poly2 == 'A')) {
 			if (A.isEmpty() || C.isEmpty()) {
 				throw new RuntimeException();
 			} else {
 				multiplication(A, C);
 			}
-		} else if ((poly1 == 'C' && poly2 == 'B') || (poly1 == 'B' && poly2 == 'C')) {
+		} else if ((poly1 == 'C' && poly2 == 'B')
+				|| (poly1 == 'B' && poly2 == 'C')) {
 			if (C.isEmpty() || B.isEmpty()) {
 				throw new RuntimeException();
 			} else {

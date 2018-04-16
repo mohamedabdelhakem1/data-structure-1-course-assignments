@@ -195,7 +195,7 @@ public class DoubleLinkedList implements ILinkedList {
 		if (index == 0) {
 			head = head.nextElement;
 			numberOfelements--;
-			if(numberOfelements == 0) {
+			if (numberOfelements == 0) {
 				tail = head;
 			}
 			return;
@@ -203,7 +203,7 @@ public class DoubleLinkedList implements ILinkedList {
 		} else if (index == numberOfelements - 1) {
 			tail = tail.prevElement;
 			numberOfelements--;
-			if(numberOfelements == 0) {
+			if (numberOfelements == 0) {
 				head = tail;
 			}
 			return;
@@ -249,7 +249,8 @@ public class DoubleLinkedList implements ILinkedList {
 		DoubleLinkedList list1 = new DoubleLinkedList();
 		Dnode node = head;
 		int counter = 0;
-		if (head != null && fromIndex >= 0 && toIndex < numberOfelements && toIndex >= fromIndex) {
+		if (head != null && fromIndex >= 0 && toIndex < numberOfelements
+				&& toIndex >= fromIndex) {
 			while (counter < fromIndex) {
 				counter++;
 				node = node.nextElement;
