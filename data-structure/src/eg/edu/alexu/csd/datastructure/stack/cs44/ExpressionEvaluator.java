@@ -12,15 +12,16 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 		StringBuilder result =  new StringBuilder();
 		MyStack operators = new MyStack();
-
-		String s[] = expression.split(" ");
+		int numofoperands = 0;
+		int numofoperators = 0;
 
 		for (int i = 0; i < expression.length(); i++) {
 			if (Character.isDigit(expression.charAt(i))) {
+				numofoperands++;
 				String number = "";
 				number += expression.charAt(i);
 				i++;
-				int len = 0;
+
 				while (i < expression.length() && Character.isDigit(expression.charAt(i))) {
 					number += expression.charAt(i);
 					i++;
@@ -30,11 +31,12 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				result.append(" ");
 
 			} else if (Character.isAlphabetic(expression.charAt(i))) {
+				numofoperands++;
 				result.append(expression.charAt(i));
 				result.append(" ");
 
 			} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
-
+				numofoperators++;
 				if (operators.isEmpty() || operators.peek().equals('-') || operators.peek().equals('+')) {
 					operators.push(expression.charAt(i));
 
@@ -54,6 +56,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				}
 
 			} else if (expression.charAt(i) == '-' || expression.charAt(i) == '+') {
+				numofoperators++;
 				if (operators.isEmpty()) {
 					operators.push(expression.charAt(i));
 				} else {
@@ -105,7 +108,9 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				result.append(" ");
 			}
 		}
-
+		if(numofoperands-1 != numofoperators ) {
+			throw new RuntimeException();
+		}
 		return result.toString();
 	}
 
