@@ -23,11 +23,18 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					operators.push(s[i]);
 
 				} else if (operators.peek().equals("*") || operators.peek().equals("/")) {
-					while (operators.peek().equals("*") || operators.peek().equals("/")) {
-						result += operators.pop();
-						result += " ";
+					try {
+						while (operators.peek().equals("*") || operators.peek().equals("/")) {
+							result += operators.pop();
+							result += " ";
+
+						}
+
+					} catch (Exception e) {
 
 					}
+					operators.push(s[i]);
+				} else {
 					operators.push(s[i]);
 				}
 
@@ -45,30 +52,30 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			} else if (s[i].charAt(0) == '(') {
 				operators.push(s[i]);
 			} else if (s[i].charAt(0) == ')') {
-				result += operators.pop();
-				result += " ";
+
 				try {
-					while (operators.peek().equals("(")) {
+					while (!operators.peek().equals("(")) {
 						result += operators.pop();
 						result += " ";
 					}
 					operators.pop();
-
 				} catch (Exception e) {
 
 				}
 
 			}
-		}
-
-		while (!operators.isEmpty()) {
-
-			result += operators.pop();
-			result += " ";
 
 		}
 
-		return result;
+	while(!operators.isEmpty())
+
+	{
+		result += operators.pop();
+		result += " ";
+
+	}
+
+	return result;
 	}
 
 	@Override
