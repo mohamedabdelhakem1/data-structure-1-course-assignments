@@ -102,7 +102,6 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		}
 
 		while (!operators.isEmpty())
-
 		{
 			result.append(operators.pop());
 
