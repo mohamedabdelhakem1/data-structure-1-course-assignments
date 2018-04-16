@@ -90,8 +90,8 @@ public class MyPolynomialSolverTest {
 		int[][] result1 = instance.add('B', 'C');
 		assertNotNull("Polynomial R must be set after evaluation",
 				instance.print('R'));
-		int[][] expected = new int[][] {{3, 7 }, {90, 5 }, {351, 3 },
-				{256, 1 } };
+		int[][] expected =
+				new int[][] {{3, 7 }, {90, 5 }, {351, 3 }, {256, 1 } };
 		assertArrayEquals(expected, result1);
 	}
 
