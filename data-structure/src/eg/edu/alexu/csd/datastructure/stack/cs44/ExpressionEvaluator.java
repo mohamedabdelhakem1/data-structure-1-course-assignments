@@ -2,29 +2,52 @@ package eg.edu.alexu.csd.datastructure.stack.cs44;
 
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ExpressionEvaluator.
  *
  * @author SHIKO
- *
  */
 public class ExpressionEvaluator implements IExpressionEvaluator {
 
+	/**
+	 * this method converts infix to postfix
+	 *
+	 * @param expression
+	 *            String to be converted from infix to postfix
+	 * @return Result postfix string
+	 * @throws RuntimeException
+	 *             if the string is empty or the number of operators is not
+	 *             equal to (the number of operand - 1)
+	 */
 	@Override
 	public String infixToPostfix(final String expression) {
 		if (expression.equals("") || expression.equals(null)) {
 			throw new RuntimeException();
 		}
 		/**
-		 *
+		 * StringBuilder result append the characters of the postfix expression
 		 */
 		StringBuilder result = new StringBuilder();
+		/**
+		 * MyStack operators used to store the operators during conversion
+		 */
 		MyStack operators = new MyStack();
+		/**
+		 * int value of the number of operands
+		 */
 		int numofoperands = 0;
+		/**
+		 * int value of the number of operators
+		 */
 		int numofoperators = 0;
 
 		for (int i = 0; i < expression.length(); i++) {
 			if (Character.isDigit(expression.charAt(i))) {
 				numofoperands++;
+				/**
+				 * String value store each operands
+				 */
 				String number = "";
 
 				number += expression.charAt(i);
@@ -63,7 +86,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 						}
 
 					} catch (Exception e) {
-
+						// TODO: handle exception
 					}
 					operators.push(expression.charAt(i));
 				}
@@ -104,7 +127,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					}
 					operators.pop();
 				} catch (Exception e) {
-
+					// TODO: handle exception
 				}
 
 			}
@@ -124,15 +147,38 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		return result.toString();
 	}
 
+	/**
+	 * this method evaluate postfix operations
+	 *
+	 * @param expression
+	 * @return result after rounding the value
+	 * @throws RuntimeException
+	 *             if the string is empty
+	 */
 	@Override
 	public int evaluate(final String expression) {
 		if (expression.equals(null) || expression.equals("")) {
 			throw new RuntimeException();
 		}
-		String s [] = expression.split(" ");
+		/**
+		 * array of strings of numbers and operators
+		 */
+		String s[] = expression.split(" ");
+		/**
+		 * MyStack stores the operands before evaluation
+		 */
 		MyStack numbers = new MyStack();
+		/**
+		 * float value of string number
+		 */
 		float num;
+		/**
+		 * float value of first operand
+		 */
 		float firstOperand;
+		/**
+		 * float value of second operand
+		 */
 		float secondOperand;
 		for (int i = 0; i < s.length; i++) {
 			if (Character.isDigit(s[i].charAt(0))) {
@@ -158,7 +204,9 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			}
 
 		}
-
+		/**
+		 * float value of the expression result
+		 */
 		float result = (float) numbers.peek();
 		return Math.round(result);
 	}
