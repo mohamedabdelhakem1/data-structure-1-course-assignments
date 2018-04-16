@@ -1,6 +1,7 @@
 package eg.edu.alexu.csd.datastructure.stack.cs44;
 
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
+
 /**
  *
  * @author SHIKO
@@ -30,7 +31,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				i++;
 
 				while (i < expression.length()
-						&& Character.isDigit(expression.charAt(i))) {
+				&& Character.isDigit(expression.charAt(i))) {
 
 					number += expression.charAt(i);
 					i++;
@@ -46,16 +47,16 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				result.append(" ");
 
 			} else if (expression.charAt(i) == '*'
-					|| expression.charAt(i) == '/') {
+			|| expression.charAt(i) == '/') {
 				numofoperators++;
 				if (operators.isEmpty() || operators.peek().equals('-')
-						|| operators.peek().equals('+')) {
+				|| operators.peek().equals('+')) {
 					operators.push(expression.charAt(i));
 
 				} else {
 					try {
 						while (operators.peek().equals('*')
-								|| operators.peek().equals('/')) {
+						|| operators.peek().equals('/')) {
 							result.append(operators.pop());
 							result.append(" ");
 
@@ -68,16 +69,16 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				}
 
 			} else if (expression.charAt(i) == '-'
-					|| expression.charAt(i) == '+') {
+			|| expression.charAt(i) == '+') {
 				numofoperators++;
 				if (operators.isEmpty()) {
 					operators.push(expression.charAt(i));
 				} else {
 					try {
 						while (operators.peek().equals('+')
-								|| operators.peek().equals('-')
-								|| operators.peek().equals('/')
-								|| operators.peek().equals('*')) {
+						|| operators.peek().equals('-')
+						|| operators.peek().equals('/')
+						|| operators.peek().equals('*')) {
 							result.append(operators.pop());
 							result.append(" ");
 
@@ -128,7 +129,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		if (expression.equals(null) || expression.equals("")) {
 			throw new RuntimeException();
 		}
-		String s[] = expression.split(" ");
+		String s [] = expression.split(" ");
 		MyStack numbers = new MyStack();
 		float num;
 		float firstOperand;
