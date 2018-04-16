@@ -10,7 +10,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			throw new RuntimeException();
 		}
 
-		StringBuilder result =  new StringBuilder();
+		StringBuilder result = new StringBuilder();
 		MyStack operators = new MyStack();
 		int numofoperands = 0;
 		int numofoperators = 0;
@@ -46,7 +46,6 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 							result.append(operators.pop());
 							result.append(" ");
 
-
 						}
 
 					} catch (Exception e) {
@@ -65,7 +64,6 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 								|| operators.peek().equals('/') || operators.peek().equals('*')) {
 							result.append(operators.pop());
 							result.append(" ");
-
 
 						}
 
@@ -86,7 +84,6 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 						result.append(operators.pop());
 						result.append(" ");
 
-
 					}
 					operators.pop();
 				} catch (Exception e) {
@@ -102,18 +99,15 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		{
 			result.append(operators.pop());
 
-
-
 			if (!operators.isEmpty()) {
 				result.append(" ");
 			}
 		}
-		if(numofoperands-1 != numofoperators ) {
+		if (numofoperands - 1 != numofoperators) {
 			throw new RuntimeException();
 		}
 		return result.toString();
 	}
-
 
 	@Override
 	public int evaluate(String expression) {
