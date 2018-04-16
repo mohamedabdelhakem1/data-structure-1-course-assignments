@@ -25,14 +25,13 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			if (Character.isDigit(expression.charAt(i))) {
 				numofoperands++;
 				String number = "";
-			//	StringBuilder num = new StringBuilder();
-			//	num.append(expression.charAt(i));
+
 				number += expression.charAt(i);
 				i++;
 
 				while (i < expression.length()
 						&& Character.isDigit(expression.charAt(i))) {
-				//	num.append(expression.charAt(i));
+
 					number += expression.charAt(i);
 					i++;
 				}
