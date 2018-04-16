@@ -6,7 +6,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 	@Override
 	public String infixToPostfix(String expression) {
-		if (expression.equals(null) || expression.equals("")) {
+		if (expression.equals("")) {
 			throw new RuntimeException();
 		}
 		String result = "";
@@ -40,10 +40,16 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				if (operators.isEmpty()) {
 					operators.push(s[i]);
 				} else {
-					while (operators.peek().equals("+") || operators.peek().equals("-") || operators.peek().equals("/")
+					try {
+						while (operators.peek().equals("+") || operators.peek().equals("-") || operators.peek().equals("/")
 							|| operators.peek().equals("*")) {
 						result += operators.pop();
 					}
+
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+
 					operators.push(s[i]);
 				}
 
