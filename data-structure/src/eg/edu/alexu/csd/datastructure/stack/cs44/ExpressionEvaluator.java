@@ -44,6 +44,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 						while (operators.peek().equals("+") || operators.peek().equals("-") || operators.peek().equals("/")
 							|| operators.peek().equals("*")) {
 						result += operators.pop();
+						result += " ";
 					}
 
 					} catch (Exception e) {
