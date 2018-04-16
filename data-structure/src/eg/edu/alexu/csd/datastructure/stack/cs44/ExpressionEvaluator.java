@@ -11,20 +11,34 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		}
 		String result = "";
 		MyStack operators = new MyStack();
+
 		String s[] = expression.split(" ");
-		for (int i = 0; i < s.length; i++) {
-			if (Character.isDigit(s[i].charAt(0)) || Character.isAlphabetic(s[i].charAt(0))) {
-				result += s[i];
+
+		for (int i = 0; i < expression.length(); i++) {
+			if (Character.isDigit(expression.charAt(i))) {
+				String number = "";
+				number += expression.charAt(i);
+				i++;
+				int len = 0;
+				while (i < expression.length() && Character.isDigit(expression.charAt(i))) {
+					number += expression.charAt(i);
+					i++;
+				}
+				i--;
+				result += number;
 				result += " ";
 
-			} else if (s[i].equals("*") || s[i].equals("/")) {
+			} else if (Character.isAlphabetic(expression.charAt(i))) {
+				result += expression.charAt(i);
+				result += " ";
+			} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
 
-				if (operators.isEmpty() || operators.peek().equals("-") || operators.peek().equals("+")) {
-					operators.push(s[i]);
+				if (operators.isEmpty() || operators.peek().equals('-') || operators.peek().equals('+')) {
+					operators.push(expression.charAt(i));
 
 				} else {
 					try {
-						while (operators.peek().equals("*") || operators.peek().equals("/")) {
+						while (operators.peek().equals('*') || operators.peek().equals('/')) {
 							result += operators.pop();
 							result += " ";
 
@@ -33,34 +47,34 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					} catch (Exception e) {
 
 					}
-					operators.push(s[i]);
+					operators.push(expression.charAt(i));
 				}
 
-			} else if (s[i].equals("-") || s[i].equals("+")) {
+			} else if (expression.charAt(i) == '-' || expression.charAt(i) == '+') {
 				if (operators.isEmpty()) {
-					operators.push(s[i]);
+					operators.push(expression.charAt(i));
 				} else {
 					try {
-						while (operators.peek().equals("+") || operators.peek().equals("-") || operators.peek().equals("/")
-							|| operators.peek().equals("*")) {
-						result += operators.pop();
-						result += " ";
-					}
+						while (operators.peek().equals('+') || operators.peek().equals('-')
+								|| operators.peek().equals('/') || operators.peek().equals('*')) {
+							result += operators.pop();
+							result += " ";
+						}
 
 					} catch (Exception e) {
 						// TODO: handle exception
 					}
 
-					operators.push(s[i]);
+					operators.push(expression.charAt(i));
 				}
 
-			} else if (s[i].charAt(0) == '(') {
+			} else if (expression.charAt(i) == '(') {
 
-				operators.push(s[i]);
-			} else if (s[i].charAt(0) == ')') {
+				operators.push(expression.charAt(i));
+			} else if (expression.charAt(i) == ')') {
 
 				try {
-					while (!operators.peek().equals("(")) {
+					while (!operators.peek().equals('(')) {
 						result += operators.pop();
 						result += " ";
 					}
@@ -73,16 +87,16 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 		}
 
-	while(!operators.isEmpty())
+		while (!operators.isEmpty())
 
-	{
-		result += operators.pop();
-		if(!operators.isEmpty()) {
-		result += " ";
+		{
+			result += operators.pop();
+			if (!operators.isEmpty()) {
+				result += " ";
+			}
 		}
-	}
 
-	return result;
+		return result;
 	}
 
 	@Override
