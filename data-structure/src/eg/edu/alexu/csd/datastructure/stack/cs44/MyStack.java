@@ -13,12 +13,12 @@ public class MyStack implements IStack {
 			this(null, null);
 		}
 
-		public Node(Object x, Node n) {
+		public Node(final Object x, final Node n) {
 			element = x;
 			next = n;
 		}
 
-		public void setElement(Object x) {
+		public void setElement(final Object x) {
 			element = x;
 		}
 
@@ -26,7 +26,7 @@ public class MyStack implements IStack {
 			return element;
 		}
 
-		public void setNext(Node n) {
+		public void setNext(final Node n) {
 			next = n;
 		}
 
@@ -62,7 +62,7 @@ public class MyStack implements IStack {
 	}
 
 	@Override
-	public void push(Object element) {
+	public void push(final Object element) {
 		if (size == 0) {
 			top = new Node(element, null);
 		} else {
