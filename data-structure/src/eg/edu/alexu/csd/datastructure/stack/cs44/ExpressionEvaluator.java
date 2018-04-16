@@ -1,15 +1,21 @@
 package eg.edu.alexu.csd.datastructure.stack.cs44;
 
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
-
+/**
+ *
+ * @author SHIKO
+ *
+ */
 public class ExpressionEvaluator implements IExpressionEvaluator {
 
 	@Override
 	public String infixToPostfix(String expression) {
-		if (expression.equals("")||expression.equals(null)) {
+		if (expression.equals("") || expression.equals(null)) {
 			throw new RuntimeException();
 		}
-
+		/**
+		 *
+		 */
 		StringBuilder result = new StringBuilder();
 		MyStack operators = new MyStack();
 		int numofoperands = 0;
@@ -18,17 +24,20 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		for (int i = 0; i < expression.length(); i++) {
 			if (Character.isDigit(expression.charAt(i))) {
 				numofoperands++;
-				String number = "";
-				number += expression.charAt(i);
+				//String number = "";
+				StringBuilder num = new StringBuilder();
+				num.append(expression.charAt(i));
+				//number += expression.charAt(i);
 				i++;
 
 				while (i < expression.length()
 						&& Character.isDigit(expression.charAt(i))) {
-					number += expression.charAt(i);
+					num.append(expression.charAt(i));
+					//number += expression.charAt(i);
 					i++;
 				}
 				i--;
-				result.append(number);
+				result.append(num);
 				result.append(" ");
 
 			} else if (Character.isAlphabetic(expression.charAt(i))) {
@@ -101,8 +110,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 		}
 
-		while (!operators.isEmpty())
-		{
+		while (!operators.isEmpty()) {
 			result.append(operators.pop());
 
 			if (!operators.isEmpty()) {
