@@ -6,24 +6,24 @@ import java.awt.Point;
 import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
 
 public class MyPolynomialSolver implements IPolynomialSolver {
-	SingleLinkedList A = new SingleLinkedList();
-	SingleLinkedList B = new SingleLinkedList();
-	SingleLinkedList C = new SingleLinkedList();
-	SingleLinkedList R = new SingleLinkedList();
+	SingleLinkedList a = new SingleLinkedList();
+	SingleLinkedList b = new SingleLinkedList();
+	SingleLinkedList c = new SingleLinkedList();
+	SingleLinkedList r = new SingleLinkedList();
 
 	public boolean ISEmpty(char poly) {
 		if (poly == 'A') {
-			return (A.isEmpty());
+			return (a.isEmpty());
 		} else if (poly == 'B') {
-			return (B.isEmpty());
+			return (b.isEmpty());
 		} else if (poly == 'C') {
-			return (C.isEmpty());
+			return (c.isEmpty());
 		}
 		return false;
 	}
 
 	private void multiplication(SingleLinkedList s1, SingleLinkedList s2) {
-		R.clear();
+		r.clear();
 		for (int i = 0; i < s1.size(); i++) {
 			for (int j = 0; j < s2.size(); j++) {
 				Point p1 = (Point) s1.get(i);
@@ -33,13 +33,13 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				pr.x = p1.x * p2.x;
 				pr.y = p1.y + p2.y;
 
-				R = sort(R, R.size(), pr);
+				r = sort(r, r.size(), pr);
 			}
 		}
 	}
 
 	private void subtraction(SingleLinkedList s1, SingleLinkedList s2) {
-		R.clear();
+		r.clear();
 
 		SingleLinkedList visited = new SingleLinkedList();
 		for (int i = 0; i < s1.size(); i++) {
@@ -56,7 +56,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 						pr.y = p1.y;
 					}
-					R = sort(R, R.size(), pr);
+					r = sort(r, r.size(), pr);
 					visited.add(p1.y);
 				}
 
@@ -65,7 +65,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 		for (int i = 0; i < s1.size(); i++) {
 			Point p1 = (Point) s1.get(i);
 			if (visited.contains(p1.y) == false) {
-				R = sort(R, R.size(), p1);
+				r = sort(r, r.size(), p1);
 			}
 		}
 		for (int i = 0; i < s2.size(); i++) {
@@ -74,27 +74,27 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			x = -1 * x;
 
 			if (visited.contains(p2.y) == false) {
-				R = sort(R, R.size(), new Point(x, p2.y));
+				r = sort(r, r.size(), new Point(x, p2.y));
 			}
 
 		}
 
-		for (int f = 0; f < R.size(); f++) {
-			Point pon = (Point) R.get(f);
+		for (int f = 0; f < r.size(); f++) {
+			Point pon = (Point) r.get(f);
 			if (pon.x == 0) {
-				R.remove(f);
+				r.remove(f);
 			}
 
 		}
-		if (R.size() == 0) {
+		if (r.size() == 0) {
 			Point pr = new Point(0, 0);
-			R.add(pr);
+			r.add(pr);
 
 		}
 	}
 
 	private void addition(SingleLinkedList s1, SingleLinkedList s2) {
-		R.clear();
+		r.clear();
 
 		SingleLinkedList visited = new SingleLinkedList();
 		for (int i = 0; i < s1.size(); i++) {
@@ -112,7 +112,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 						pr.y = p1.y;
 					}
-					R = sort(R, R.size(), pr);
+					r = sort(r, r.size(), pr);
 					visited.add(p1.y);
 				}
 
@@ -121,25 +121,25 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 		for (int i = 0; i < s1.size(); i++) {
 			Point p1 = (Point) s1.get(i);
 			if (visited.contains(p1.y) == false) {
-				R = sort(R, R.size(), p1);
+				r = sort(r, r.size(), p1);
 			}
 		}
 		for (int i = 0; i < s2.size(); i++) {
 			Point p1 = (Point) s2.get(i);
 			if (visited.contains(p1.y) == false) {
-				R = sort(R, R.size(), p1);
+				r = sort(r, r.size(), p1);
 			}
 		}
-		for (int f = 0; f < R.size(); f++) {
-			Point pon = (Point) R.get(f);
+		for (int f = 0; f < r.size(); f++) {
+			Point pon = (Point) r.get(f);
 			if (pon.x == 0) {
-				R.remove(f);
+				r.remove(f);
 			}
 
 		}
-		if (R.size() == 0) {
+		if (r.size() == 0) {
 			Point pr = new Point(0, 0);
-			R.add(pr);
+			r.add(pr);
 
 		}
 	}
@@ -174,28 +174,28 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	@Override
 	public void setPolynomial(char poly, int[][] terms) {
 		if (poly == 'A') {
-			if (!A.isEmpty()) {
-				A.clear();
+			if (!a.isEmpty()) {
+				a.clear();
 			}
 			for (int i = 0; i < terms.length; i++) {
 				Point p = new Point(terms[i][0], terms[i][1]);
-				A = sort(A, i, p);
+				a = sort(a, i, p);
 			}
 		} else if (poly == 'B') {
-			if (!B.isEmpty()) {
-				B.clear();
+			if (!b.isEmpty()) {
+				b.clear();
 			}
 			for (int i = 0; i < terms.length; i++) {
 				Point p = new Point(terms[i][0], terms[i][1]);
-				B = sort(B, i, p);
+				b = sort(b, i, p);
 			}
 		} else if (poly == 'C') {
-			if (!C.isEmpty()) {
-				C.clear();
+			if (!c.isEmpty()) {
+				c.clear();
 			}
 			for (int i = 0; i < terms.length; i++) {
 				Point p = new Point(terms[i][0], terms[i][1]);
-				C = sort(C, i, p);
+				c = sort(c, i, p);
 			}
 		} else {
 			throw new RuntimeException();
@@ -208,11 +208,11 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 		String s = "";
 
 		if (poly == 'A') {
-			if (A.isEmpty()) {
+			if (a.isEmpty()) {
 				return null;
 			}
-			for (int i = 0; i < A.size(); i++) {
-				Point p = (Point) A.get(i);
+			for (int i = 0; i < a.size(); i++) {
+				Point p = (Point) a.get(i);
 				if (p.x == 0) {
 
 					continue;
@@ -234,8 +234,8 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 				}
 
-				if (i != A.size() - 1) {
-					Point p1 = (Point) A.get(i + 1);
+				if (i != a.size() - 1) {
+					Point p1 = (Point) a.get(i + 1);
 					if (p1.x > 0) {
 						s += "+";
 					}
@@ -243,13 +243,13 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 			}
 		} else if (poly == 'B') {
-			if (B.isEmpty()) {
+			if (b.isEmpty()) {
 				return null;
 			}
 
-			for (int i = 0; i < B.size(); i++) {
+			for (int i = 0; i < b.size(); i++) {
 
-				Point p = (Point) B.get(i);
+				Point p = (Point) b.get(i);
 				if (p.x == 0) {
 
 					continue;
@@ -271,8 +271,8 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 				}
 
-				if (i != B.size() - 1) {
-					Point p1 = (Point) B.get(i + 1);
+				if (i != b.size() - 1) {
+					Point p1 = (Point) b.get(i + 1);
 					if (p1.x > 0) {
 						s += "+";
 					}
@@ -280,11 +280,11 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			}}
 
 		else if (poly == 'C') {
-			if (C.isEmpty()) {
+			if (c.isEmpty()) {
 				return null;
 			}
-			for (int i = 0; i < C.size(); i++) {
-				Point p = (Point) C.get(i);
+			for (int i = 0; i < c.size(); i++) {
+				Point p = (Point) c.get(i);
 				if (p.x == 0) {
 
 					continue;
@@ -306,8 +306,8 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 				}
 
-				if (i != C.size() - 1) {
-					Point p1 = (Point) C.get(i + 1);
+				if (i != c.size() - 1) {
+					Point p1 = (Point) c.get(i + 1);
 					if (p1.x > 0) {
 						s += "+";
 					}
@@ -317,11 +317,11 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 		}
 
 		else if (poly == 'R') {
-			if (R.isEmpty()) {
+			if (r.isEmpty()) {
 				return null;
 			}
-			for (int i = 0; i < R.size(); i++) {
-				Point p = (Point) R.get(i);
+			for (int i = 0; i < r.size(); i++) {
+				Point p = (Point) r.get(i);
 				if (p.x == 0) {
 
 					continue;
@@ -343,8 +343,8 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 				}
 
-				if (i != R.size() - 1) {
-					Point p1 = (Point) R.get(i + 1);
+				if (i != r.size() - 1) {
+					Point p1 = (Point) r.get(i + 1);
 					if (p1.x > 0) {
 						s += "+";
 					}
@@ -362,13 +362,13 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	@Override
 	public void clearPolynomial(char poly) {
 		if (poly == 'A') {
-			A.clear();
+			a.clear();
 		} else if (poly == 'B') {
-			B.clear();
+			b.clear();
 		} else if (poly == 'C') {
-			C.clear();
+			c.clear();
 		} else if (poly == 'R') {
-			R.clear();
+			r.clear();
 		} else {
 			throw new RuntimeException();
 
@@ -381,39 +381,39 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 
 		float result = 0;
 		if (poly == 'A') {
-			if (A.isEmpty()) {
+			if (a.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				for (int i = 0; i < A.size(); i++) {
-					Point p = (Point) A.get(i);
+				for (int i = 0; i < a.size(); i++) {
+					Point p = (Point) a.get(i);
 					result += (p.getX() * java.lang.Math.pow(value, p.getY()));
 				}
 			}
 		} else if (poly == 'B') {
-			if (B.isEmpty()) {
+			if (b.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				for (int i = 0; i < B.size(); i++) {
-					Point p = (Point) B.get(i);
+				for (int i = 0; i < b.size(); i++) {
+					Point p = (Point) b.get(i);
 					result += (p.getX() * java.lang.Math.pow(value, p.getY()));
 
 				}
 			}
 		} else if (poly == 'C') {
-			if (C.isEmpty()) {
+			if (c.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				for (int i = 0; i < C.size(); i++) {
-					Point p = (Point) C.get(i);
+				for (int i = 0; i < c.size(); i++) {
+					Point p = (Point) c.get(i);
 					result += (p.getX() * java.lang.Math.pow(value, p.getY()));
 				}
 			}
 		} else if (poly == 'R') {
-			if (R.isEmpty()) {
+			if (r.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				for (int i = 0; i < R.size(); i++) {
-					Point p = (Point) R.get(i);
+				for (int i = 0; i < r.size(); i++) {
+					Point p = (Point) r.get(i);
 					result += (p.getX() * java.lang.Math.pow(value, p.getY()));
 
 				}
@@ -430,54 +430,54 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	public int[][] add(char poly1, char poly2) {
 
 		if ((poly1 == 'A' && poly2 == 'B') || (poly1 == 'B' && poly2 == 'A')) {
-			if (A.isEmpty() || B.isEmpty()) {
+			if (a.isEmpty() || b.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				addition(A, B);
+				addition(a, b);
 			}
 		} else if ((poly1 == 'A' && poly2 == 'C')
 				|| (poly1 == 'C' && poly2 == 'A')) {
-			if (A.isEmpty() || C.isEmpty()) {
+			if (a.isEmpty() || c.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				addition(A, C);
+				addition(a, c);
 			}
 		} else if ((poly1 == 'C' && poly2 == 'B')
 				|| (poly1 == 'B' && poly2 == 'C')) {
-			if (B.isEmpty() || C.isEmpty()) {
+			if (b.isEmpty() || c.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				addition(C, B);
+				addition(c, b);
 			}
 		} else if (poly1 == 'A' && poly2 == 'A') {
-			if (A.isEmpty()) {
+			if (a.isEmpty()) {
 
 				throw new RuntimeException();
 			} else {
-				addition(A, A);
+				addition(a, a);
 			}
 		} else if (poly1 == 'B' && poly2 == 'B') {
-			if (B.isEmpty()) {
+			if (b.isEmpty()) {
 
 				throw new RuntimeException();
 			} else {
-				addition(B, B);
+				addition(b, b);
 			}
 		} else if (poly1 == 'C' && poly2 == 'C') {
-			if (C.isEmpty()) {
+			if (c.isEmpty()) {
 
 				throw new RuntimeException();
 			} else {
-				addition(C, C);
+				addition(c, c);
 			}
 		} else {
 
 			throw new RuntimeException();
 
 		}
-		int[][] result = new int[R.size()][2];
-		for (int i = 0; i < R.size(); i++) {
-			Point p = (Point) R.get(i);
+		int[][] result = new int[r.size()][2];
+		for (int i = 0; i < r.size(); i++) {
+			Point p = (Point) r.get(i);
 			result[i][0] = p.x;
 			result[i][1] = p.y;
 		}
@@ -488,72 +488,72 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	@Override
 	public int[][] subtract(char poly1, char poly2) {
 		if (poly1 == 'A' && poly2 == 'B') {
-			if (A.isEmpty() || B.isEmpty()) {
+			if (a.isEmpty() || b.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				subtraction(A, B);
+				subtraction(a, b);
 			}
 		} else if (poly1 == 'B' && poly2 == 'A') {
-			if (A.isEmpty() || B.isEmpty()) {
+			if (a.isEmpty() || b.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				subtraction(B, A);
+				subtraction(b, a);
 			}
 		} else if (poly1 == 'A' && poly2 == 'C') {
-			if (A.isEmpty() || C.isEmpty()) {
+			if (a.isEmpty() || c.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				subtraction(A, C);
+				subtraction(a, c);
 			}
 		} else if (poly1 == 'C' && poly2 == 'A') {
-			if (A.isEmpty() || C.isEmpty()) {
+			if (a.isEmpty() || c.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				subtraction(C, A);
+				subtraction(c, a);
 			}
 		} else if (poly1 == 'C' && poly2 == 'B') {
-			if (B.isEmpty() || C.isEmpty()) {
+			if (b.isEmpty() || c.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				subtraction(C, B);
+				subtraction(c, b);
 			}
 		} else if (poly1 == 'B' && poly2 == 'C') {
-			if (C.isEmpty() || B.isEmpty()) {
+			if (c.isEmpty() || b.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				subtraction(B, C);
+				subtraction(b, c);
 			}
 		} else if (poly1 == 'A' && poly2 == 'A') {
-			if (A.isEmpty()) {
+			if (a.isEmpty()) {
 
 				throw new RuntimeException();
 			} else {
-				subtraction(A, A);
+				subtraction(a, a);
 
 			}
 		} else if (poly1 == 'B' && poly2 == 'B') {
-			if (B.isEmpty()) {
+			if (b.isEmpty()) {
 
 				throw new RuntimeException();
 			} else {
-				subtraction(B, B);
+				subtraction(b, b);
 
 			}
 		} else if (poly1 == 'C' && poly2 == 'C') {
-			if (C.isEmpty()) {
+			if (c.isEmpty()) {
 
 				throw new RuntimeException();
 			} else {
-				subtraction(C, C);
+				subtraction(c, c);
 
 			}
 		} else {
 			throw new RuntimeException();
 
 		}
-		int[][] result = new int[R.size()][2];
-		for (int i = 0; i < R.size(); i++) {
-			Point p = (Point) R.get(i);
+		int[][] result = new int[r.size()][2];
+		for (int i = 0; i < r.size(); i++) {
+			Point p = (Point) r.get(i);
 			result[i][0] = p.x;
 			result[i][1] = p.y;
 		}
@@ -563,53 +563,53 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	@Override
 	public int[][] multiply(char poly1, char poly2) {
 		if ((poly1 == 'A' && poly2 == 'B') || (poly1 == 'B' && poly2 == 'A')) {
-			if (A.isEmpty() || B.isEmpty()) {
+			if (a.isEmpty() || b.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				multiplication(A, B);
+				multiplication(a, b);
 			}
 		} else if ((poly1 == 'A' && poly2 == 'C')
 				|| (poly1 == 'C' && poly2 == 'A')) {
-			if (A.isEmpty() || C.isEmpty()) {
+			if (a.isEmpty() || c.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				multiplication(A, C);
+				multiplication(a, c);
 			}
 		} else if ((poly1 == 'C' && poly2 == 'B')
 				|| (poly1 == 'B' && poly2 == 'C')) {
-			if (C.isEmpty() || B.isEmpty()) {
+			if (c.isEmpty() || b.isEmpty()) {
 				throw new RuntimeException();
 			} else {
-				multiplication(B, C);
+				multiplication(b, c);
 			}
 		} else if (poly1 == 'A' && poly2 == 'A') {
-			if (A.isEmpty()) {
+			if (a.isEmpty()) {
 
 				throw new RuntimeException();
 			} else {
-				multiplication(A, A);
+				multiplication(a, a);
 			}
 		} else if (poly1 == 'B' && poly2 == 'B') {
-			if (B.isEmpty()) {
+			if (b.isEmpty()) {
 
 				throw new RuntimeException();
 			} else {
-				multiplication(B, B);
+				multiplication(b, b);
 			}
 		} else if (poly1 == 'C' && poly2 == 'C') {
-			if (C.isEmpty()) {
+			if (c.isEmpty()) {
 
 				throw new RuntimeException();
 			} else {
-				multiplication(C, C);
+				multiplication(c, c);
 			}
 		} else {
 			throw new RuntimeException();
 
 		}
-		int[][] result = new int[R.size()][2];
-		for (int i = 0; i < R.size(); i++) {
-			Point p = (Point) R.get(i);
+		int[][] result = new int[r.size()][2];
+		for (int i = 0; i < r.size(); i++) {
+			Point p = (Point) r.get(i);
 			result[i][0] = p.x;
 			result[i][1] = p.y;
 		}
