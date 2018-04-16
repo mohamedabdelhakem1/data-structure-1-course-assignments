@@ -9,7 +9,7 @@ import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 public class ExpressionEvaluator implements IExpressionEvaluator {
 
 	@Override
-	public String infixToPostfix(String expression) {
+	public String infixToPostfix(final String expression) {
 		if (expression.equals("") || expression.equals(null)) {
 			throw new RuntimeException();
 		}
@@ -36,6 +36,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					i++;
 				}
 				i--;
+
 				result.append(number);
 				result.append(" ");
 
@@ -123,7 +124,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 	}
 
 	@Override
-	public int evaluate(String expression) {
+	public int evaluate(final String expression) {
 		if (expression.equals(null) || expression.equals("")) {
 			throw new RuntimeException();
 		}
