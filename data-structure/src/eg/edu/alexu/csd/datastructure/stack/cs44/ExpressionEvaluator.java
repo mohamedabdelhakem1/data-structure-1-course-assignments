@@ -9,7 +9,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		if (expression.equals("")) {
 			throw new RuntimeException();
 		}
-		String result = "";
+
+		StringBuilder result =  new StringBuilder();
 		MyStack operators = new MyStack();
 
 		String s[] = expression.split(" ");
@@ -25,12 +26,13 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					i++;
 				}
 				i--;
-				result += number;
-				result += " ";
+				result.append(number);
+				result.append(" ");
 
 			} else if (Character.isAlphabetic(expression.charAt(i))) {
-				result += expression.charAt(i);
-				result += " ";
+				result.append(expression.charAt(i));
+				result.append(" ");
+
 			} else if (expression.charAt(i) == '*' || expression.charAt(i) == '/') {
 
 				if (operators.isEmpty() || operators.peek().equals('-') || operators.peek().equals('+')) {
@@ -39,8 +41,9 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				} else {
 					try {
 						while (operators.peek().equals('*') || operators.peek().equals('/')) {
-							result += operators.pop();
-							result += " ";
+							result.append(operators.pop());
+							result.append(" ");
+
 
 						}
 
@@ -57,8 +60,10 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					try {
 						while (operators.peek().equals('+') || operators.peek().equals('-')
 								|| operators.peek().equals('/') || operators.peek().equals('*')) {
-							result += operators.pop();
-							result += " ";
+							result.append(operators.pop());
+							result.append(" ");
+
+
 						}
 
 					} catch (Exception e) {
@@ -75,8 +80,10 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 				try {
 					while (!operators.peek().equals('(')) {
-						result += operators.pop();
-						result += " ";
+						result.append(operators.pop());
+						result.append(" ");
+
+
 					}
 					operators.pop();
 				} catch (Exception e) {
@@ -90,13 +97,16 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		while (!operators.isEmpty())
 
 		{
-			result += operators.pop();
+			result.append(operators.pop());
+
+
+
 			if (!operators.isEmpty()) {
-				result += " ";
+				result.append(" ");
 			}
 		}
 
-		return result;
+		return result.toString();
 	}
 
 	@Override
