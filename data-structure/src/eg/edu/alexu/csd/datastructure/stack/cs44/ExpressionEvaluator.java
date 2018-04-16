@@ -48,6 +48,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				}
 
 			} else if (s[i].charAt(0) == '('||s[i].charAt(0) == '[') {
+
 				operators.push(s[i]);
 			} else if (s[i].charAt(0) == ')'||s[i].charAt(0) == ']') {
 
