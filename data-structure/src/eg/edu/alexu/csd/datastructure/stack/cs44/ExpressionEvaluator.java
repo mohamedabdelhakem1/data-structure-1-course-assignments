@@ -6,7 +6,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 	@Override
 	public String infixToPostfix(String expression) {
-		if (expression.equals("")) {
+		if (expression.equals(null) || expression.equals("")) {
 			throw new RuntimeException();
 		}
 		String result = "";
