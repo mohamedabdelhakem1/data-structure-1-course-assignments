@@ -11,7 +11,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	SingleLinkedList c = new SingleLinkedList();
 	SingleLinkedList r = new SingleLinkedList();
 
-	public boolean ISEmpty(char poly) {
+	public boolean ISEmpty(final char poly) {
 		if (poly == 'A') {
 			return (a.isEmpty());
 		} else if (poly == 'B') {
@@ -22,7 +22,8 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 		return false;
 	}
 
-	private void multiplication(SingleLinkedList s1, SingleLinkedList s2) {
+	private void multiplication(final SingleLinkedList s1,
+			final SingleLinkedList s2) {
 		r.clear();
 		for (int i = 0; i < s1.size(); i++) {
 			for (int j = 0; j < s2.size(); j++) {
@@ -38,7 +39,8 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 		}
 	}
 
-	private void subtraction(SingleLinkedList s1, SingleLinkedList s2) {
+	private void subtraction(final SingleLinkedList s1,
+			final SingleLinkedList s2) {
 		r.clear();
 
 		SingleLinkedList visited = new SingleLinkedList();
@@ -93,7 +95,8 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 		}
 	}
 
-	private void addition(SingleLinkedList s1, SingleLinkedList s2) {
+	private void addition(final SingleLinkedList s1,
+			final SingleLinkedList s2) {
 		r.clear();
 
 		SingleLinkedList visited = new SingleLinkedList();
@@ -144,7 +147,8 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 		}
 	}
 
-	private SingleLinkedList sort(SingleLinkedList s, int i, Point p1) {
+	private SingleLinkedList sort(final SingleLinkedList s, final int i,
+			final Point p1) {
 		boolean added = false;
 		if (i > 0) {
 			for (int j = 0; j < s.size(); j++) {
@@ -172,7 +176,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	@Override
-	public void setPolynomial(char poly, int[][] terms) {
+	public void setPolynomial(final char poly, final int[][] terms) {
 		if (poly == 'A') {
 			if (!a.isEmpty()) {
 				a.clear();
@@ -204,7 +208,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	@Override
-	public String print(char poly) {
+	public String print(final char poly) {
 		String s = "";
 
 		if (poly == 'A') {
@@ -361,7 +365,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	@Override
-	public void clearPolynomial(char poly) {
+	public void clearPolynomial(final char poly) {
 		if (poly == 'A') {
 			a.clear();
 		} else if (poly == 'B') {
@@ -378,7 +382,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	@Override
-	public float evaluatePolynomial(char poly, float value) {
+	public float evaluatePolynomial(final char poly, final float value) {
 
 		float result = 0;
 		if (poly == 'A') {
@@ -428,7 +432,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] add(char poly1, char poly2) {
+	public int[][] add(final char poly1, final char poly2) {
 
 		if ((poly1 == 'A' && poly2 == 'B') || (poly1 == 'B' && poly2 == 'A')) {
 			if (a.isEmpty() || b.isEmpty()) {
@@ -487,7 +491,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] subtract(char poly1, char poly2) {
+	public int[][] subtract(final char poly1,final char poly2) {
 		if (poly1 == 'A' && poly2 == 'B') {
 			if (a.isEmpty() || b.isEmpty()) {
 				throw new RuntimeException();
@@ -562,7 +566,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] multiply(char poly1, char poly2) {
+	public int[][] multiply(final char poly1,final char poly2) {
 		if ((poly1 == 'A' && poly2 == 'B') || (poly1 == 'B' && poly2 == 'A')) {
 			if (a.isEmpty() || b.isEmpty()) {
 				throw new RuntimeException();
