@@ -23,7 +23,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	private void multiplication(final SingleLinkedList s1,
-			final SingleLinkedList s2) {
+	final SingleLinkedList s2) {
 		r.clear();
 		for (int i = 0; i < s1.size(); i++) {
 			for (int j = 0; j < s2.size(); j++) {
@@ -40,7 +40,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	private void subtraction(final SingleLinkedList s1,
-			final SingleLinkedList s2) {
+	final SingleLinkedList s2) {
 		r.clear();
 
 		SingleLinkedList visited = new SingleLinkedList();
@@ -96,7 +96,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	private void addition(final SingleLinkedList s1,
-			final SingleLinkedList s2) {
+	final SingleLinkedList s2) {
 		r.clear();
 
 		SingleLinkedList visited = new SingleLinkedList();
@@ -148,7 +148,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	private SingleLinkedList sort(final SingleLinkedList s, final int i,
-			final Point p1) {
+	final Point p1) {
 		boolean added = false;
 		if (i > 0) {
 			for (int j = 0; j < s.size(); j++) {
@@ -441,14 +441,14 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				addition(a, b);
 			}
 		} else if ((poly1 == 'A' && poly2 == 'C')
-				|| (poly1 == 'C' && poly2 == 'A')) {
+		|| (poly1 == 'C' && poly2 == 'A')) {
 			if (a.isEmpty() || c.isEmpty()) {
 				throw new RuntimeException();
 			} else {
 				addition(a, c);
 			}
 		} else if ((poly1 == 'C' && poly2 == 'B')
-				|| (poly1 == 'B' && poly2 == 'C')) {
+		|| (poly1 == 'B' && poly2 == 'C')) {
 			if (b.isEmpty() || c.isEmpty()) {
 				throw new RuntimeException();
 			} else {
@@ -491,7 +491,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] subtract(final char poly1,final char poly2) {
+	public int[][] subtract(final char poly1, final char poly2) {
 		if (poly1 == 'A' && poly2 == 'B') {
 			if (a.isEmpty() || b.isEmpty()) {
 				throw new RuntimeException();
@@ -566,7 +566,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	}
 
 	@Override
-	public int[][] multiply(final char poly1,final char poly2) {
+	public int[][] multiply(final char poly1, final char poly2) {
 		if ((poly1 == 'A' && poly2 == 'B') || (poly1 == 'B' && poly2 == 'A')) {
 			if (a.isEmpty() || b.isEmpty()) {
 				throw new RuntimeException();
@@ -574,14 +574,14 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				multiplication(a, b);
 			}
 		} else if ((poly1 == 'A' && poly2 == 'C')
-				|| (poly1 == 'C' && poly2 == 'A')) {
+		|| (poly1 == 'C' && poly2 == 'A')) {
 			if (a.isEmpty() || c.isEmpty()) {
 				throw new RuntimeException();
 			} else {
 				multiplication(a, c);
 			}
 		} else if ((poly1 == 'C' && poly2 == 'B')
-				|| (poly1 == 'B' && poly2 == 'C')) {
+		|| (poly1 == 'B' && poly2 == 'C')) {
 			if (c.isEmpty() || b.isEmpty()) {
 				throw new RuntimeException();
 			} else {
