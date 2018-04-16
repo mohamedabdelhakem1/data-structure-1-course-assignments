@@ -13,7 +13,7 @@ public class MyPolynomialSolverTest {
 	public void testSolveSubtracte() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
 		instance.setPolynomial('C',
-				new int[][] { { 3, 7 }, { 45, 5 }, { 176, 3 }, { 128, 1 } });
+				new int[][] {{ 3, 7 }, { 45, 5 }, { 176, 3 }, { 128, 1 } });
 		instance.setPolynomial('B', new int[][] { { -120, 5 }, { -1, 3 },
 				{ 27, 2 }, { 1, 1 }, { -1, 0 } });
 
