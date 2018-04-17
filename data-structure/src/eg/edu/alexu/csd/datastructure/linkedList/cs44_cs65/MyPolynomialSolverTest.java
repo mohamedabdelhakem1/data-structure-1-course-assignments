@@ -813,7 +813,8 @@ public class MyPolynomialSolverTest {
 	public void testSolveSubtracte() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
 		instance.setPolynomial('C',
-		new int[][] {{n3, n7 }, {n45, n5 }, {n176, n3 }, {n128, n1 } });
+		new int[][] {{n3, n7 },
+			{n45, n5 }, {n176, n3 }, {n128, n1 } });
 		instance.setPolynomial('B',
 		new int[][] {
 		{-n120, n5 },
@@ -822,9 +823,11 @@ public class MyPolynomialSolverTest {
 		{n1, n1 },
 		{-n1, n0 } });
 
-		assertNull("Polynomial R is not set yet", instance.print('R'));
+		assertNull("Polynomial R is "
+		+ "not set yet", instance.print('R'));
 		int[][] result1 = instance.subtract('C', 'B');
-		assertNotNull("Polynomial R must be set after evaluation",
+		assertNotNull("Polynomial R must "
+		+ "be set after evaluation",
 		instance.print('R'));
 		int[][] expected = new int[][] {
 		{n3, n7 },
@@ -840,8 +843,10 @@ public class MyPolynomialSolverTest {
 	public void testprint1() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
 		instance.setPolynomial('C',
-		new int[][] {{n3, n7 }, {n45, n5 }, {n176, n3 }, {n128, n1 } });
-		assertEquals(instance.print('C'), "3x^7+45x^5+176x^3+128x");
+		new int[][] {{n3, n7 }, {n45, n5 },
+			{n176, n3 }, {n128, n1 } });
+		assertEquals(instance.print('C'),
+		"3x^7+45x^5+176x^3+128x");
 
 	}
 
@@ -855,7 +860,8 @@ public class MyPolynomialSolverTest {
 		{n27, n2 },
 		{n1, n1 },
 		{-n1, 0 } });
-		assertEquals(instance.print('C'), "-120x^5-x^3+27x^2+x-1");
+		assertEquals(instance.print('C'),
+		"-120x^5-x^3+27x^2+x-1");
 
 	}
 
@@ -870,8 +876,10 @@ public class MyPolynomialSolverTest {
 	@Test
 	public void testmultiply() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
-		instance.setPolynomial('C', new int[][] {{n3, n7 }, {n45, n5 } });
-		instance.setPolynomial('B', new int[][] {{-n120, n5 }, {-n1, n3 } });
+		instance.setPolynomial('C', new int[][]
+		{{n3, n7 }, {n45, n5 } });
+		instance.setPolynomial('B', new int[][]
+		{{-n120, n5 }, {-n1, n3 } });
 		int[][] result1 = instance.multiply('B', 'C');
 		int[][] expected =
 		new int[][] {
@@ -896,7 +904,8 @@ public class MyPolynomialSolverTest {
 		{-n1, n0 } });
 		assertNull("Polynomial R is not set yet", instance.print('R'));
 		int[][] result1 = instance.add('B', 'C');
-		assertNotNull("Polynomial R must be set after evaluation",
+		assertNotNull("Polynomial R must"
+		+ " be set after evaluation",
 		instance.print('R'));
 		int[][] expected = new int[][] {
 		{n3, n7 },
@@ -917,7 +926,8 @@ public class MyPolynomialSolverTest {
 		new int[][] {{n3, n7 }, {n45, n5 }, {n175, n3 }, {n128, n1 } });
 		assertNull("Polynomial R is not set yet", instance.print('R'));
 		int[][] result1 = instance.add('B', 'C');
-		assertNotNull("Polynomial R must be set after evaluation",
+		assertNotNull("Polynomial R must "
+		+ "be set after evaluation",
 		instance.print('R'));
 		int[][] expected =
 		new int[][] {
