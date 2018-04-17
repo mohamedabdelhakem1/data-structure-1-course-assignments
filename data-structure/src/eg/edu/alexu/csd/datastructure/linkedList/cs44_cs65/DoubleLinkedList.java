@@ -250,7 +250,7 @@ public class DoubleLinkedList implements ILinkedList {
 		Dnode node = head;
 		int counter = 0;
 		if (head != null && fromIndex >= 0 && toIndex < numberOfelements
-				&& toIndex >= fromIndex) {
+		&& toIndex >= fromIndex) {
 			while (counter < fromIndex) {
 				counter++;
 				node = node.nextElement;
