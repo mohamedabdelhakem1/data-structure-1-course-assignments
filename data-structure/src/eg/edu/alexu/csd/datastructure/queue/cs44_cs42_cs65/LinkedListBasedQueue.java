@@ -12,17 +12,17 @@ import eg.edu.alexu.csd.datastructure.queue.IQueue;
  */
 public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 
-	static class node {
+	static class Node {
 
 		Object element;
 
-		node next;
+		Node next;
 
-		public node() {
+		public Node() {
 			this(null, null);
 		}
 
-		public node(final Object x, final node n) {
+		public Node(final Object x, final Node n) {
 			element = x;
 			next = n;
 		}
@@ -35,28 +35,29 @@ public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 			return element;
 		}
 
-		public void setNext(final node n) {
+		public void setNext(final Node n) {
 			next = n;
 		}
 
-		public node getnext() {
+		public Node getnext() {
 			return next;
 		}
 
 	}
 
-	private node front;
-	private node rear;
+	private Node front;
+	private Node rear;
 	int size = 0;
 
 	@Override
 	public void enqueue(Object item) {
 		if (size == 0) {
-			rear = new node(item, null);
+			rear = new Node(item, null);
 			front = rear;
 			size++;
+
 		} else {
-			node addedNode = new node(item, null);
+			Node addedNode = new Node(item, null);
 			rear.setNext(addedNode);
 			rear = addedNode;
 			size++;
