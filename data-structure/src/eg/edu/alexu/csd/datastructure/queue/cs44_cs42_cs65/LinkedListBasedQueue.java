@@ -72,6 +72,7 @@ public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 			front = front.getnext();
 			rear = front ;
 			return element;
+			size--;
 		}
 			Object element = front.getElement();
 			front = front.getnext();
