@@ -874,7 +874,7 @@ public class MyPolynomialSolverTest {
 		instance.setPolynomial('B', new int[][] {{-n120, n5 }, {-n1, n3 } });
 		int[][] result1 = instance.multiply('B', 'C');
 		int[][] expected =
-		new int[][] {{-n100 - n160, n12 }, {-n54 * n100 - n3, 10 }, {-45, 8 } };
+		new int[][] {{-n100 - n160, n12 }, {-n54 * n100 - n3, n10 }, {-n45, n8 } };
 		assertEquals(instance.print('R'), "-360x^12-5403x^10-45x^8");
 		assertArrayEquals(result1, expected);
 	}
