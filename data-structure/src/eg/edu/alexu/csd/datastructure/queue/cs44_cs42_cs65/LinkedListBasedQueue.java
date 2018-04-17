@@ -67,16 +67,19 @@ public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 	public Object dequeue() {
 		if (size == 0) {
 			throw new RuntimeException();
-		}else if(size==1) {
+		} else if (size == 1) {
 			Object element = front.getElement();
 			front = front.getnext();
-			rear = front ;
-			return element;
+			rear = front;
 			size--;
-		}
-			Object element = front.getElement();
-			front = front.getnext();
 			return element;
+
+		}
+		Object element = front.getElement();
+		front = front.getnext();
+		size--;
+		return element;
+
 
 	}
 
