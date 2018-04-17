@@ -152,7 +152,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		if (numofoperands - 1 != numofoperators) {
 			throw new RuntimeException();
 		}
-		if(numbOfLeft != numOfRight) {
+		if (numbOfLeft != numOfRight) {
 			throw new RuntimeException();
 		}
 		return result.toString();
