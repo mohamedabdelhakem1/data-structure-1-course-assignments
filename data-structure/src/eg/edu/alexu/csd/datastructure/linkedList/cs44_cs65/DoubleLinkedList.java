@@ -53,7 +53,8 @@ public class DoubleLinkedList implements ILinkedList {
 					node = node.nextElement;
 					counter++;
 				}
-				Dnode addedNode = new Dnode(element, node, node.prevElement);
+				Dnode addedNode = new Dnode(element,
+				node, node.prevElement);
 				node.prevElement = addedNode;
 				(addedNode.prevElement).nextElement = addedNode;
 				numberOfelements++;
@@ -75,7 +76,8 @@ public class DoubleLinkedList implements ILinkedList {
 					node = node.prevElement;
 					counter--;
 				}
-				Dnode addedNode = new Dnode(element, node, node.prevElement);
+				Dnode addedNode = new Dnode(element,
+				node, node.prevElement);
 				node.prevElement = addedNode;
 				(addedNode.prevElement).nextElement = addedNode;
 				numberOfelements++;
@@ -100,7 +102,8 @@ public class DoubleLinkedList implements ILinkedList {
 				numberOfelements++;
 			} else {
 				node = tail;
-				node.nextElement = new Dnode(element, null, node);
+				node.nextElement = new Dnode(element,
+				null, node);
 				tail = node.nextElement;
 				node.nextElement = tail;
 				numberOfelements++;
