@@ -47,7 +47,7 @@ public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 
 	private node front;
 	private node rear;
-	int size;
+	int size = 0;
 
 	@Override
 	public void enqueue(Object item) {
