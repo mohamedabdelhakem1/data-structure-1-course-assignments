@@ -41,6 +41,14 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		 * int value of the number of operators
 		 */
 		int numofoperators = 0;
+		/**
+		 * int number of right parentheses
+		 */
+		int numbOfLeft = 0;
+		/**
+		 * int number of left parentheses
+		 */
+		int numOfRight = 0;
 
 		for (int i = 0; i < expression.length(); i++) {
 			if (Character.isDigit(expression.charAt(i))) {
@@ -115,10 +123,10 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				}
 
 			} else if (expression.charAt(i) == '(') {
-
+				numbOfLeft++;
 				operators.push(expression.charAt(i));
 			} else if (expression.charAt(i) == ')') {
-
+				numOfRight++;
 				try {
 					while (!operators.peek().equals('(')) {
 						result.append(operators.pop());
@@ -142,6 +150,9 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			}
 		}
 		if (numofoperands - 1 != numofoperators) {
+			throw new RuntimeException();
+		}
+		if(numbOfLeft != numOfRight) {
 			throw new RuntimeException();
 		}
 		return result.toString();
