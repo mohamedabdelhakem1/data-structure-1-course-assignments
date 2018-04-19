@@ -342,9 +342,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				}
 
 			}
-		}
-
-		else if (poly == 'R') {
+		} else if (poly == 'R') {
 			if (r.isEmpty()) {
 				return null;
 			}
