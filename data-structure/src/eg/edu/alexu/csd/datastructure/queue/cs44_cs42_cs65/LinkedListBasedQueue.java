@@ -9,7 +9,11 @@ import eg.edu.alexu.csd.datastructure.queue.IQueue;
  *
  */
 public class LinkedListBasedQueue implements IQueue, ILinkedBased {
-
+	/**
+	 *
+	 * @author SHIKO
+	 *
+	 */
 	private static class Node {
 		/**
 		 *
