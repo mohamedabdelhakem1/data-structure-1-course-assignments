@@ -48,47 +48,61 @@ public class PriorityQueue implements IPriorityQueue {
 		 *
 		 */
 		private int key = 0;
+
 		/**
-		 * @param e obj
-		 * @param p p
-		 * @param n n
+		 * @param e
+		 *            obj
+		 * @param p
+		 *            p
+		 * @param n
+		 *            n
 		 */
-		public DNode(Object e, DNode p, DNode n, int k) {
+		public DNode(final Object e, final DNode p, final DNode n,
+		final int k) {
 			key = k;
 			element = e;
 			previousLink = p;
 			nextLink = n;
 		}
+
 		/**
-		 * @param x d
+		 * @param x
+		 *            d
 		 */
-		public void setObject(Object x) {
+		public void setObject(final Object x) {
 			element = x;
 		}
+
 		/**
-		 * @param n n
+		 * @param n
+		 *            n
 		 */
 		public void setPreviousLink(final DNode n) {
 			previousLink = n;
 		}
+
 		/**
-		 * @param n hhj
+		 * @param n
+		 *            hhj
 		 */
 		public void setnextLink(final DNode n) {
 			nextLink = n;
 		}
+
 		/**
 		 * @return jjj
 		 */
 		public Object getObject() {
 			return element;
 		}
+
 		/**
 		 * @return gg
 		 */
 		public DNode getPreviousLink() {
 			return previousLink;
 		}
+
 		/**
 		 * @return ggg
 		 */
@@ -96,6 +110,7 @@ public class PriorityQueue implements IPriorityQueue {
 			return nextLink;
 		}
 	}
+
 	/**
 	 *
 	 */
@@ -107,13 +122,13 @@ public class PriorityQueue implements IPriorityQueue {
 		DNode i = head.nextLink;
 		DNode j = tail.previousLink;
 		while (i.key <= key && i.key != 0
-			&& j.key != 0 && j.key > key) {
+		&& j.key != 0 && j.key > key) {
 			i = i.nextLink;
 			j = j.previousLink;
 		}
 		if (i.key > key) {
 			DNode addednode = new DNode(
-				item, i.previousLink, i, key);
+			item, i.previousLink, i, key);
 			i.previousLink.setnextLink(addednode);
 			i.previousLink = addednode;
 		}
@@ -124,6 +139,7 @@ public class PriorityQueue implements IPriorityQueue {
 		}
 		size++;
 	}
+
 	/**
 	 *
 	 */
@@ -138,6 +154,7 @@ public class PriorityQueue implements IPriorityQueue {
 		size--;
 		return i.getObject();
 	}
+
 	/**
 	 *
 	 */
@@ -149,6 +166,7 @@ public class PriorityQueue implements IPriorityQueue {
 		}
 		return i.getObject();
 	}
+
 	/**
 	 *
 	 */
@@ -156,6 +174,7 @@ public class PriorityQueue implements IPriorityQueue {
 	public boolean isEmpty() {
 		return (size == 0);
 	}
+
 	/**
 	 *
 	 */
