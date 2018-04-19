@@ -4,7 +4,11 @@ package eg.edu.alexu.csd.datastructure.linkedList.cs44_cs65;
 import java.awt.Point;
 
 import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
-
+/**
+ *
+ * @author SHIKO
+ *
+ */
 public class MyPolynomialSolver implements IPolynomialSolver {
 	/**
 	 *

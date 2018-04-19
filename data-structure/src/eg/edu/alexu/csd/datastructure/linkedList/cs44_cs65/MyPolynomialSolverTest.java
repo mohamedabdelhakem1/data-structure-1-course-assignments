@@ -6,7 +6,11 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
-
+/**
+ *
+ * @author SHIKO
+ *
+ */
 public class MyPolynomialSolverTest {
 	/**
 	*
