@@ -1,4 +1,6 @@
 package eg.edu.alexu.csd.datastructure.maze;
+
+
 public interface IMazeSolver {
 /**
 * Read the maze file, and solve it using Breadth First Search

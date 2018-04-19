@@ -1,5 +1,6 @@
 package eg.edu.alexu.csd.datastructure.maze.cs42_cs44_cs65;
 
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

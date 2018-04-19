@@ -46,6 +46,7 @@ public class Node {
     /**
      * @param b boolean
      */
+
     public void setVisited(final boolean b) {
         v = b;
     }
