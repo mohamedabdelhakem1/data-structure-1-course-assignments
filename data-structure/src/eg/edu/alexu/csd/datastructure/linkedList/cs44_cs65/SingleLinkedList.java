@@ -14,9 +14,20 @@ public class SingleLinkedList implements ILinkedList {
 	 *
 	 */
 	static class Snode {
+		/**
+		 *
+		 */
 		Object newElement;
+		/**
+		 *
+		 */
 		Snode nextElement;
 
+		/**
+		 *
+		 * @param x
+		 * @param n
+		 */
 		Snode(final Object x, final Snode n) {
 			newElement = x;
 			nextElement = n;
@@ -24,7 +35,13 @@ public class SingleLinkedList implements ILinkedList {
 		}
 	}
 
+	/**
+	 *
+	 */
 	int numberOfElements = 0;
+	/**
+	 *
+	 */
 	Snode head = null;
 
 	@Override
@@ -161,7 +178,7 @@ public class SingleLinkedList implements ILinkedList {
 		Snode node = head;
 		int counter = 0;
 		if (head != null && fromIndex >= 0 && toIndex < numberOfElements
-				&& toIndex >= fromIndex) {
+		&& toIndex >= fromIndex) {
 			while (counter < fromIndex) {
 				counter++;
 				node = node.nextElement;
