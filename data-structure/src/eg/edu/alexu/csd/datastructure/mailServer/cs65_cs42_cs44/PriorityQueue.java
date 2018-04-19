@@ -2,20 +2,36 @@ package eg.edu.alexu.csd.datastructure.mailServer.cs65_cs42_cs44;
 
 import eg.edu.alexu.csd.datastructure.mailServer.IPriorityQueue;
 
+/**
+ * @author SHIKO
+ *
+ */
 public class PriorityQueue implements IPriorityQueue {
 	/**
-	 * @author Abdelrahman Youssef
 	 *
 	 */
 	private int size = 0;
-	private dNode head = new dNode(null, null, null, 0);
-	private dNode tail = new dNode(null, head, null, 0);
+	/**
+	 *
+	 */
+	private DNode head = new DNode(null, null, null, 0);
+	/**
+	 *
+	 */
+	private DNode tail = new DNode(null, head, null, 0);
 
+	/**
+	 *
+	 */
 	public PriorityQueue() {
 		head.setnextLink(tail);
 	}
 
-	private class dNode {
+	/**
+	 * @author SHIKO
+	 *
+	 */
+	private class DNode {
 		/**
 		 *
 		 */
@@ -23,106 +39,91 @@ public class PriorityQueue implements IPriorityQueue {
 		/**
 		 *
 		 */
-		private dNode previousLink;
+		private DNode previousLink;
 		/**
 		 *
 		 */
-		private dNode nextLink;
+		private DNode nextLink;
 		/**
 		 *
 		 */
 		private int key = 0;
-
 		/**
-		 * @param e
-		 *            obj
-		 * @param p
-		 *            p
-		 * @param n
-		 *            n
+		 * @param e obj
+		 * @param p p
+		 * @param n n
 		 */
-		public dNode(Object e, dNode p, dNode n, int k) {
+		public DNode(Object e, DNode p, DNode n, int k) {
 			key = k;
 			element = e;
 			previousLink = p;
 			nextLink = n;
 		}
-
 		/**
-		 * @param x
-		 *            d
+		 * @param x d
 		 */
 		public void setObject(Object x) {
 			element = x;
 		}
-
 		/**
-		 * @param n
-		 * 
+		 * @param n n
 		 */
-		public void setPreviousLink(dNode n) {
+		public void setPreviousLink(final DNode n) {
 			previousLink = n;
 		}
-
 		/**
-		 * @param n
-		 *            hhj
+		 * @param n hhj
 		 */
-		public void setnextLink(dNode n) {
+		public void setnextLink(final DNode n) {
 			nextLink = n;
 		}
-
 		/**
 		 * @return jjj
 		 */
 		public Object getObject() {
 			return element;
 		}
-
 		/**
 		 * @return gg
 		 */
-		public dNode getPreviousLink() {
+		public DNode getPreviousLink() {
 			return previousLink;
 		}
-
 		/**
 		 * @return ggg
 		 */
-		public dNode getNextLink() {
+		public DNode getNextLink() {
 			return nextLink;
 		}
 	}
-
 	/**
 	 *
 	 */
 	@Override
-	public void insert(Object item, int key) {
+	public void insert(final Object item, final int key) {
 		if (key <= 0) {
 			throw new RuntimeException();
 		}
-		dNode i = head.nextLink;
-		dNode j = tail.previousLink;
-		while (i.key <= key && i.key != 0 && j.key != 0 && j.key > key) {
+		DNode i = head.nextLink;
+		DNode j = tail.previousLink;
+		while (i.key <= key && i.key != 0
+			&& j.key != 0 && j.key > key) {
 			i = i.nextLink;
 			j = j.previousLink;
-
 		}
 		if (i.key > key) {
-			dNode addednode = new dNode(item, i.previousLink, i, key);
+			DNode addednode = new DNode(
+				item, i.previousLink, i, key);
 			i.previousLink.setnextLink(addednode);
 			i.previousLink = addednode;
 		}
 		if (j.key <= key) {
-			dNode addednode = new dNode(item, j, j.nextLink, key);
+			DNode addednode = new DNode(item, j, j.nextLink, key);
 			j.nextLink.setPreviousLink(addednode);
 			j.setnextLink(addednode);
 		}
-
-			size++;
+		size++;
 	}
-
 	/**
 	 *
 	 */
@@ -131,41 +132,35 @@ public class PriorityQueue implements IPriorityQueue {
 		if (size == 0) {
 			throw new RuntimeException();
 		}
-		dNode i = head.nextLink;
+		DNode i = head.nextLink;
 		i.nextLink.setPreviousLink(head);
 		head.setnextLink(i.nextLink);
 		size--;
 		return i.getObject();
 	}
-
 	/**
 	 *
 	 */
 	@Override
 	public Object min() {
-		dNode i = head.nextLink;
+		DNode i = head.nextLink;
 		if (size == 0) {
 			throw new RuntimeException();
 		}
 		return i.getObject();
 	}
-
 	/**
 	 *
 	 */
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
 		return (size == 0);
 	}
-
 	/**
 	 *
 	 */
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
 		return size;
 	}
-
 }
