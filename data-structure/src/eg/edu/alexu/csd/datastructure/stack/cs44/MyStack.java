@@ -1,7 +1,5 @@
 package eg.edu.alexu.csd.datastructure.stack.cs44;
 
-import java.lang.reflect.Constructor;
-
 import eg.edu.alexu.csd.datastructure.stack.IStack;
 /**
  *
@@ -28,13 +26,13 @@ public class MyStack implements IStack {
 		 */
 		Node next;
 		/**
-		 * {@link Constructor} for the node
+		 *  for the node
 		 */
 		public Node() {
 			this(null, null);
 		}
 		/**
-		 * {@link Constructor} for the node
+		 *  for the node
 		 */
 		public Node(final Object x, final Node n) {
 			element = x;
