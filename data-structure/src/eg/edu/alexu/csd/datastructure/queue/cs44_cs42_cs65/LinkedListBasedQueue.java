@@ -1,6 +1,4 @@
-/**
- *
- */
+
 package eg.edu.alexu.csd.datastructure.queue.cs44_cs42_cs65;
 
 import eg.edu.alexu.csd.datastructure.queue.ILinkedBased;
@@ -12,42 +10,79 @@ import eg.edu.alexu.csd.datastructure.queue.IQueue;
  */
 public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 
-	static class Node {
+	private static class Node {
+		/**
+		 *
+		 */
+		private Object element;
+		/**
+		 *
+		 */
+		private Node next;
 
-		Object element;
-
-		Node next;
-
+		/**
+		 *
+		 */
 		public Node() {
 			this(null, null);
 		}
 
+		/**
+		 *
+		 * @param x
+		 * @param n
+		 */
 		public Node(final Object x, final Node n) {
 			element = x;
 			next = n;
 		}
 
+		/**
+		 *
+		 * @param x
+		 */
 		public void setElement(final Object x) {
 			element = x;
 		}
 
+		/**
+		 *
+		 * @return
+		 */
 		public Object getElement() {
 			return element;
 		}
 
+		/**
+		 *
+		 * @param n
+		 */
 		public void setNext(final Node n) {
 			next = n;
 		}
 
+		/**
+		 *
+		 * @return
+		 */
 		public Node getnext() {
 			return next;
 		}
 
 	}
 
+	/**
+	 *
+	 */
 	private Node front;
+	/**
+	 *
+	 */
 	private Node rear;
-	int size = 0;
+	/**
+	 *
+	 */
+	private int size = 0;
 
 	@Override
 	public void enqueue(Object item) {
@@ -80,7 +115,6 @@ public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 		front = front.getnext();
 		size--;
 		return element;
-
 
 	}
 
