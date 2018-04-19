@@ -6,22 +6,43 @@ import java.awt.Point;
 import eg.edu.alexu.csd.datastructure.linkedList.IPolynomialSolver;
 
 public class MyPolynomialSolver implements IPolynomialSolver {
+	/**
+	 *
+	 */
 	SingleLinkedList a = new SingleLinkedList();
+	/**
+	 *
+	 */
 	SingleLinkedList b = new SingleLinkedList();
+	/**
+	 *
+	 */
 	SingleLinkedList c = new SingleLinkedList();
+	/**
+	 *
+	 */
 	SingleLinkedList r = new SingleLinkedList();
-
-	public boolean ISEmpty(final char poly) {
+	/**
+	 *
+	 * @param poly
+	 * @return
+	 */
+	public boolean isEmpty(final char poly) {
 		if (poly == 'A') {
 			return (a.isEmpty());
 		} else if (poly == 'B') {
 			return (b.isEmpty());
 		} else if (poly == 'C') {
 			return (c.isEmpty());
-		}
+       	}
+
 		return false;
 	}
-
+	/**
+	 *
+	 * @param s1
+	 * @param s2
+	 */
 	private void multiplication(final SingleLinkedList s1,
 	final SingleLinkedList s2) {
 		r.clear();
@@ -38,7 +59,11 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			}
 		}
 	}
-
+	/**
+	 *
+	 * @param s1
+	 * @param s2
+	 */
 	private void subtraction(final SingleLinkedList s1,
 	final SingleLinkedList s2) {
 		r.clear();
@@ -66,7 +91,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 		}
 		for (int i = 0; i < s1.size(); i++) {
 			Point p1 = (Point) s1.get(i);
-			if (visited.contains(p1.y) == false) {
+			if (!visited.contains(p1.y)) {
 				r = sort(r, r.size(), p1);
 			}
 		}
@@ -75,7 +100,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			int x = p2.x;
 			x = -1 * x;
 
-			if (visited.contains(p2.y) == false) {
+			if (!visited.contains(p2.y)) {
 				r = sort(r, r.size(), new Point(x, p2.y));
 			}
 
@@ -169,7 +194,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 		} else {
 			s.add(p1);
 		}
-		if (added == false && i > 0) {
+		if (!added && i > 0) {
 			s.add(p1);
 		}
 		return s;
@@ -282,9 +307,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 					}
 				}
 			}
-		}
-
-		else if (poly == 'C') {
+		} else if (poly == 'C') {
 			if (c.isEmpty()) {
 				return null;
 			}
