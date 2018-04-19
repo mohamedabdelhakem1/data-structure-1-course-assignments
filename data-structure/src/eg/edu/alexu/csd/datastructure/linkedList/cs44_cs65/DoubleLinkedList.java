@@ -4,10 +4,24 @@ import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
 
 public class DoubleLinkedList implements ILinkedList {
 	static class Dnode {
+		/**
+		 *
+		 */
 		Object newElement;
+		/**
+		 *
+		 */
 		Dnode nextElement;
+		/**
+		 *
+		 */
 		Dnode prevElement;
-
+		/**
+		 *
+		 * @param x
+		 * @param next
+		 * @param prev
+		 */
 		Dnode(final Object x, final Dnode next, final Dnode prev) {
 			newElement = x;
 			nextElement = next;
@@ -15,10 +29,17 @@ public class DoubleLinkedList implements ILinkedList {
 
 		}
 	}
-
+	/**
+	 *
+	 */
 	Dnode head = null;
+	/**
+	 *
+	 */
 	Dnode tail = null;
-
+	/**
+	 *
+	 */
 	int numberOfelements = 0;
 
 	@Override
