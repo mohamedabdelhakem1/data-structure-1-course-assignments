@@ -5,7 +5,7 @@ import java.io.File;
 
 import eg.edu.alexu.csd.datastructure.maze.IMazeSolver;
 import eg.edu.alexu.csd.datastructure.queue.cs44_cs42_cs65.LinkedListBasedQueue;
-import eg.edu.alexu.csd.datastructure.stack.cs44.Stack;
+import eg.edu.alexu.csd.datastructure.stack.cs44.MyStack;
 
 
 /**
@@ -93,8 +93,8 @@ public class Maze implements IMazeSolver {
     /**
      * @return stack
      */
-    private Stack dfs() {
-        Stack s = new Stack();
+    private MyStack dfs() {
+        MyStack s = new MyStack();
         findStart();
         Point t = start;
         s.push(t);
@@ -234,7 +234,7 @@ public class Maze implements IMazeSolver {
     @Override
     public int[][] solveDFS(final File maze) {
         setMaze(maze);
-        Stack s = dfs();
+        MyStack s = dfs();
         if (s.isEmpty()) {
             return null;
         }
