@@ -56,6 +56,7 @@ public class PriorityQueue implements IPriorityQueue {
 		 *            p
 		 * @param n
 		 *            n
+		 * @param k key
 		 */
 		public DNode(final Object e, final DNode p, final DNode n,
 		final int k) {
