@@ -1,8 +1,17 @@
 package eg.edu.alexu.csd.datastructure.linkedList.cs44_cs65;
 
 import eg.edu.alexu.csd.datastructure.linkedList.ILinkedList;
-
+/**
+ *
+ * @author SHIKO
+ *
+ */
 public class DoubleLinkedList implements ILinkedList {
+	/**
+	 *
+	 * @author SHIKO
+	 *
+	 */
 	static class Dnode {
 		/**
 		 *
