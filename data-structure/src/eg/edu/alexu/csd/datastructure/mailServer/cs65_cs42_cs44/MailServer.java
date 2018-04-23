@@ -15,10 +15,10 @@ import eg.edu.alexu.csd.datastructure.mailServer.ISort;
  * @author SHIKO
  *
  */
-public class MailServer implements IApp{
+public class MailServer implements IApp {
 
-	/* (non-Javadoc)
-	 * @see eg.edu.alexu.csd.datastructure.mailServer.IApp#signin(java.lang.String, java.lang.String)
+	/**
+	 *
 	 */
 	@Override
 	public boolean signin(String email, String password) {
@@ -26,18 +26,13 @@ public class MailServer implements IApp{
 		return false;
 	}
 
-	/* (non-Javadoc)
-	 * @see eg.edu.alexu.csd.datastructure.mailServer.IApp#signup(eg.edu.alexu.csd.datastructure.mailServer.IContact)
-	 */
 	@Override
 	public boolean signup(IContact contact) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	/* (non-Javadoc)
-	 * @see eg.edu.alexu.csd.datastructure.mailServer.IApp#setViewingOptions(eg.edu.alexu.csd.datastructure.mailServer.IFolder, eg.edu.alexu.csd.datastructure.mailServer.IFilter, eg.edu.alexu.csd.datastructure.mailServer.ISort)
-	 */
+
 	@Override
 	public void setViewingOptions(IFolder folder, IFilter filter, ISort sort) {
 		// TODO Auto-generated method stub
