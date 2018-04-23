@@ -39,36 +39,26 @@ public class MailServer implements IApp {
 
 	}
 
-	/* (non-Javadoc)
-	 * @see eg.edu.alexu.csd.datastructure.mailServer.IApp#listEmails(int)
-	 */
+
 	@Override
 	public IMail[] listEmails(int page) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	/* (non-Javadoc)
-	 * @see eg.edu.alexu.csd.datastructure.mailServer.IApp#deleteEmails(eg.edu.alexu.csd.datastructure.linkedList.ILinkedList)
-	 */
 	@Override
 	public void deleteEmails(ILinkedList mails) {
 		// TODO Auto-generated method stub
 
 	}
 
-	/* (non-Javadoc)
-	 * @see eg.edu.alexu.csd.datastructure.mailServer.IApp#moveEmails(eg.edu.alexu.csd.datastructure.linkedList.ILinkedList, eg.edu.alexu.csd.datastructure.mailServer.IFolder)
-	 */
+
 	@Override
 	public void moveEmails(ILinkedList mails, IFolder des) {
 		// TODO Auto-generated method stub
 
 	}
 
-	/* (non-Javadoc)
-	 * @see eg.edu.alexu.csd.datastructure.mailServer.IApp#compose(eg.edu.alexu.csd.datastructure.mailServer.IMail)
-	 */
 	@Override
 	public boolean compose(IMail email) {
 		// TODO Auto-generated method stub
