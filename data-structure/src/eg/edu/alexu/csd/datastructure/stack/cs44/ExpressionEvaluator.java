@@ -72,7 +72,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				result.append(number);
 				result.append(" ");
 
-			} else if (Character.isAlphabetic(expression.charAt(i))) {
+			} else if (Character.isAlphabetic(
+			expression.charAt(i))) {
 				numofoperands++;
 				result.append(expression.charAt(i));
 				result.append(" ");
@@ -80,7 +81,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			} else if (expression.charAt(i) == '*'
 			|| expression.charAt(i) == '/') {
 				numofoperators++;
-				if (operators.isEmpty() || operators.peek().equals('-')
+				if (operators.isEmpty()
+				|| operators.peek().equals('-')
 				|| operators.peek().equals('+')) {
 					operators.push(expression.charAt(i));
 
