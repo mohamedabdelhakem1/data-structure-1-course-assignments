@@ -435,6 +435,7 @@ public class SingleLinkedListTest {
 			fail("You should throw an exception"
 			+ " when trying to set in a wrong index");
 		} catch (RuntimeException f) {
+			System.out.println(" ");
 		}
 	}
 
