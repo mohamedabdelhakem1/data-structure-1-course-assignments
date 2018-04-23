@@ -16,20 +16,20 @@ public class DoubleLinkedList implements ILinkedList {
 		/**
 		 *
 		 */
-		Object newElement;
+		private Object newElement;
 		/**
 		 *
 		 */
-		Dnode nextElement;
+		private Dnode nextElement;
 		/**
 		 *
 		 */
-		Dnode prevElement;
+		private Dnode prevElement;
 		/**
 		 *
-		 * @param x
-		 * @param next
-		 * @param prev
+		 * @param x value
+		 * @param next next
+		 * @param prev prev
 		 */
 		Dnode(final Object x, final Dnode next, final Dnode prev) {
 			newElement = x;
@@ -45,11 +45,11 @@ public class DoubleLinkedList implements ILinkedList {
 	/**
 	 *
 	 */
-	Dnode tail = null;
+	private Dnode tail = null;
 	/**
 	 *
 	 */
-	int numberOfelements = 0;
+	private int numberOfelements = 0;
 
 	@Override
 	public void add(final int index, final Object element) {
@@ -65,7 +65,8 @@ public class DoubleLinkedList implements ILinkedList {
 
 				if (numberOfelements != 0) {
 
-					Dnode addednode = new Dnode(element, head, null);
+					Dnode addednode = new Dnode(element,
+					head, null);
 					head.prevElement = addednode;
 					head = addednode;
 
@@ -95,7 +96,8 @@ public class DoubleLinkedList implements ILinkedList {
 			node = tail;
 			counter = numberOfelements - 1;
 			if (index == numberOfelements) {
-				Dnode addedNode = new Dnode(element, null, tail);
+				Dnode addedNode = new Dnode(element, null,
+				tail);
 				tail.nextElement = addedNode;
 				tail = addedNode;
 				numberOfelements++;
