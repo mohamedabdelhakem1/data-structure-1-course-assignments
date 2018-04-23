@@ -6,7 +6,7 @@ import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 /**
  * The Class ExpressionEvaluator.
  *
- * @author SHIKO
+ * @author MOHAMED
  */
 public class ExpressionEvaluator implements IExpressionEvaluator {
 
@@ -174,7 +174,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		/**
 		 * array of strings of numbers and operators
 		 */
-		String s[] = expression.split(" ");
+		String[] s = expression.split(" ");
 		/**
 		 * MyStack stores the operands before evaluation
 		 */
