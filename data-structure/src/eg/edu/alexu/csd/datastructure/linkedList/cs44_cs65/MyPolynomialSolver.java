@@ -252,7 +252,6 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 				} else if (p.x != 1) {
 					s += p.x;
 				}
-
 				if (p.y != 0) {
 					if (p.y == 1) {
 						s += "x";
@@ -262,34 +261,27 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 					}
 				} else if (p.x == 1 || p.x == -1) {
 					s += "1";
-
 				}
-
 				if (i != a.size() - 1) {
 					Point p1 = (Point) a.get(i + 1);
 					if (p1.x > 0) {
 						s += "+";
 					}
 				}
-
 			}
 		} else if (poly == 'B') {
 			if (b.isEmpty()) {
 				return null;
 			}
-
 			for (int i = 0; i < b.size(); i++) {
-
 				Point p = (Point) b.get(i);
 				if (p.x == 0) {
-
 					continue;
 				} else if (p.x == -1) {
 					s += '-';
 				} else if (p.x != 1) {
 					s += p.x;
 				}
-
 				if (p.y != 0) {
 					if (p.y == 1) {
 						s += "x";
@@ -299,9 +291,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 					}
 				} else if (p.x == 1 || p.x == -1) {
 					s += "1";
-
 				}
-
 				if (i != b.size() - 1) {
 					Point p1 = (Point) b.get(i + 1);
 					if (p1.x > 0) {
@@ -316,14 +306,12 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			for (int i = 0; i < c.size(); i++) {
 				Point p = (Point) c.get(i);
 				if (p.x == 0) {
-
 					continue;
 				} else if (p.x == -1) {
 					s += '-';
 				} else if (p.x != 1) {
 					s += p.x;
 				}
-
 				if (p.y != 0) {
 					if (p.y == 1) {
 						s += "x";
@@ -333,9 +321,7 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 					}
 				} else if (p.x == 1 || p.x == -1) {
 					s += "1";
-
 				}
-
 				if (i != c.size() - 1) {
 					Point p1 = (Point) c.get(i + 1);
 					if (p1.x > 0) {
@@ -351,14 +337,12 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			for (int i = 0; i < r.size(); i++) {
 				Point p = (Point) r.get(i);
 				if (p.x == 0) {
-
 					continue;
 				} else if (p.x == -1) {
 					s += '-';
 				} else if (p.x != 1) {
 					s += p.x;
 				}
-
 				if (p.y != 0) {
 					if (p.y == 1) {
 						s += "x";
@@ -368,25 +352,19 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 					}
 				} else if (p.x == 1 || p.x == -1) {
 					s += "1";
-
 				}
-
 				if (i != r.size() - 1) {
 					Point p1 = (Point) r.get(i + 1);
 					if (p1.x > 0) {
 						s += "+";
 					}
 				}
-
 			}
-
 		} else {
 			throw new RuntimeException();
-
 		}
 		return s;
 	}
-
 	@Override
 	public void clearPolynomial(final char poly) {
 		if (poly == 'A') {
