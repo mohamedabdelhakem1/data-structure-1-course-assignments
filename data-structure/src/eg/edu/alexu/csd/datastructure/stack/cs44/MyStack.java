@@ -1,6 +1,7 @@
 package eg.edu.alexu.csd.datastructure.stack.cs44;
 
 import eg.edu.alexu.csd.datastructure.stack.IStack;
+
 /**
  *
  * @author SHIKO
@@ -8,14 +9,15 @@ import eg.edu.alexu.csd.datastructure.stack.IStack;
  */
 public class MyStack implements IStack {
 	/**
+	 *
 	 * size of the stack
 	 */
 	private int size = 0;
-   /**
-    *
-    * @author SHIKO
-    * class node of the stack
-    */
+
+	/**
+	 *
+	 * @author SHIKO class node of the stack
+	 */
 	static class Node {
 		/**
 		 * value of the element
@@ -25,26 +27,31 @@ public class MyStack implements IStack {
 		 * a pointer to the next element in the stack
 		 */
 		Node next;
+
 		/**
-		 *  for the node
+		 * for the node
 		 */
 		public Node() {
 			this(null, null);
 		}
+
 		/**
-		 *  for the node
+		 * for the node
 		 */
 		public Node(final Object x, final Node n) {
 			element = x;
 			next = n;
 		}
+
 		/**
 		 * method set the value of the element
+		 *
 		 * @param x
 		 */
 		public void setElement(final Object x) {
 			element = x;
 		}
+
 		/**
 		 *
 		 * @return the value of the element
@@ -52,13 +59,16 @@ public class MyStack implements IStack {
 		public Object getElement() {
 			return element;
 		}
+
 		/**
 		 *
-		 * @param n pointer to the next element
+		 * @param n
+		 *            pointer to the next element
 		 */
 		public void setNext(final Node n) {
 			next = n;
 		}
+
 		/**
 		 *
 		 * @return the pointer to the next element
@@ -68,12 +78,14 @@ public class MyStack implements IStack {
 		}
 
 	}
+
 	/**
 	 * pointer to the top of the stack
 	 */
 	private Node top;
+
 	/**
-	 *@return the element in the top of the stack and removes it
+	 * @return the element in the top of the stack and removes it
 	 */
 	@Override
 	public Object pop() {
@@ -87,8 +99,9 @@ public class MyStack implements IStack {
 		}
 
 	}
+
 	/**
-	 *@return the the element in the top of the stack
+	 * @return the the element in the top of the stack
 	 */
 	@Override
 	public Object peek() {
@@ -99,8 +112,10 @@ public class MyStack implements IStack {
 		}
 
 	}
+
 	/**
-	 * @param element to be added at the top of the stack
+	 * @param element
+	 *            to be added at the top of the stack
 	 */
 	@Override
 	public void push(final Object element) {
@@ -112,6 +127,7 @@ public class MyStack implements IStack {
 		}
 		size++;
 	}
+
 	/**
 	 * @return boolean if the stack is empty of not
 	 */
@@ -120,6 +136,7 @@ public class MyStack implements IStack {
 
 		return (size == 0);
 	}
+
 	/**
 	 * @return the size of the stack
 	 */
