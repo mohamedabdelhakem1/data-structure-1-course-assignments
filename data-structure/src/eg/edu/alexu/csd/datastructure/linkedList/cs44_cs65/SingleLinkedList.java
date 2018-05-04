@@ -25,8 +25,8 @@ public class SingleLinkedList implements ILinkedList {
 
 		/**
 		 *
-		 * @param x
-		 * @param n
+		 * @param x .
+		 * @param n .
 		 */
 		Snode(final Object x, final Snode n) {
 			newElement = x;
