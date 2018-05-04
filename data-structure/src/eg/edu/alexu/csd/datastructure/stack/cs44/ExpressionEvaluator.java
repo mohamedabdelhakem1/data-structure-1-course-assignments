@@ -95,7 +95,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 						}
 
 					} catch (Exception e) {
-						// TODO: handle exception
+
 					}
 					operators.push(expression.charAt(i));
 				}
@@ -117,7 +117,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 						}
 
 					} catch (Exception e) {
-						// TODO: handle exception
+
 					}
 
 					operators.push(expression.charAt(i));
@@ -136,7 +136,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					}
 					operators.pop();
 				} catch (Exception e) {
-					// TODO: handle exception
+
 				}
 
 			}
