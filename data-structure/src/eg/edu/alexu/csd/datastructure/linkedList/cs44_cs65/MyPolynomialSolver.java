@@ -239,7 +239,6 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 	@Override
 	public String print(final char poly) {
 		String s = "";
-
 		if (poly == 'A') {
 			if (a.isEmpty()) {
 				return null;
@@ -247,7 +246,6 @@ public class MyPolynomialSolver implements IPolynomialSolver {
 			for (int i = 0; i < a.size(); i++) {
 				Point p = (Point) a.get(i);
 				if (p.x == 0) {
-
 					continue;
 				} else if (p.x == -1) {
 					s += '-';
