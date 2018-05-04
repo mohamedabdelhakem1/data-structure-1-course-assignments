@@ -9,34 +9,33 @@ import eg.edu.alexu.csd.datastructure.stack.IStack;
  */
 public class MyStack implements IStack {
 	/**
-	 *
-	 * size of the stack
+	 *int size of the stack.
 	 */
 	private int size = 0;
 
 	/**
 	 *
-	 * @author SHIKO class node of the stack
+	 * @author SHIKO class node of the stack.
 	 */
 	static class Node {
 		/**
-		 * value of the element
+		 * value of the element.
 		 */
 		Object element;
 		/**
-		 * a pointer to the next element in the stack
+		 * a pointer to the next element in the stack.
 		 */
 		Node next;
 
 		/**
-		 * for the node
+		 * for the node.
 		 */
 		public Node() {
 			this(null, null);
 		}
 
 		/**
-		 * for the node
+		 * for the node.
 		 */
 		public Node(final Object x, final Node n) {
 			element = x;
@@ -44,7 +43,7 @@ public class MyStack implements IStack {
 		}
 
 		/**
-		 * method set the value of the element
+		 * method set the value of the element.
 		 *
 		 * @param x
 		 */
@@ -54,7 +53,7 @@ public class MyStack implements IStack {
 
 		/**
 		 *
-		 * @return the value of the element
+		 * @return the value of the element.
 		 */
 		public Object getElement() {
 			return element;
