@@ -812,7 +812,9 @@ public class MyPolynomialSolverTest {
 	*
 	*/
 	public final int n199 = 199;
-
+	/**
+	 *
+	 */
 	@Test
 	public void testSolveSubtracte() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
@@ -842,7 +844,9 @@ public class MyPolynomialSolverTest {
 		{n1, n0 } };
 		assertArrayEquals(expected, result1);
 	}
-
+	/**
+	 *
+	 */
 	@Test
 	public void testprint1() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
@@ -853,7 +857,9 @@ public class MyPolynomialSolverTest {
 		"3x^7+45x^5+176x^3+128x");
 
 	}
-
+	/**
+	 *
+	 */
 	@Test
 	public void testprint2() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
@@ -868,7 +874,9 @@ public class MyPolynomialSolverTest {
 		"-120x^5-x^3+27x^2+x-1");
 
 	}
-
+	/**
+	 *
+	 */
 	@Test
 	public void testprint3() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
@@ -876,7 +884,9 @@ public class MyPolynomialSolverTest {
 		assertEquals(instance.print('C'), null);
 
 	}
-
+	/**
+	 *
+	 */
 	@Test
 	public void testmultiply() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
@@ -893,7 +903,9 @@ public class MyPolynomialSolverTest {
 		assertEquals(instance.print('R'), "-360x^12-5403x^10-45x^8");
 		assertArrayEquals(result1, expected);
 	}
-
+	/**
+	 *
+	 */
 	@Test
 	public void testSolveAdd() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
@@ -920,7 +932,9 @@ public class MyPolynomialSolverTest {
 		{-n1, n0 } };
 		assertArrayEquals(expected, result1);
 	}
-
+	/**
+	 *
+	 */
 	@Test
 	public void testSolveAdd2() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
@@ -941,7 +955,9 @@ public class MyPolynomialSolverTest {
 		{n100 + n100 + n56, n1 } };
 		assertArrayEquals(expected, result1);
 	}
-
+	/**
+	 *
+	 */
 	@Test
 	public void testSolveAdd3() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
@@ -956,7 +972,9 @@ public class MyPolynomialSolverTest {
 		int[][] expected = new int[][] {{-n1, n3 } };
 		assertArrayEquals(expected, result1);
 	}
-
+	/**
+	 *
+	 */
 	@Test
 	public void testSolveAdd4() {
 		MyPolynomialSolver instance = new MyPolynomialSolver();
@@ -968,6 +986,5 @@ public class MyPolynomialSolverTest {
 		instance.print('R'));
 		int[][] expected = new int[][] {{0, 0 } };
 		assertArrayEquals(expected, result1);
-
 	}
 }
