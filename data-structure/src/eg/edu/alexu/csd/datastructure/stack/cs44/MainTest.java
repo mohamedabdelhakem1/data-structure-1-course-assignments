@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class MainTest {
 	/**
 	 *
-	 * @param args
+	 * @param args .
 	 */
 	public static void main(final String[] args) {
 		/**
