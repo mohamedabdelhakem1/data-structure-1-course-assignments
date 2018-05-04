@@ -35,7 +35,9 @@ public class MyStack implements IStack {
 		}
 
 		/**
-		 * for the node.
+		 *
+		 * @param x .
+		 * @param n .
 		 */
 		public Node(final Object x, final Node n) {
 			element = x;
@@ -45,7 +47,7 @@ public class MyStack implements IStack {
 		/**
 		 * method set the value of the element.
 		 *
-		 * @param x
+		 * @param x .
 		 */
 		public void setElement(final Object x) {
 			element = x;
