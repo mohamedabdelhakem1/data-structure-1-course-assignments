@@ -414,7 +414,9 @@ public class DoubleLinkedListTest {
 	*
 	*/
 	public final int n99 = 99;
-
+	/**
+	 *
+	 */
 	@Test
 	public void cs65TestSet() {
 		DoubleLinkedList instance = new DoubleLinkedList();
