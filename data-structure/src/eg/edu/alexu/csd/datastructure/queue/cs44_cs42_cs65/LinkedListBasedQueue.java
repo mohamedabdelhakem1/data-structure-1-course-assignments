@@ -32,8 +32,9 @@ public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 		}
 
 		/**
-		 *	Object x value.
-		 *  Node n node.
+		 *
+		 * @param x .
+		 * @param n .
 		 */
 		public Node(final Object x, final Node n) {
 			element = x;
