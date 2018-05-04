@@ -117,11 +117,17 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					operators.push(expression.charAt(i));
 				} else {
 					try {
-						while (operators.peek().equals('+')
-						|| operators.peek().equals('-')
-						|| operators.peek().equals('/')
-						|| operators.peek().equals('*')) {
-							result.append(operators.pop());
+						while (operators
+						.peek().equals('+')
+						|| operators
+						.peek().equals('-')
+						|| operators
+						.peek().equals('/')
+						|| operators
+						.peek().equals('*')) {
+							result
+							.append(operators
+							.pop());
 							result.append(" ");
 
 						}
@@ -170,7 +176,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 	}
 
 	/**
-	 * this method evaluate postfix operations
+	 * this method evaluate postfix operations .
 	 *
 	 * @param expression
 	 * @return result after rounding the value
