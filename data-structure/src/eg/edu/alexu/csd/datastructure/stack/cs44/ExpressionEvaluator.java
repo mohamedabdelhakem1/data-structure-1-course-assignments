@@ -2,7 +2,6 @@ package eg.edu.alexu.csd.datastructure.stack.cs44;
 
 import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class ExpressionEvaluator.
  *
