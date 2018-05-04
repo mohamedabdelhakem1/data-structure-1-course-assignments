@@ -32,9 +32,8 @@ public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 		}
 
 		/**
-		 *
-		 *	Object x
-		 *  Node n
+		 *	Object x value.
+		 *  Node n node.
 		 */
 		public Node(final Object x, final Node n) {
 			element = x;
@@ -42,7 +41,7 @@ public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 		}
 		/**
 		 *
-		 * @param x
+		 * @param x .
 		 */
 		public void setElement(final Object x) {
 			element = x;
@@ -50,7 +49,7 @@ public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 
 		/**
 		 *
-		 * @return
+		 * @return element .
 		 */
 		public Object getElement() {
 			return element;
@@ -58,7 +57,7 @@ public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 
 		/**
 		 *
-		 * @param n
+		 * @param n .
 		 */
 		public void setNext(final Node n) {
 			next = n;
@@ -66,7 +65,7 @@ public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 
 		/**
 		 *
-		 * @return
+		 * @return next .
 		 */
 		public Node getnext() {
 			return next;
