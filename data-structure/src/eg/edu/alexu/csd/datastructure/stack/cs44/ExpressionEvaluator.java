@@ -10,7 +10,7 @@ import eg.edu.alexu.csd.datastructure.stack.IExpressionEvaluator;
 public class ExpressionEvaluator implements IExpressionEvaluator {
 
 	/**
-	 * this method converts infix to postfix
+	 * this method converts infix to postfix .
 	 *
 	 * @param expression
 	 *            String to be converted from infix to postfix
@@ -25,11 +25,17 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 			throw new RuntimeException();
 		}
 		/**
-		 * StringBuilder result append the characters of the postfix expression
+		 * StringBuilder result
+		 * append the
+		 * characters of
+		 *  the postfix expression
 		 */
 		StringBuilder result = new StringBuilder();
 		/**
-		 * MyStack operators used to store the operators during conversion
+		 * MyStack operators
+		 *  used to
+		 *  store the operators
+		 *  during conversion
 		 */
 		MyStack operators = new MyStack();
 		/**
@@ -87,9 +93,13 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
 				} else {
 					try {
-						while (operators.peek().equals('*')
-						|| operators.peek().equals('/')) {
-							result.append(operators.pop());
+						while (operators.peek().
+						equals('*')
+						|| operators.peek().
+						equals('/')) {
+							result.
+							append(operators.
+							pop());
 							result.append(" ");
 
 						}
