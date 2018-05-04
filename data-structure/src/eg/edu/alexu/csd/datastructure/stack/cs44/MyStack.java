@@ -61,8 +61,7 @@ public class MyStack implements IStack {
 
 		/**
 		 *
-		 * @param n
-		 *            pointer to the next element
+		 * @param n pointer to the next element.
 		 */
 		public void setNext(final Node n) {
 			next = n;
@@ -70,7 +69,7 @@ public class MyStack implements IStack {
 
 		/**
 		 *
-		 * @return the pointer to the next element
+		 * @return the pointer to the next element.
 		 */
 		public Object getnext() {
 			return next;
@@ -79,12 +78,13 @@ public class MyStack implements IStack {
 	}
 
 	/**
-	 * pointer to the top of the stack
+	 * pointer to the top of the stack.
 	 */
 	private Node top;
 
 	/**
-	 * @return the element in the top of the stack and removes it
+	 * @return the element in the top of the
+	 * stack and removes it.
 	 */
 	@Override
 	public Object pop() {
