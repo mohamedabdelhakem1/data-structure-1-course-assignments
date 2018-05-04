@@ -33,14 +33,13 @@ public class LinkedListBasedQueue implements IQueue, ILinkedBased {
 
 		/**
 		 *
-		 * @param x
-		 * @param n
+		 *	Object x
+		 *  Node n
 		 */
 		public Node(final Object x, final Node n) {
 			element = x;
 			next = n;
 		}
-
 		/**
 		 *
 		 * @param x
