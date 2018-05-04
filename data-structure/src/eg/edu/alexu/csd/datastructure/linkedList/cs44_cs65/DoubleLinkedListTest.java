@@ -426,7 +426,9 @@ public class DoubleLinkedListTest {
 		instance.set(n1, 'F');
 		assertEquals('F', instance.get(1));
 	}
-
+	/**
+	 *
+	 */
 	@Test
 	public void cs65TestSetError() {
 		DoubleLinkedList instance = new DoubleLinkedList();
@@ -440,7 +442,9 @@ public class DoubleLinkedListTest {
 			System.out.println(" ");
 		}
 	}
-
+	/**
+	 *
+	 */
 	@Test
 	public void cs65TestSubList() {
 		DoubleLinkedList instance = new DoubleLinkedList();
@@ -451,9 +455,10 @@ public class DoubleLinkedListTest {
 		ILinkedList temp = instance.sublist(n1, n2);
 		assertEquals(temp.get(0), instance.get(n1));
 		assertEquals(temp.get(1), instance.get(n2));
-
 	}
-
+/**
+ *
+ */
 	@Test
 	public void cs56TestContains() {
 		DoubleLinkedList c = new DoubleLinkedList();
@@ -471,7 +476,9 @@ public class DoubleLinkedListTest {
 		assertFalse(c.contains(n9));
 		assertFalse(c.contains(n7));
 	}
-
+/**
+ *
+ */
 	@Test
 	public void cs56TestAddRemoveTwoLists5() {
 		DoubleLinkedList c = new DoubleLinkedList();
@@ -492,7 +499,9 @@ public class DoubleLinkedListTest {
 			assertEquals(c.get(i), d.get(i));
 		}
 	}
-
+/**
+ *
+ */
 	@Test
 	public void test1() {
 		DoubleLinkedList instance = new DoubleLinkedList();
@@ -504,7 +513,9 @@ public class DoubleLinkedListTest {
 			assertEquals(instance.get(i), i);
 		}
 	}
-
+/**
+ *
+ */
 	@Test
 	public void test2() {
 		DoubleLinkedList instance = new DoubleLinkedList();
@@ -524,7 +535,9 @@ public class DoubleLinkedListTest {
 		assertTrue(c);
 
 	}
-
+/**
+ *
+ */
 	@Test
 	public void test3() {
 		DoubleLinkedList instance = new DoubleLinkedList();
@@ -538,7 +551,9 @@ public class DoubleLinkedListTest {
 		assertTrue(c);
 
 	}
-
+/**
+ *
+ */
 	@Test
 	public void test4() {
 		DoubleLinkedList instance = new DoubleLinkedList();
@@ -550,7 +565,5 @@ public class DoubleLinkedListTest {
 			c = true;
 		}
 		assertTrue(c);
-
 	}
-
 }
