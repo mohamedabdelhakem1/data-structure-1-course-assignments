@@ -62,27 +62,21 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				 * String value store each operands
 				 */
 				String number = "";
-
 				number += expression.charAt(i);
 				i++;
-
 				while (i < expression.length()
 				&& Character.isDigit(expression.charAt(i))) {
-
 					number += expression.charAt(i);
 					i++;
 				}
 				i--;
-
 				result.append(number);
 				result.append(" ");
-
 			} else if (Character.isAlphabetic(
 			expression.charAt(i))) {
 				numofoperands++;
 				result.append(expression.charAt(i));
 				result.append(" ");
-
 			} else if (expression.charAt(i) == '*'
 			|| expression.charAt(i) == '/') {
 				numofoperators++;
@@ -90,7 +84,6 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 				|| operators.peek().equals('-')
 				|| operators.peek().equals('+')) {
 					operators.push(expression.charAt(i));
-
 				} else {
 					try {
 						while (operators.peek().
@@ -101,15 +94,12 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 							append(operators.
 							pop());
 							result.append(" ");
-
 						}
-
 					} catch (Exception e) {
 						e.getMessage();
 					}
 					operators.push(expression.charAt(i));
 				}
-
 			} else if (expression.charAt(i) == '-'
 			|| expression.charAt(i) == '+') {
 				numofoperators++;
@@ -129,16 +119,12 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 							.append(operators
 							.pop());
 							result.append(" ");
-
 						}
-
 					} catch (Exception e) {
 						e.getMessage();
 					}
-
 					operators.push(expression.charAt(i));
 				}
-
 			} else if (expression.charAt(i) == '(') {
 				numbOfLeft++;
 				operators.push(expression.charAt(i));
@@ -148,20 +134,15 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 					while (!operators.peek().equals('(')) {
 						result.append(operators.pop());
 						result.append(" ");
-
 					}
 					operators.pop();
 				} catch (Exception e) {
 					e.getMessage();
 				}
-
 			}
-
 		}
-
 		while (!operators.isEmpty()) {
 			result.append(operators.pop());
-
 			if (!operators.isEmpty()) {
 				result.append(" ");
 			}
@@ -174,7 +155,6 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 		}
 		return result.toString();
 	}
-
 	/**
 	 * this method evaluate postfix operations .
 	 *
