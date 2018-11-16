@@ -1,6 +1,6 @@
 package eg.edu.alexu.csd.datastructure.mailServer.cs65_cs42_cs44;
 
-import eg.edu.alexu.csd.datastructure.mailServer.IPriorityQueue;
+
 
 /**
  * @author SHIKO

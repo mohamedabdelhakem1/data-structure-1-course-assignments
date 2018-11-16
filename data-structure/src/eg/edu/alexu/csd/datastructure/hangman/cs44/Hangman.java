@@ -1,6 +1,7 @@
 package eg.edu.alexu.csd.datastructure.hangman.cs44;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
@@ -59,16 +60,18 @@ public class Hangman implements IHangman {
 	public void readfile() throws IOException {
 
 		try {
-			FileReader filereader = new FileReader(
+			 File	 file = new File(
+
 					""
 					+ "C:\\Users\\SHIKO\\git\\"
 					+ "data-structure\\data-structure"
 					+ "\\src\\eg\\edu\\alexu"
 					+ "\\csd\\datastructure\\"
-					+ "hangman\\cs44");
-			BufferedReader buffer = new BufferedReader(filereader);
+					+ "hangman\\cs44\\words.txt");
+			BufferedReader buffer = new BufferedReader(new FileReader(file));
 			String line;
 			while ((line = buffer.readLine()) != null) {
+				System.out.println(line);
 				word[i] = line;
 
 				i++;
